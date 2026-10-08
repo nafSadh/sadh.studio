@@ -9,3 +9,5 @@ Sadh's creative output. Hosted on GitHub Pages at **[sadh.studio](https://sadh.s
 
 Built from `~/photos/site` with `python3 build.py --deploy ~/src/sadh.studio`; `published.json` there is the source of truth
 (curate in `pick.html`, merge with `merge_picks.py`). Do not hand-edit the HTML; rebuild it.
+
+Local: `./run.sh` (build + serve at http://localhost:8768/). Curation: `~/photos/site/curate.sh`.
