@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curation Review · sadh.studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..600;1,400&family=Fraunces:opsz,wght@9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<style>
+  :root, [data-theme="dark"] {
+    --bg: #0f0e0d;
+    --bg-elev: #181614;
+    --bg-card: #151311;
+    --fg: #ebe6dd;
+    --fg-dim: #9e9689;
+    --fg-mute: #69635a;
+    --line: #282420;
+    --accent: #e0a96d;
+    --keep: #5bb98b;
+    --Keep-bg: rgba(91, 185, 139, 0.14);
+    --promote: #e5a93c;
+    --promote-bg: rgba(229, 169, 60, 0.16);
+    --contender: #68a5e8;
+    --contender-bg: rgba(104, 165, 232, 0.15);
+    --demote: #e07a5f;
+    --demote-bg: rgba(224, 122, 95, 0.16);
+    --purge: #e5484d;
+    --purge-bg: rgba(229, 72, 77, 0.18);
+    --feed: #8e877d;
+    --feed-bg: rgba(142, 135, 125, 0.14);
+    --overlay-bg: rgba(12, 11, 10, 0.90);
+  }
+  [data-theme="light"] {
+    --bg: #f6f3ec;
+    --bg-elev: #ece7dc;
+    --bg-card: #ffffff;
+    --fg: #1d1b18;
+    --fg-dim: #5c564d;
+    --fg-mute: #8c8478;
+    --line: #dcd5c7;
+    --accent: #9c6324;
+    --keep: #237a51;
+    --Keep-bg: rgba(35, 122, 81, 0.12);
+    --promote: #a86c07;
+    --promote-bg: rgba(168, 108, 7, 0.12);
+    --contender: #2563eb;
+    --contender-bg: rgba(37, 99, 235, 0.11);
+    --demote: #c2410c;
+    --demote-bg: rgba(194, 65, 12, 0.12);
+    --purge: #be123c;
+    --purge-bg: rgba(190, 18, 60, 0.12);
+    --feed: #57534e;
+    --feed-bg: rgba(87, 83, 78, 0.12);
+    --overlay-bg: rgba(20, 18, 16, 0.88);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Jost', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 28px;
+  }
+  .header-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1720px;
+    margin: 0 auto;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .brand h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.35rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .brand .sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .search-input {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--fg);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    padding: 6px 11px;
+    border-radius: 5px;
+    width: 210px;
+  }
+  .search-input:focus {
+    outline: 1px solid var(--accent);
+  }
+  .btn-toggle {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--fg-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    padding: 6px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-toggle:hover, .btn-toggle.active {
+    color: var(--fg);
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, var(--bg-elev));
+  }
+
+  /* Filter Tabs */
+  .tabs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 1720px;
+    margin: 12px auto 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .tab {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--fg-dim);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 99px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.15s ease;
+  }
+  .tab:hover {
+    color: var(--fg);
+    border-color: var(--fg-mute);
+  }
+  .tab.active {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+  .tab .count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    opacity: 0.75;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-keep { background: var(--keep); }
+  .dot-promote { background: var(--promote); }
+  .dot-contender { background: var(--contender); }
+  .dot-demote { background: var(--demote); }
+  .dot-purge { background: var(--purge); }
+  .dot-feed { background: var(--feed); }
+
+  /* Main Layout */
+  main {
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: 24px 28px 80px;
+  }
+  .summary-banner {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .summary-banner p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--fg-dim);
+  }
+  .summary-banner strong {
+    color: var(--fg);
+  }
+  .hint-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .section-block {
+    margin-bottom: 48px;
+  }
+  .section-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  .section-header h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .section-header .desc {
+    font-size: 0.88rem;
+    color: var(--fg-dim);
+  }
+
+  /* Photo Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 18px;
+  }
+  body.compact-grid .grid {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 12px;
+  }
+
+  /* Photo Card */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.16s ease, border-color 0.16s ease;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: var(--fg-mute);
+  }
+  .card[data-verdict="keep"] { border-top: 3px solid var(--keep); }
+  .card[data-verdict="promote"] { border-top: 3px solid var(--promote); }
+  .card[data-verdict="contender"] { border-top: 3px solid var(--contender); }
+  .card[data-verdict="demote"] { border-top: 3px solid var(--demote); }
+  .card[data-verdict="purge"] { border-top: 3px solid var(--purge); }
+  .card[data-verdict="feed"] { border-top: 3px solid var(--feed); }
+
+  .thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #090808;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  .thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+  .card:hover .thumb-wrap img {
+    transform: scale(1.02);
+  }
+
+  /* Top-left & Top-right floating pills on image */
+  .card-badges {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .verdict-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+  .pill-keep { background: rgba(16, 48, 33, 0.86); color: #7ce6b1; border: 1px solid rgba(91, 185, 139, 0.45); }
+  .pill-promote { background: rgba(58, 39, 7, 0.88); color: #ffd07b; border: 1px solid rgba(229, 169, 60, 0.5); }
+  .pill-contender { background: rgba(15, 38, 68, 0.88); color: #9ec5ff; border: 1px solid rgba(104, 165, 232, 0.5); }
+  .pill-demote { background: rgba(64, 24, 15, 0.88); color: #ffab94; border: 1px solid rgba(224, 122, 95, 0.5); }
+  .pill-purge { background: rgba(68, 13, 18, 0.90); color: #ff9da0; border: 1px solid rgba(229, 72, 77, 0.55); }
+  .pill-feed { background: rgba(30, 28, 25, 0.85); color: #ccc5b9; border: 1px solid rgba(142, 135, 125, 0.4); }
+
+  .grade-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(15, 14, 13, 0.84);
+    color: #f3ede2;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+  }
+  .grade-Aplus, .grade-A { color: #ffd485; border-color: rgba(229, 169, 60, 0.5); }
+  .grade-C, .grade-Cplus { color: #ff9da0; border-color: rgba(229, 72, 77, 0.5); }
+
+  /* Hover Rationale Overlay */
+  .hover-rationale {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-bg);
+    color: #f4efe6;
+    padding: 38px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    z-index: 2;
+    overflow-y: auto;
+  }
+  .thumb-wrap:hover .hover-rationale,
+  .card:focus-within .hover-rationale {
+    opacity: 1;
+  }
+  .hover-rationale .rat-action {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .hover-rationale .rat-text {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.38;
+    color: #f4efe6;
+    margin: 0 0 8px;
+  }
+  .hover-rationale .rat-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: #b5ada0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding-top: 6px;
+  }
+
+  /* Card Footer */
+  .card-meta {
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+  }
+  .meta-row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .frame-id {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--fg);
+  }
+  .place-tag {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .meta-row-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.69rem;
+    color: var(--fg-mute);
+  }
+  .stat-chip {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--fg-dim);
+  }
+  .warn-chip {
+    background: var(--purge-bg);
+    color: var(--purge);
+    border: 1px solid color-mix(in srgb, var(--purge) 40%, transparent);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  /* Always-visible rationale below card when toggled */
+  .inline-rationale {
+    display: none;
+    padding: 8px 12px 11px;
+    border-top: 1px dashed var(--line);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 0.96rem;
+    line-height: 1.38;
+    color: var(--fg-dim);
+    background: color-mix(in srgb, var(--bg-elev) 55%, transparent);
+  }
+  body.always-show-rationale .inline-rationale {
+    display: block;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 8, 7, 0.95);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 28px;
+  }
+  .lightbox.open {
+    display: flex;
+  }
+  .lb-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: #d6cfc2;
+  }
+  .lb-close {
+    background: transparent;
+    border: 1px solid #3a3530;
+    color: #d6cfc2;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .lb-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    margin: 12px 0;
+    position: relative;
+  }
+  .lb-stage img {
+    max-width: 100%;
+    max-height: 74vh;
+    object-fit: contain;
+    border-radius: 3px;
+  }
+  .lb-bottom {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .lb-rationale {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    color: #f3ede2;
+    margin: 0 0 6px;
+  }
+  .lb-submeta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #9e9689;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="brand">
+      <h1>sadh.studio · Curation Review</h1>
+      <span class="sub">179 frames visually inspected · Hover any photo for rationale, click to enlarge</span>
+    </div>
+    <div class="controls">
+      <input type="search" id="searchInput" class="search-input" placeholder="Filter ID, place, keyword…">
+      <button type="button" id="toggleFullResBtn" class="btn-toggle" title="Load full-resolution JPEGs directly inside the grid cards">Full-Res Grid Images</button>
+      <button type="button" id="toggleInlineBtn" class="btn-toggle" title="Toggle rationale below every card">Show Rationale Below Cards</button>
+      <button type="button" id="toggleCompactBtn" class="btn-toggle" title="Toggle smaller grid thumbnails">Compact Grid</button>
+      <button type="button" id="toggleThemeBtn" class="btn-toggle">Light / Dark</button>
+    </div>
+  </div>
+  <div class="tabs-bar" id="tabsBar">
+    <button class="tab active" data-filter="all">All Inspected <span class="count" id="cnt-all">179</span></button>
+    <button class="tab" data-filter="fullres-changes"><span class="dot dot-promote"></span>Changed in Full-Res Pass <span class="count" id="cnt-fullres">20</span></button>
+    <button class="tab" data-filter="proposed-wall"><span class="dot dot-keep"></span>Proposed 50 Wall <span class="count" id="cnt-proposed-wall">50</span></button>
+    <button class="tab" data-filter="keep"><span class="dot dot-keep"></span>Wall Kept <span class="count" id="cnt-keep">32</span></button>
+    <button class="tab" data-filter="promote"><span class="dot dot-promote"></span>Promoted to Wall <span class="count" id="cnt-promote">18</span></button>
+    <button class="tab" data-filter="demote"><span class="dot dot-demote"></span>Cut from Wall <span class="count" id="cnt-demote">18</span></button>
+    <button class="tab" data-filter="contender"><span class="dot dot-contender"></span>Wall Runner-Ups <span class="count" id="cnt-contender">6</span></button>
+    <button class="tab" data-filter="feed"><span class="dot dot-feed"></span>Keep in Feed <span class="count" id="cnt-feed">91</span></button>
+    <button class="tab" data-filter="purge"><span class="dot dot-purge"></span>Purge / Rule Violation <span class="count" id="cnt-purge">15</span></button>
+  </div>
+</header>
+
+<main>
+  <div class="summary-banner">
+    <p>
+      <strong>Visual Audit Summary (Full-Res Pass Updated):</strong> Kept <strong>32</strong> current wall frames (including your fixed Top 5), cut <strong>18</strong> flawed/weaker frames from the wall (including 6 caught at full resolution: <code>P7037348</code> street wires/haze, <code>P5170624-2</code> 608×810 crop, <code>P7048213</code> Equinox/Uber traffic, <code>P6266135</code>, <code>P6064421</code>, and <code>DSCF2410</code>), and promoted <strong>18</strong> full-res verified A/A+ gems to form a cohesive <strong>50-frame Wall</strong>. Rescued <code>P8091032</code> &amp; <code>P8091124</code> to the feed (<strong>91</strong> feed frames) and flagged <strong>15</strong> frames for purge. Use the <strong>Changed in Full-Res Pass (20)</strong> tab to review every verdict updated after full-res inspection.
+    </p>
+    <span class="hint-pill">Hover image = Rationale · Click = Full-res Lightbox</span>
+  </div>
+
+  <div id="sectionsContainer"></div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-top">
+    <span id="lbTitle"></span>
+    <button class="lb-close" id="lbClose">ESC / Close</button>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <div class="lb-bottom">
+    <p class="lb-rationale" id="lbRationale"></p>
+    <div class="lb-submeta" id="lbSubmeta"></div>
+  </div>
+</div>
+
+<script>
+const FRAMES = [
+  // =========================================================================
+  // 1. CURRENT WALL KEPT (32 frames — 100% verified at full resolution)
+  // =========================================================================
+  {
+    id: "DSCF3795", thumb: "DSCF3795", place: "Yosemite", wallRank: 1,
+    verdict: "keep", badge: "FIXED TOP 5 · #1", grade: "A+", reddit: 947,
+    rationale: "Fixed #1 favorite (full-res verified). Monumental sunlit granite face of Sentinel Rock framed through dark silhouetted pine needles; rich warm-amber vs. cool-shadow separation."
+  },
+  {
+    id: "P6064392-2", thumb: "P6064392-2", place: "San José", wallRank: 2,
+    verdict: "keep", badge: "FIXED TOP 5 · #2", grade: "A+", reddit: 3274,
+    rationale: "Fixed #2 favorite (3,274 on r/itookapicture, full-res verified). Graphic orange-lit fire escape zigzagging beside a teal Art Deco facade—impeccable geometry and color contrast."
+  },
+  {
+    id: "P5230972", thumb: "P5230972", place: "Yosemite", wallRank: 3,
+    verdict: "keep", badge: "FIXED TOP 5 · #3", grade: "A+", reddit: 90,
+    rationale: "Fixed #3 favorite (full-res verified). Sculptural, sun-bleached tan snag reaching across a pure deep-cobalt sky; stark minimalist restraint."
+  },
+  {
+    id: "P1034144", thumb: "P1034144", place: "Austin", wallRank: 4,
+    verdict: "keep", badge: "FIXED TOP 5 · #4", grade: "A+", reddit: 175,
+    rationale: "Fixed #4 favorite (full-res verified). Lone runner caught mid-stride in a warm tungsten street pool beneath a dramatic dark angular skyscraper."
+  },
+  {
+    id: "P5109495", thumb: "P5109495", place: "Shasta–Cascade", wallRank: 5,
+    verdict: "keep", badge: "FIXED TOP 5 · #5", grade: "A", reddit: 321,
+    rationale: "Fixed #5 favorite (full-res verified). Snow-clad Mount Shasta rising cleanly above a dark conifer line under a deep-blue May sky."
+  },
+  {
+    id: "P7128816", thumb: "P7128816", place: "San Francisco", wallRank: 6,
+    verdict: "keep", badge: "KEPT · WALL #6", grade: "A+", reddit: 1971, ig: 19,
+    rationale: "Signature SF frame (6,063 total Reddit upvotes, full-res verified). Baker Beach trail fence curves cleanly into the Golden Gate Bridge under dramatic amber-lit cloud drama with a tiny kite accent."
+  },
+  {
+    id: "DSCF3842", thumb: "DSCF3842-3", place: "Yosemite", wallRank: 7,
+    verdict: "keep", badge: "KEPT · WALL #7", grade: "A", reddit: 1630, ig: 50,
+    rationale: "Top Instagram post (50 likes) & 1,630 on r/NationalPark (full-res verified). Wooden boardwalk S-curve leads across lush green meadow to Yosemite Falls at dusk."
+  },
+  {
+    id: "P7159131", thumb: "P7159131", place: "San José", wallRank: 8,
+    verdict: "keep", badge: "KEPT · WALL #8", grade: "A", reddit: 1299,
+    rationale: "1,299 on r/TheNightFeeling ('sliver', full-res verified). Minimalist razor-thin crescent moon (and a tiny distant plane below it!) suspended in a smooth navy-to-amber dusk gradient."
+  },
+  {
+    id: "P5098825", thumb: "P5098825", place: "Shasta–Cascade", wallRank: 9,
+    verdict: "keep", badge: "KEPT · WALL #9 (BLOWN SKY)", grade: "B", reddit: 260,
+    rationale: "Burney Falls twin cascades (260 on r/EarthPorn). Full-res note: the top sky triangle is completely clipped pure white (#fff)—we promoted P5099064 and P5098785 which have zero blown sky."
+  },
+  {
+    id: "P5231028-3", thumb: "P5231028-3", place: "Yosemite", wallRank: 10,
+    verdict: "keep", badge: "KEPT · WALL #10", grade: "A", reddit: 630,
+    rationale: "Full-res verified: Half Dome catching warm golden-hour alpenglow framed by dark valley walls (630 on r/EarthPorn, 1,626 total). Crisp granite fissure detail."
+  },
+  {
+    id: "P5231119-3", thumb: "P5231119-3", place: "Yosemite", wallRank: 11,
+    verdict: "keep", badge: "KEPT · WALL #11", grade: "A", reddit: 467,
+    rationale: "Full-res verified: tight vertical study of Bridalveil Fall catching warm orange light on wet granite while cool blue mist swirls at the base."
+  },
+  {
+    id: "PC210616", thumb: "PC210616", place: "Oʻahu", wallRank: 12,
+    verdict: "keep", badge: "KEPT · WALL #12", grade: "B", reddit: 351,
+    rationale: "Sweeping view of Oʻahu windward coast toward Waimānalo (351 on r/MostBeautiful). Full-res note: heavy electric-blue/cyan color cast, dark top-left vignette, and crunchy highway detail at bottom-left."
+  },
+  {
+    id: "P7047961", thumb: "P7047961", place: "San Francisco", wallRank: 14,
+    verdict: "keep", badge: "KEPT · WALL #14", grade: "A-", reddit: 184,
+    rationale: "Full-res verified: moody July 4th nocturne ('the show the fog couldn't cancel'). Crimson firework glow bleeding across dark water under a heavy blue fog bank."
+  },
+  {
+    id: "P5098471-2", thumb: "P5098471-2", place: "Shasta–Cascade", wallRank: 15,
+    verdict: "keep", badge: "KEPT · WALL #15", grade: "A", reddit: 40,
+    rationale: "Full-res verified: clean graphic geometry—a tiny yellow speedboat (with wakeboarder in tow!) carves a sweeping white C-curve wake across deeply textured sapphire water."
+  },
+  {
+    id: "P7128799-2", thumb: "P7128799-2", place: "San Francisco", wallRank: 16,
+    verdict: "keep", badge: "KEPT · WALL #16 (1200×1600)", grade: "B+", reddit: 193, warn: "1200×1600px export",
+    rationale: "Full-res verified: charming backlit silhouette of a small dog with glowing fur rim-light on golden rippled sand at Baker Beach. Re-export at full sensor resolution from RAW if possible."
+  },
+  {
+    id: "P5231057", thumb: "P5231057", place: "Yosemite", wallRank: 17,
+    verdict: "keep", badge: "KEPT · WALL #17", grade: "A+", reddit: 49,
+    rationale: "Full-res verified: razor-sharp profile portrait of a Common Raven showing intricate throat hackles and eye catchlight against a creamy bokeh background."
+  },
+  {
+    id: "P5263230", thumb: "P5263230", place: "Mendocino", wallRank: 22,
+    verdict: "keep", badge: "KEPT · WALL #22", grade: "A", reddit: 100,
+    rationale: "Full-res verified: feather-sharp bird-in-flight capture of a Turkey Vulture banking with golden light catching its primary feathers against a soft coastal bluff."
+  },
+  {
+    id: "P5252934", thumb: "P5252934", place: "Mendocino", wallRank: 24,
+    verdict: "keep", badge: "KEPT · WALL #24", grade: "A",
+    rationale: "Full-res verified: spectacular golden crepuscular rays fanning down through brooding slate storm clouds onto a shimmering silver patch of the Pacific."
+  },
+  {
+    id: "P5251263", thumb: "P5251263", place: "Mendocino", wallRank: 26,
+    verdict: "keep", badge: "KEPT · WALL #26", grade: "A", reddit: 283,
+    rationale: "Full-res verified (283 on r/EarthPorn): slate-blue marine layer rolling over dark ridges contrasted against a sunlit golden grass slope."
+  },
+  {
+    id: "P7128817-7", thumb: "P7128817-7", place: "San Francisco", wallRank: 27,
+    verdict: "keep", badge: "KEPT · WALL #27 (CROP TIP)", grade: "B+", reddit: 138, ig: 19,
+    rationale: "Warm golden-hour silhouettes along Baker Beach ('three phases of life', 418 total Reddit). Full-res note: bottom 20% has dark out-of-focus weeds/wire fence—crop tighter."
+  },
+  {
+    id: "DSCF4052", thumb: "DSCF4052", place: "Mendocino", wallRank: 28,
+    verdict: "keep", badge: "KEPT · WALL #28", grade: "A+", reddit: 152,
+    rationale: "Full-res verified: Wes Anderson-worthy coastal minimalism—tiny white watchhouse with a red roof perched on a rugged headland against a vast moody sea."
+  },
+  {
+    id: "P5252974", thumb: "P5252974", place: "Mendocino", wallRank: 29,
+    verdict: "keep", badge: "KEPT · WALL #29", grade: "A", reddit: 263,
+    rationale: "Full-res verified: feather-sharp portrait of a White-crowned Sparrow perched on a diagonal stem against creamy ochre and sage-green bokeh (263 on r/BirdPhotography)."
+  },
+  {
+    id: "DSCF3136", thumb: "DSCF3136", place: "Highway 1", wallRank: 31,
+    verdict: "keep", badge: "KEPT · WALL #31", grade: "B+",
+    rationale: "Full-res verified: serene amber Pacific sunset framed by lacy silhouetted Monterey cypress branches on the right."
+  },
+  {
+    id: "DSCF3043", thumb: "DSCF3043", place: "Highway 1", wallRank: 32,
+    verdict: "keep", badge: "KEPT · WALL #32", grade: "B", reddit: 7,
+    rationale: "Contemplative mood: lone figure at the end of a dark cypress-lined coastal path facing a silver ocean reflection. (Borderline: foreground path is quite dark at full res)."
+  },
+  {
+    id: "P8091154-3", thumb: "P8091154-3", place: "Santa Cruz", wallRank: 33,
+    verdict: "keep", badge: "KEPT · WALL #33", grade: "A", reddit: 134,
+    rationale: "Full-res verified: dramatic upward perspective from inside a burned-out redwood cavern, with golden sunbeams raking across deeply furrowed bark."
+  },
+  {
+    id: "DSCF2309", thumb: "DSCF2309-2", place: "Austin", wallRank: 35,
+    verdict: "keep", badge: "KEPT · WALL #35", grade: "A",
+    rationale: "Full-res verified: crisp nighttime one-point perspective down an arched brick colonnade, balancing warm amber interior glow against cool architectural uplighting."
+  },
+  {
+    id: "P6064344", thumb: "P6064344", place: "San José", wallRank: 39,
+    verdict: "keep", badge: "KEPT · WALL #39", grade: "A-", reddit: 59,
+    rationale: "Full-res verified: historic Bank of Italy cupola wrapped in scaffolding catching warm sunset light above a vibrant geometric bird mural."
+  },
+  {
+    id: "P1023333", thumb: "P1023333", place: "Austin", wallRank: 40,
+    verdict: "keep", badge: "KEPT · WALL #40", grade: "A",
+    rationale: "Full-res verified: disciplined architectural frame-within-a-frame looking out from a dark classical doorway onto the warm sunlit limestone dome of the Texas State Capitol."
+  },
+  {
+    id: "PC211047-2", thumb: "PC211047-2", place: "Oʻahu", wallRank: 43,
+    verdict: "keep", badge: "KEPT · WALL #43", grade: "A", reddit: 118,
+    rationale: "Full-res verified: silhouetted palm clusters frame a glowing orange sunset disk while a tiny commercial plane crosses the horizon."
+  },
+  {
+    id: "P3146792", thumb: "P3146792-2", place: "Highway 1", wallRank: 45,
+    verdict: "keep", badge: "KEPT · WALL #45", grade: "B", reddit: 183,
+    rationale: "Capitola lagoon & Venetian cottages (183 on r/MostBeautiful). Full-res note: foreground beach is busy with kelp piles, a blue beach tent, and a blurry gull."
+  },
+  {
+    id: "P6287264", thumb: "P6287264", place: "Monterey Coast", wallRank: 48,
+    verdict: "keep", badge: "KEPT · MOVE TO TOP 15", grade: "A+", reddit: 101,
+    rationale: "'A gap in the pink'—poetic minimalist capture of a single gull silhouetted inside a glowing coral-pink opening in dark dusk clouds. Verified clean at full res."
+  },
+  {
+    id: "P5252760", thumb: "P5252760", place: "Point Reyes", wallRank: 49,
+    verdict: "keep", badge: "KEPT · MOVE TO TOP 15", grade: "A+", reddit: 173,
+    rationale: "Masterful diagonal tension between the tiny red-roofed Point Reyes Lighthouse on the rocky cliff and a lone fishing boat crossing the vast dark sea. Verified crisp at full res."
+  },
+
+  // =========================================================================
+  // 2. PROMOTED TO WALL (18 Full-Res Verified A/A+ Gems replacing the 18 Demotions)
+  // =========================================================================
+  {
+    id: "P7128852.2-3", thumb: "P7128852.2-3", place: "San Francisco",
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A+", reddit: 247,
+    rationale: "Full-res verified! Hidden in feed-only (3e), yet scored 247 on r/itookapicture ('ace' tier). Four birds perched atop a weathered snag against luminous peach-and-slate sunset clouds."
+  },
+  {
+    id: "P7128684", thumb: "P7128684", place: "San Francisco",
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A+",
+    rationale: "Full-res verified! From 3c feed additions: breathtaking golden-monochrome telephoto of pelicans gliding in formation over a silhouetted cargo ship on liquid-gold water."
+  },
+  {
+    id: "P7128675", thumb: "P7128675", place: "San Francisco", oldCutRank: 18,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A", reddit: 351,
+    rationale: "Full-res verified! Cut at old rank #18 (351 on r/CityPorn, 'ace' tier). Tack-sharp warm golden-hour telephoto of the Golden Gate Bridge towers and headland silhouettes—vastly cleaner than Wall #19 (P7037348)."
+  },
+  {
+    id: "P3146567-2", thumb: "P3146567-2", place: "Highway 1", oldCutRank: 73,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A+",
+    rationale: "Full-res verified! Cut at old rank #73. Cinematic coastal panorama: ~15 horseback riders parading along the shoreline behind vivid yellow oxalis wildflowers."
+  },
+  {
+    id: "P5099064", thumb: "P5099064", place: "Shasta–Cascade", oldCutRank: 26,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A+", ig: 22,
+    rationale: "Full-res verified! Cut at old rank #26 & IG carousel cover (22 likes). Full-frame vertical veil of Burney Falls plunging over emerald moss—eliminates the blown white sky of Wall #9."
+  },
+  {
+    id: "P5098785", thumb: "P5098785", place: "Shasta–Cascade", oldCutRank: 92, fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A",
+    rationale: "Full-res verified! Newly promoted after full-res pass (cut at old rank #92). Clean vertical study of Burney Falls framed by backlit oak leaves with zero blown white sky."
+  },
+  {
+    id: "P5099355-2", thumb: "P5099355-2", place: "Shasta–Cascade", oldCutRank: 40,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A",
+    rationale: "Full-res verified! Cut at old rank #40. Crisp Osprey perched inside a sunlit skeletal snag against a deep cobalt sky—wonderful wildlife/minimalist hybrid."
+  },
+  {
+    id: "P5231225", thumb: "P5231225", place: "Yosemite", oldCutRank: 98,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A", ig: 22,
+    rationale: "Full-res verified! Cut at old rank #98 & IG cover (22 likes). Classic layered Yosemite Valley study: sunlit meadow grass, dark pine line, and sheer blue-grey granite cliff face."
+  },
+  {
+    id: "P5231177", thumb: "P5231177", place: "Yosemite", oldCutRank: 38, fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A", reddit: 136,
+    rationale: "Full-res verified! Newly promoted after full-res pass (cut at old rank #38, 136 on r/EarthPorn). Tack-sharp golden-hour study of a granite dome crown and summit pines against an unblemished deep-blue sky."
+  },
+  {
+    id: "PC200377", thumb: "PC200377", place: "Oʻahu",
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A", reddit: 176,
+    rationale: "Full-res verified! From 3e feed-only (176 on r/MostBeautiful). High-angle graphic composition of two yellow-sailed catamarans floating on vivid turquoise Waikiki surf."
+  },
+  {
+    id: "PC200370", thumb: "PC200370", place: "Oʻahu", fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A",
+    rationale: "Full-res verified! Newly promoted after full-res pass (3c feed addition): minimalist lone yellow-and-white catamaran slicing across a vast, sparkling turquoise Pacific expanse."
+  },
+  {
+    id: "P5263253", thumb: "P5263253", place: "Mendocino", oldCutRank: 59,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A",
+    rationale: "Full-res verified! Cut at old rank #59. Feather-sharp portrait of a plumed California Quail standing proud on a weathered post against creamy golden-hour bokeh."
+  },
+  {
+    id: "P5263368", thumb: "P5263368", place: "Mendocino", oldCutRank: 56,
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A",
+    rationale: "Full-res verified! Cut at old rank #56. Explosive coastal action: a seagull banking mid-air with kelp in its beak set against a towering white plume of crashing surf."
+  },
+  {
+    id: "P5252424", thumb: "P5252424", place: "Mendocino", oldCutRank: 107, fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A",
+    rationale: "Full-res verified! Newly promoted after full-res pass (cut at old rank #107). Painterly Rothko-esque horizon study: brooding slate-blue storm clouds over a glowing peach sky band and tiny boat on dark water."
+  },
+  {
+    id: "P5251876", thumb: "P5251876", place: "Mendocino", oldCutRank: 34, fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A-", reddit: 8,
+    rationale: "Full-res verified! Newly promoted after full-res pass (cut at old rank #34). Fine-art black-and-white minimalism: a single barnacle-encrusted pier piling and its wavy reflection in still grey water."
+  },
+  {
+    id: "DSCF4174", thumb: "DSCF4174", place: "Mendocino", oldCutRank: 32, fullResChanged: true,
+    verdict: "promote", badge: "PROMOTE TO WALL ★ (FULL-RES SWAP)", grade: "A", reddit: 137,
+    rationale: "Full-res verified! Newly promoted after full-res pass (cut at old rank #32, 137 on r/itookapicture). Crisp vertical coastal composition of the white cliff watchhouse overlooking a swirling turquoise cove."
+  },
+  {
+    id: "P9042806-2-3", thumb: "P9042806-2-3", place: "Lake Tahoe",
+    verdict: "promote", badge: "PROMOTE TO WALL ★", grade: "A-", reddit: 81, ig: 28,
+    rationale: "Full-res verified! Edited Tahoe standout (81 on r/LakePorn, 28 IG likes—your #2 IG post): intricate weathered driftwood grain anchoring deep cobalt water and pines."
+  },
+  {
+    id: "P1034082", thumb: "P1034082", place: "Austin", oldCutRank: 80,
+    verdict: "promote", badge: "PROMOTE ★ (NEEDS EXPORT)", grade: "A-", warn: "bak/jpeg path",
+    rationale: "Full-res verified! Cut at old rank #80. Sail-shaped Block 185 tower catching warm sunset light with a full reflection in Lady Bird Lake and a lone paddler. Re-export from edits/."
+  },
+
+  // =========================================================================
+  // 3. CUT / DEMOTED FROM CURRENT WALL (18 frames: 17 to Feed, 1 Purge)
+  // =========================================================================
+  {
+    id: "P5252213", thumb: "P5252213", place: "Point Reyes", wallRank: 13,
+    verdict: "demote", badge: "CUT FROM WALL #13 → FEED", grade: "C+", reddit: 398,
+    rationale: "Despite 398 Reddit upvotes, the deer is walking away showing its rear end in tall weeds with its mouth awkwardly open. You rightly rejected this in pick.html."
+  },
+  {
+    id: "P5170419", thumb: "P5170419", place: "Santa Cruz", wallRank: 18,
+    verdict: "demote", badge: "CUT FROM WALL #18 → FEED", grade: "B-", reddit: 45,
+    rationale: "Western Gull mid-squawk is heavily crowded by giant out-of-focus pink and green foreground blobs covering nearly 45% of the frame."
+  },
+  {
+    id: "P7037348", thumb: "P7037348", place: "San Francisco", wallRank: 19, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #19 (FULL-RES CATCH)", grade: "B-", reddit: 178,
+    rationale: "Full-res catch: washed-out, low-contrast cyan-teal haze with a messy clutter of utility poles, criss-crossing street wires, streetlamps, and parked cars across the bottom third. Outclassed by P7128675."
+  },
+  {
+    id: "P5170624-2", thumb: "P5170624-2", place: "Santa Cruz", wallRank: 20, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #20 (FULL-RES CATCH)", grade: "B-", reddit: 85, warn: "608×810 low-res crop",
+    rationale: "Full-res catch: heavily cropped tiny 608×810 px file! Looks fine as a small thumbnail, but appears soft and noisy when opened at full desktop resolution."
+  },
+  {
+    id: "DSCF3764", thumb: "DSCF3764", place: "Yosemite", wallRank: 21,
+    verdict: "demote", badge: "CUT FROM WALL #21 → FEED", grade: "B-", reddit: 166,
+    rationale: "Classic Tunnel View golden hour, but marred by an accidental black silhouette of a bystander's hat/head jutting into the bottom-right corner (rejected in pick.html)."
+  },
+  {
+    id: "P9053375", thumb: "P9053375", place: "Lake Tahoe", wallRank: 23,
+    verdict: "demote", badge: "CUT FROM WALL #23 → FEED", grade: "B",
+    rationale: "Reads as a casual beach snapshot: a volleyball net, people on sand, and a tarp-covered rock squeezed between two dark tree trunks."
+  },
+  {
+    id: "P7048213", thumb: "P7048213", place: "San Francisco", wallRank: 25, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #25 (FULL-RES CATCH)", grade: "B-", reddit: 146,
+    rationale: "Full-res catch: the marquee is an Equinox gym ('EQUINOX' in blown-out white letters), overhead trolley wires slice right across the red METRO sign, and the bottom third is a traffic jam of modern cars (including an Uber Prius)."
+  },
+  {
+    id: "P8091084", thumb: "P8091084", place: "Santa Cruz", wallRank: 30,
+    verdict: "demote", badge: "CUT FROM WALL #30 → FEED", grade: "B", reddit: 140,
+    rationale: "Sunburst in the redwoods clips into a harsh white blob with a tourist split-rail fence at the bottom; outclassed by redwood sibling P8091154-3 (#33)."
+  },
+  {
+    id: "P7047891", thumb: "P7047891", place: "San Francisco", wallRank: 34,
+    verdict: "demote", badge: "CUT FROM WALL #34 → FEED", grade: "B", reddit: 138,
+    rationale: "Novelty subject (two rooster weathervanes on a Tudor roof), but the flat overcast grey sky and bright white building edge on the left lack portfolio-wall punch."
+  },
+  {
+    id: "P6266135", thumb: "P6266135", place: "San José", wallRank: 36, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #36 (FULL-RES CATCH)", grade: "B-", reddit: 127,
+    rationale: "Full-res catch: overcooked color/dehaze grading—unnatural cyan upper sky colliding with a muddy grey-orange cloud bank, heavy blue clarity crunch on the middle ridge, and suburban rooftops sliced along the bottom edge."
+  },
+  {
+    id: "DSCF1884", thumb: "DSCF1884", place: "Oʻahu", wallRank: 37,
+    verdict: "demote", badge: "CUT FROM WALL #37 → FEED", grade: "B",
+    rationale: "Heavy chocolate-sepia monochrome of the photographer's own shadow on asphalt road stripes; feels like an exercise and clashes with the rest of the wall's color palette."
+  },
+  {
+    id: "P6064421", thumb: "P6064421", place: "San José", wallRank: 38, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #38 (FULL-RES CATCH)", grade: "B-", reddit: 73,
+    rationale: "Full-res catch: heavy artificial dark vignette in the top corners, muddy grey-pink midtone sky band, noisy shadow detail in the fronds, and a cliché 'three palms phone wallpaper' look (73 on r/MobileWallpaper, 'slow' tier)."
+  },
+  {
+    id: "DSCF3492", thumb: "DSCF3492", place: "Shasta–Cascade", wallRank: 41,
+    verdict: "demote", badge: "CUT FROM WALL #41 → FEED", grade: "B-",
+    rationale: "Underexposed edit: the entire bottom 45% of the frame is crushed to featureless pitch black, paired with a heavy artificial top-sky vignette."
+  },
+  {
+    id: "PC210671-2", thumb: "PC210671-2", place: "Oʻahu", wallRank: 42,
+    verdict: "demote", badge: "CUT FROM WALL #42 → FEED", grade: "B-", reddit: 121,
+    rationale: "Red junglefowl rooster in a mossy tree is spoiled by a glaring neon-blue and pink tour-tram windshield in the bottom-right background."
+  },
+  {
+    id: "DSCF5212", thumb: "DSCF5212", place: "Lake Tahoe", wallRank: 44,
+    verdict: "purge", badge: "CUT FROM WALL #44 · PURGE SOOC", grade: "C+", warn: "tops/jpeg SOOC",
+    rationale: "Unedited straight-out-of-camera JPEG from 26.09.04 Tahoe/tops/jpeg/. Very dark wooden pier merging into dark water with an awkward half-cropped boat on the left edge."
+  },
+  {
+    id: "P6286798", thumb: "P6286798", place: "Monterey Coast", wallRank: 46,
+    verdict: "demote", badge: "CUT FROM WALL #46 → FEED", grade: "B", reddit: 110,
+    rationale: "Close-up of a park squirrel on dirt, distracted by a bright magenta/purple out-of-focus person's shirt on the right edge."
+  },
+  {
+    id: "DSCF2410", thumb: "DSCF2410", place: "Austin", wallRank: 47, fullResChanged: true,
+    verdict: "demote", badge: "CUT FROM WALL #47 (FULL-RES CATCH)", grade: "B-",
+    rationale: "Full-res catch: indoor retail store shelf shot at high ISO (grainy/soft), converging tilted wooden verticals on the right, hats sliced at both edges, and a white electrical conduit pipe running across the wall behind the middle row."
+  },
+  {
+    id: "DSCF3494", thumb: "DSCF3494", place: "Shasta–Cascade", wallRank: 50,
+    verdict: "demote", badge: "CUT FROM WALL #50 → FEED", grade: "B-",
+    rationale: "Third Mount Shasta frame on the wall; curving highway has crushed black forest shadows and a distracting white van parked at the turnout."
+  },
+
+  // =========================================================================
+  // 4. RUNNER-UP WALL CONTENDERS (6 Full-Res Verified A- frames ready for swaps)
+  // =========================================================================
+  {
+    id: "P5231095", thumb: "P5231095", place: "Yosemite", oldCutRank: 45,
+    verdict: "contender", badge: "WALL RUNNER-UP", grade: "A-",
+    rationale: "Full-res verified! Cut at old rank #45. Monumental vertical study of Bridalveil Fall and Cathedral Rocks with a dramatic diagonal shadow slicing across the sunlit granite."
+  },
+  {
+    id: "PC211099", thumb: "PC211099", place: "Oʻahu", oldCutRank: 67,
+    verdict: "contender", badge: "WALL RUNNER-UP", grade: "A-", reddit: 58,
+    rationale: "Full-res verified! Cut at old rank #67 (58 on r/CityPorn). Warm golden-hour panorama of Diamond Head and Honolulu under striated peach-and-amber dusk clouds."
+  },
+  {
+    id: "P5263920", thumb: "P5263920", place: "Mendocino", oldCutRank: 58,
+    verdict: "contender", badge: "WALL RUNNER-UP", grade: "A-", reddit: 3,
+    rationale: "Full-res verified! Cut at old rank #58. Tack-sharp minimalist portrait of a glossy Brewer's Blackbird with a piercing yellow eye perched on weathered driftwood against soft grey surf."
+  },
+  {
+    id: "P6286958", thumb: "P6286958", place: "Monterey Coast",
+    verdict: "contender", badge: "WALL RUNNER-UP", grade: "A-",
+    rationale: "Full-res verified! 3c feed addition: backlit translucent emerald-green wave cresting with golden sun-spangled spray."
+  },
+  {
+    id: "P1044214", thumb: "P1044214", place: "Austin", oldCutRank: 81, fullResChanged: true,
+    verdict: "contender", badge: "WALL RUNNER-UP (NEEDS RAW EDIT)", grade: "B+", warn: "bak/jpeg SOOC",
+    rationale: "Full-res catch: hypnotic upward radial symmetry inside the Texas State Capitol rotunda dome, but currently an unedited SOOC JPEG (bak/jpeg) with dark outer shadows and clipped window highlights."
+  },
+  {
+    id: "P7047621", thumb: "P7047621", place: "San Francisco",
+    verdict: "contender", badge: "WALL RUNNER-UP (NEEDS CROP/CLONE)", grade: "B+", reddit: 84,
+    rationale: "Full-res verified: Russian Hill high-rise swallowed by marine fog (84 on r/CityPorn, 'ace'). Has a streetlight jutting in on the left and a horizontal wire across the lower third."
+  },
+
+  // =========================================================================
+  // 5. PURGE / RULE VIOLATIONS (14 additional feed frames -> 15 total with DSCF5212)
+  // =========================================================================
+  {
+    id: "P7047822", thumb: "P7047822", place: "San Francisco",
+    verdict: "purge", badge: "PURGE · VISCERAL", grade: "C",
+    rationale: "Full-res verified (3c feed addition): close-up of a seagull yanking a long string of orange entrails from a bloody fish carcass on concrete rocks. Jarring and unpleasant in a fine-art feed."
+  },
+  {
+    id: "P6064408", thumb: "P6064408", place: "San José", oldCutRank: 111,
+    verdict: "purge", badge: "PURGE · BLURRED SNAPSHOT", grade: "C",
+    rationale: "Full-res verified (cut at old rank #111): accidental shutter press—severely motion-blurred, out-of-focus back of a skateboarder in a beige hoodie at a crosswalk."
+  },
+  {
+    id: "P6064409", thumb: "P6064409", place: "San José", oldCutRank: 112,
+    verdict: "purge", badge: "PURGE · WEAK SNAPSHOT", grade: "C+",
+    rationale: "Full-res verified (cut at old rank #112, taken 1 second after P6064408): unremarkable street snapshot of teenagers on a scooter/skateboard ('SAN JOSE' red shorts)."
+  },
+  {
+    id: "DSCF2311", thumb: "DSCF2311", place: "Austin", oldCutRank: 114,
+    verdict: "purge", badge: "PURGE · SOOC JPEG", grade: "C+", warn: "bak/jpeg SOOC",
+    rationale: "Full-res verified: violates the 'no straight-out-of-camera JPEGs' rule (26.01 Austin/bak/jpeg/DSCF2311.jpg). Red neon STATE blade sign and 'HAPPY NEW YEAR!' marquee against pitch-black shadow."
+  },
+  {
+    id: "DSCF2344", thumb: "DSCF2344", place: "Austin", oldCutRank: 115,
+    verdict: "purge", badge: "PURGE · SOOC JPEG", grade: "C+", warn: "bak/jpeg SOOC",
+    rationale: "Full-res verified: violates the 'no SOOC JPEGs' rule (26.01 Austin/bak/jpeg/DSCF2344.JPG). Glass candleholders in a shop window ruined by a cluttered parking lot and tent background."
+  },
+  {
+    id: "P1044421", thumb: "P1044421", place: "Austin", oldCutRank: 82,
+    verdict: "purge", badge: "PURGE · SOOC JPEG", grade: "B-", warn: "bak/jpeg SOOC",
+    rationale: "Full-res verified: sourced from unedited 26.01 Austin/bak/jpeg/P1044421.JPG. Shows the Texas African American History Memorial ('EMANCIPATION' bronze statue) in front of the Texas Capitol dome; re-export from RAW if you want to keep it in the feed."
+  },
+  {
+    id: "P9063661", thumb: "P9063661", place: "Lake Tahoe",
+    verdict: "purge", badge: "PURGE · SOOC JPEG", grade: "C", warn: "tops/jpeg SOOC",
+    rationale: "Full-res verified: unedited SOOC JPEG from 26.09.04 Tahoe/tops/jpeg/. Flat midday snapshot of two pines beside a gravel roadside pullout."
+  },
+  {
+    id: "P9053349", thumb: "P9053349", place: "Lake Tahoe",
+    verdict: "purge", badge: "PURGE · SOOC JPEG", grade: "C+", warn: "tops/jpeg SOOC",
+    rationale: "Full-res verified: unedited SOOC JPEG from 26.09.04 Tahoe/tops/jpeg/. Ordinary beach snapshot of small wavelets on coarse sand and moored motorboats."
+  },
+  {
+    id: "P9042304", thumb: "P9042304", place: "Lake Tahoe",
+    verdict: "purge", badge: "PURGE · SOOC REDUNDANT", grade: "B-", warn: "tops/jpeg SOOC",
+    rationale: "Full-res verified: unedited SOOC JPEG from 26.09.04 Tahoe/tops/jpeg/. Flat overcast view of Fannette Island with an empty wooden bench in the foreground; redundant with P9042225."
+  },
+  {
+    id: "P5097733", thumb: "P5097733", place: "Shasta–Cascade", oldCutRank: 117,
+    verdict: "purge", badge: "PURGE · TOURIST SNAPSHOT", grade: "C",
+    rationale: "Full-res verified (cut at old rank #117): documentary snapshot of the Mt. Shasta Chamber of Commerce Visitor Information log cabin cluttered with street signs, banners, and utility poles."
+  },
+  {
+    id: "DSCF4761", thumb: "DSCF4761-3", place: "San Francisco", oldCutRank: 113,
+    verdict: "purge", badge: "PURGE · NO SUBJECT", grade: "C+",
+    rationale: "Full-res verified (cut at old rank #113): a wide empty suburban green lawn in front of Marina stucco houses with no discernible focal point."
+  },
+  {
+    id: "P5251945", thumb: "P5251945", place: "Mendocino", oldCutRank: 105,
+    verdict: "purge", badge: "PURGE · CLUTTERED", grade: "C+",
+    rationale: "Full-res verified (cut at old rank #105): distant black cows in a dry pasture crisscrossed by 7+ utility poles, power lines, and out-of-focus foreground wire."
+  },
+  {
+    id: "P5252219", thumb: "P5252219", place: "Mendocino", oldCutRank: 106,
+    verdict: "purge", badge: "PURGE · DUPLICATE BUTT", grade: "C+",
+    rationale: "Full-res verified (cut at old rank #106): second frame of the exact same deer rear-end walking away as P5252213 (#13), just with its mouth closed."
+  },
+  {
+    id: "P8091177", thumb: "P8091177", place: "Santa Cruz",
+    verdict: "purge", badge: "PURGE · BLOWN SKY", grade: "C+",
+    rationale: "Full-res verified (3c feed addition): looking up into redwood canopy with huge blown-out pure white sky patches and chaotic branches; outclassed by P8091154-3 (#33) and P8091124."
+  },
+
+  // =========================================================================
+  // 6. KEEP IN FEED (91 solid narrative/contextual frames across 3b, 3c, 3e)
+  // =========================================================================
+  // Rescued from Purge after full-resolution inspection:
+  {
+    id: "P8091124", thumb: "P8091124", place: "Santa Cruz", fullResChanged: true,
+    verdict: "feed", badge: "RESCUED TO FEED (FULL-RES PASS)", grade: "B+",
+    rationale: "Full-res rescue: earlier thumbnail batching confused this with P8091177's blown sky. At full resolution, P8091124 is a strong vertical study of a massive charred redwood trunk with a blackened fire-scar cavern at its base."
+  },
+  {
+    id: "P8091032", thumb: "P8091032", place: "Santa Cruz", fullResChanged: true,
+    verdict: "feed", badge: "RESCUED TO FEED (FULL-RES PASS)", grade: "B",
+    rationale: "Full-res rescue: earlier thumbnail batching misidentified this as a wharf parking lot. At full resolution, P8091032 is a clean coastal cliff view along West Cliff Drive looking across rocky riprap and turquoise surf toward the Santa Cruz Wharf."
+  },
+  // Earlier feed-only (3e) kept in feed:
+  {
+    id: "P6064390-2", thumb: "P6064390-2", place: "San José",
+    verdict: "feed", badge: "KEEP IN FEED (3e)", grade: "B+",
+    rationale: "Tighter architectural crop of the orange-lit fire escape; keep in feed while P6064392-2 (with the teal Art Deco facade) anchors #2 on the wall."
+  },
+  {
+    id: "P9042185-2", thumb: "P9042185-2", place: "Lake Tahoe",
+    verdict: "feed", badge: "KEEP IN FEED (3e)", grade: "B+", reddit: 111, warn: "tops/jpeg path",
+    rationale: "Warm tungsten cabin window reflection floating like an apparition among dusk pine trees (111 on r/itookapicture). Note: check tops/jpeg source path."
+  },
+  {
+    id: "P9133693-2-5", thumb: "P9133693-2-5", place: "San José",
+    verdict: "feed", badge: "KEEP IN FEED (3e)", grade: "B+", reddit: 40,
+    rationale: "Clean graphic study of an industrial red 'FIRE HOSE' cabinet inside a gridded concrete alcove."
+  },
+  {
+    id: "P6204945", thumb: "P6204945", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3e)", grade: "B",
+    rationale: "Classical domed rotunda and columns framed through coastal trees under a crisp blue sky."
+  },
+
+  // Cuts 18–88 kept in feed:
+  {
+    id: "P5263590", thumb: "P5263590", place: "Mendocino", oldCutRank: 25,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #25", grade: "B+", reddit: 79,
+    rationale: "Quirky carved wooden totem topped with an open hand against coastal cypress trees."
+  },
+  {
+    id: "DSCF4791", thumb: "DSCF4791-2", place: "San Francisco", oldCutRank: 47, fullResChanged: true,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #47 (FULL-RES CATCH)", grade: "B-",
+    rationale: "Full-res catch: looked like a refined architectural atrium in the thumbnail, but at full resolution it is a shopping mall food court ('THE CAFE FOOD COURT', 'POTATO MEETS WING' cartoon fries, and a GNC store sign)."
+  },
+  {
+    id: "P5231171", thumb: "P5231171", place: "Yosemite", oldCutRank: 48,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #48", grade: "B+",
+    rationale: "Dramatic vertical shadow slicing across the granite cliff beside Bridalveil Fall."
+  },
+  {
+    id: "P5097801", thumb: "P5097801", place: "Shasta–Cascade", oldCutRank: 52,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #52", grade: "B",
+    rationale: "Full-res check: Black Butte rising behind green meadow and cattails; note horizontal power lines cutting across the trees on the left."
+  },
+  {
+    id: "P5109918", thumb: "P5109918", place: "Shasta–Cascade", oldCutRank: 53,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #53", grade: "B+",
+    rationale: "Full-res verified: two contrasting conifer silhouettes framing hazy blue Cascade ridges under crisscrossing contrails."
+  },
+  {
+    id: "DSCF3711", thumb: "DSCF3711", place: "Yosemite", oldCutRank: 55,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #55", grade: "B",
+    rationale: "Wide Yosemite Valley floor view showing Bridalveil Fall and El Capitan under bright afternoon light."
+  },
+  {
+    id: "P5027665", thumb: "P5027665", place: "Santa Cruz", oldCutRank: 62,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #62", grade: "B+",
+    rationale: "Warm sunset back-lighting coastal bluff grasses and a dark cypress tree above the beach."
+  },
+  {
+    id: "P5230814", thumb: "P5230814", place: "Yosemite", oldCutRank: 64,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #64", grade: "B+",
+    rationale: "Granite domes and pine trees reflected cleanly in the calm Merced River."
+  },
+  {
+    id: "P5252533", thumb: "P5252533", place: "Mendocino", oldCutRank: 69,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #69", grade: "B+",
+    rationale: "Point Cabrillo Lighthouse set in golden coastal prairie grass under a soft pastel sky."
+  },
+  {
+    id: "DSCF3636", thumb: "DSCF3636", place: "Yosemite", oldCutRank: 70,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #70", grade: "B", reddit: 91,
+    rationale: "Full-res check (245 total Reddit): peaceful afternoon light across Wawona Meadow/Golf Course—at full res, a green golf ball-washer/bin on the left and yellow putting-green pin flag on the right are visible."
+  },
+  {
+    id: "DSCF2949-2", thumb: "DSCF2949-2", place: "Highway 1", oldCutRank: 72,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #72", grade: "B+",
+    rationale: "Full-res verified: dirt coastal trail curving through a field of yellow oxalis wildflowers toward a dark Monterey cypress grove."
+  },
+  {
+    id: "P5099197", thumb: "P5099197", place: "Shasta–Cascade", oldCutRank: 74,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #74", grade: "B+",
+    rationale: "Wide turquoise river bend winding through dense northern California conifer forest."
+  },
+  {
+    id: "DSCF4576", thumb: "DSCF4576-2", place: "Monterey Coast", oldCutRank: 75,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #75", grade: "B+", reddit: 13,
+    rationale: "Atmospheric golden sun disk glowing through heavy sea haze over silhouettes at Pacific Grove."
+  },
+  {
+    id: "DSCF3837", thumb: "DSCF3837", place: "Yosemite", oldCutRank: 76,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #76", grade: "B+",
+    rationale: "Wider dusk frame of the Yosemite Falls boardwalk; sibling to Wall #7 (DSCF3842)."
+  },
+  {
+    id: "P4267367", thumb: "P4267367", place: "Santa Cruz", oldCutRank: 77,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #77", grade: "B+",
+    rationale: "Intimate forest floor study of a towering redwood trunk surrounded by lush green redwood sorrel."
+  },
+  {
+    id: "P5170476", thumb: "P5170476", place: "Santa Cruz", oldCutRank: 78,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #78", grade: "B+",
+    rationale: "Cormorant perched on a dark sea-cave ledge above swirling teal surf."
+  },
+  {
+    id: "DSCF2609", thumb: "DSCF2609", place: "Monterey Coast", oldCutRank: 79,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #79", grade: "B",
+    rationale: "Charming European-style stone turret and courtyard in Carmel-by-the-Sea."
+  },
+  {
+    id: "DSCF2944", thumb: "DSCF2944-2", place: "Highway 1", oldCutRank: 83,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #83", grade: "B+",
+    rationale: "Full-res verified: weathered wooden split-rail fence leading through coastal bluff grass and yellow wildflowers toward two distant walkers."
+  },
+  {
+    id: "DSCF2975", thumb: "DSCF2975", place: "Highway 1", oldCutRank: 84,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #84", grade: "B",
+    rationale: "Bench on a rugged coastal headland looking out toward the horizon."
+  },
+  {
+    id: "DSCF3082-3", thumb: "DSCF3082-3", place: "Highway 1", oldCutRank: 85,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #85", grade: "B+",
+    rationale: "Jagged silhouette of a dead cypress branch reaching across a glowing orange sunset sky."
+  },
+  {
+    id: "P3146743", thumb: "P3146743-2", place: "Highway 1", oldCutRank: 86,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #86", grade: "B+",
+    rationale: "Full-res verified: panorama of the Santa Cruz Wharf and Beach Boardwalk roller coasters across deep blue water."
+  },
+  {
+    id: "P5170445", thumb: "P5170445", place: "Santa Cruz", oldCutRank: 87,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #87", grade: "B", warn: "birds/*.JPG path",
+    rationale: "Colony of cormorants and gulls crowded onto a sunlit sandstone cliff ledge."
+  },
+  {
+    id: "P5170441", thumb: "P5170441", place: "Santa Cruz", oldCutRank: 88,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #88", grade: "B+",
+    rationale: "Clean wildlife portrait of a Brandt's Cormorant showing its striking cobalt-blue throat patch."
+  },
+
+  // Cuts 89–131 kept in feed:
+  {
+    id: "P5097830", thumb: "P5097830", place: "Shasta–Cascade", oldCutRank: 89,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #89", grade: "B",
+    rationale: "Mount Shasta behind green pasture and road; good trip context."
+  },
+  {
+    id: "P5097882", thumb: "P5097882", place: "Shasta–Cascade", oldCutRank: 90,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #90", grade: "B+",
+    rationale: "Telephoto study of snow-covered Mount Shasta slopes above dark timberline."
+  },
+  {
+    id: "P5097888", thumb: "P5097888", place: "Shasta–Cascade", oldCutRank: 91,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #91", grade: "B+",
+    rationale: "Clean wide view of Mount Shasta and Shastina under a deep blue sky."
+  },
+  {
+    id: "DSCF3583", thumb: "DSCF3583", place: "Shasta–Cascade", oldCutRank: 93,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #93", grade: "B",
+    rationale: "Shasta Lake shoreline, forested hills, and bridge in afternoon light."
+  },
+  {
+    id: "P5100220", thumb: "P5100220", place: "Shasta–Cascade", oldCutRank: 94,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #94", grade: "B+",
+    rationale: "Misty mountain ridges and pine silhouettes at dusk."
+  },
+  {
+    id: "P5109521", thumb: "P5109521", place: "Shasta–Cascade", oldCutRank: 95,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #95", grade: "B+",
+    rationale: "Snowy volcanic peak framed by roadside conifers."
+  },
+  {
+    id: "P5109780", thumb: "P5109780", place: "Shasta–Cascade", oldCutRank: 96,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #96", grade: "B+",
+    rationale: "Volcanic cinder cone and lava beds under crisp high-altitude light."
+  },
+  {
+    id: "DSCF3650", thumb: "DSCF3650", place: "Yosemite", oldCutRank: 97,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #97", grade: "B+",
+    rationale: "Sunbeams filtering through tall Yosemite pines onto the forest floor."
+  },
+  {
+    id: "DSCF3758", thumb: "DSCF3758", place: "Yosemite", oldCutRank: 99,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #99", grade: "B+",
+    rationale: "Clean afternoon Tunnel View frame (without the bystander head of DSCF3764)."
+  },
+  {
+    id: "P5230949", thumb: "P5230949", place: "Yosemite", oldCutRank: 100,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #100", grade: "B+",
+    rationale: "Sheer granite face of El Capitan rising above dark valley pines."
+  },
+  {
+    id: "P5231005", thumb: "P5231005", place: "Yosemite", oldCutRank: 101,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #101", grade: "B+",
+    rationale: "Upper Yosemite Fall framed through valley oaks and pines."
+  },
+  {
+    id: "DSCF4250", thumb: "DSCF4250", place: "Mendocino", oldCutRank: 102,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #102", grade: "B+",
+    rationale: "Turquoise cove and rugged sea stacks along the Mendocino headlands."
+  },
+  {
+    id: "P5251635", thumb: "P5251635", place: "Mendocino", oldCutRank: 103,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #103", grade: "B",
+    rationale: "Driftwood log on dark wet sand with foamy Pacific surf."
+  },
+  {
+    id: "P5251872", thumb: "P5251872", place: "Mendocino", oldCutRank: 104,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #104", grade: "B+",
+    rationale: "Harbor pilings and calm water reflections in black and white."
+  },
+  {
+    id: "P5253150", thumb: "P5253150", place: "Mendocino", oldCutRank: 108,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #108", grade: "B+",
+    rationale: "Dark coastal rock silhouettes against a warm amber dusk horizon."
+  },
+  {
+    id: "P5263303-2", thumb: "P5263303-2", place: "Mendocino", oldCutRank: 109,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #109", grade: "B+",
+    rationale: "Weathered wooden fence leading through coastal bluff wildflowers."
+  },
+  {
+    id: "P5263801", thumb: "P5263801", place: "Mendocino", oldCutRank: 110,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #110", grade: "B+",
+    rationale: "Crashing whitewater surf around dark offshore sea stacks."
+  },
+  {
+    id: "DSCF2910", thumb: "DSCF2910", place: "Highway 1", oldCutRank: 116,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #116", grade: "B",
+    rationale: "Coastal highway curve and cliffs along Big Sur / Highway 1."
+  },
+  {
+    id: "P5097792", thumb: "P5097792", place: "Shasta–Cascade", oldCutRank: 118,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #118", grade: "B",
+    rationale: "Pasture fence and snow-capped Mount Shasta in clear daylight."
+  },
+  {
+    id: "P5263843", thumb: "P5263843", place: "Mendocino", oldCutRank: 119,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #119", grade: "B+",
+    rationale: "Layered offshore sea stacks in soft coastal mist."
+  },
+  {
+    id: "P5252638-2", thumb: "P5252638-2", place: "Mendocino", oldCutRank: 120,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #120", grade: "B+",
+    rationale: "Point Reyes / Mendocino headland cliff dropping into deep blue surf."
+  },
+  {
+    id: "P5253064", thumb: "P5253064", place: "Mendocino", oldCutRank: 121,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #121", grade: "B+",
+    rationale: "Close-up botanical study of a purple thistle bloom in soft evening light."
+  },
+  {
+    id: "P5251942", thumb: "P5251942", place: "Mendocino", oldCutRank: 122,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #122", grade: "B",
+    rationale: "Rolling coastal hills and rural fence line."
+  },
+  {
+    id: "P5252253", thumb: "P5252253", place: "Mendocino", oldCutRank: 123,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #123", grade: "B+",
+    rationale: "Alert Black-tailed deer looking toward the camera in coastal scrub—much better pose than P5252213!"
+  },
+  {
+    id: "DSCF3012", thumb: "DSCF3012", place: "Highway 1", oldCutRank: 124,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #124", grade: "B",
+    rationale: "Rocky Pacific cove and turquoise water from the coastal trail."
+  },
+  {
+    id: "P4267520", thumb: "P4267520", place: "Santa Cruz", oldCutRank: 125,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #125", grade: "B",
+    rationale: "Forest path winding through tall redwoods."
+  },
+  {
+    id: "P5099376", thumb: "P5099376", place: "Shasta–Cascade", oldCutRank: 126,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #126", grade: "B+",
+    rationale: "Twilight gradient over dark northern California pine ridges."
+  },
+  {
+    id: "P5109838", thumb: "P5109838", place: "Shasta–Cascade", oldCutRank: 127,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #127", grade: "B+",
+    rationale: "Expansive high-desert valley and distant volcanic peaks."
+  },
+  {
+    id: "P5251461", thumb: "P5251461", place: "Mendocino", oldCutRank: 128,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #128", grade: "B",
+    rationale: "Foggy forest road lined with coastal conifers."
+  },
+  {
+    id: "P5252907", thumb: "P5252907", place: "Mendocino", oldCutRank: 129,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #129", grade: "B+",
+    rationale: "Golden sun rays piercing cloud banks over the ocean."
+  },
+  {
+    id: "P5263544", thumb: "P5263544", place: "Mendocino", oldCutRank: 130,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #130", grade: "B", reddit: 4,
+    rationale: "Puffy white cumulus clouds rising over green coastal hills."
+  },
+  {
+    id: "P5264043", thumb: "P5264043", place: "Mendocino", oldCutRank: 131,
+    verdict: "feed", badge: "KEEP IN FEED · CUT #131", grade: "B+",
+    rationale: "Evening glow over the rugged Mendocino shoreline."
+  },
+
+  // 3c Feed Additions kept in feed:
+  {
+    id: "P6286409", thumb: "P6286409", place: "Monterey Coast",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Clean coastal study along Pacific Grove with textured rocks and surf."
+  },
+  {
+    id: "P7047562", thumb: "P7047562", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Steep San Francisco street perspective with classic bay windows and fog."
+  },
+  {
+    id: "P7047614", thumb: "P7047614", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Urban architectural layers on Russian Hill."
+  },
+  {
+    id: "P7047707", thumb: "P7047707", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Fog rolling past urban towers and street lamps."
+  },
+  {
+    id: "P7047872", thumb: "P7047872", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B",
+    rationale: "Architectural detail along the waterfront in soft overcast light."
+  },
+  {
+    id: "P7048029", thumb: "P7048029", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Blue-hour harbor scene with masts and fog-diffused city glow."
+  },
+  {
+    id: "P7048070", thumb: "P7048070", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Atmospheric night waterfront reflections during July 4th fog."
+  },
+  {
+    id: "P7048223", thumb: "P7048223", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Warm storefront and neon glow on a nocturnal San Francisco street."
+  },
+  {
+    id: "P7048314", thumb: "P7048314", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Night architecture and illuminated bridge structure."
+  },
+  {
+    id: "P7048332", thumb: "P7048332", place: "San Francisco", fullResChanged: true,
+    verdict: "feed", badge: "KEEP IN FEED (FULL-RES CATCH)", grade: "B-",
+    rationale: "Full-res catch ('lines'): harsh floodlit white Bay Bridge tower has clipped/blown-out white highlights on the upper crossbeams, visible high-ISO night noise, and slight softness on the lower-right cables."
+  },
+  {
+    id: "P7128406-4", thumb: "P7128406-4", place: "San Francisco", fullResChanged: true,
+    verdict: "feed", badge: "KEEP IN FEED (FULL-RES CATCH)", grade: "B-", reddit: 11,
+    rationale: "Full-res catch (11 on r/itookapicture): the pilot ground-handling at the bottom has his ankles/feet amputated by the frame edge, and the teal ocean background shows blotchy color noise."
+  },
+  {
+    id: "P7128621-2", thumb: "P7128621-2", place: "San Francisco",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Flock of seabirds wheeling through golden-hour coastal haze."
+  },
+  {
+    id: "P7159162", thumb: "P7159162", place: "San José",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Deep twilight sky gradient with silhouette detail; companion to P7159131."
+  },
+  {
+    id: "P8070732", thumb: "P8070732", place: "San José (Diridon Station)",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", reddit: 20,
+    rationale: "Warm vintage station clock inside the brick archway of San José Diridon Station (caption currently blank in published.json)."
+  },
+  {
+    id: "P8091167", thumb: "P8091167", place: "Santa Cruz",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Textured redwood bark and warm shafts of forest light at Henry Cowell."
+  },
+  {
+    id: "P8091224", thumb: "P8091224", place: "Santa Cruz",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Filtered afternoon sunlight illuminating ferns and tall redwoods."
+  },
+  {
+    id: "P8141390-2", thumb: "P8141390-2", place: "Gaviota Coast (LA Trip)", fullResChanged: true,
+    verdict: "feed", badge: "KEEP IN FEED (FULL-RES CATCH)", grade: "B",
+    rationale: "Full-res catch: standard 'standing in the middle of train tracks' perspective under a flat overcast grey sky with utility poles lining the right hillside. Good travel context for the feed, not wall-tier."
+  },
+  {
+    id: "P8141498", thumb: "P8141498", place: "Santa Barbara (LA Trip)",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Spanish-colonial white stucco arcade and arches in Santa Barbara (caption currently blank in published.json)."
+  },
+  {
+    id: "P8141556", thumb: "P8141556", place: "Point Mugu (LA Trip)", fullResChanged: true,
+    verdict: "feed", badge: "KEEP IN FEED (FULL-RES CATCH)", grade: "B",
+    rationale: "Full-res catch: sweeping coastal curve with a beach guitar player, but at full resolution a bumper-to-bumper line of parked SUVs/trucks along PCH clutters the left edge, plus dark teal sky vignetting and sensor dust spots."
+  },
+  {
+    id: "P8141558-2", thumb: "P8141558-2", place: "Point Mugu (LA Trip)",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Sunset silhouettes along the Point Mugu shoreline (caption currently blank in published.json)."
+  },
+  {
+    id: "P8281783-2-4", thumb: "P8281783-2-4", place: "San José",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", reddit: 37,
+    rationale: "Clever double-exposure-like window reflection layering an indoor coffee table onto a balcony rocking chair."
+  },
+  {
+    id: "P9042225", thumb: "P9042225", place: "Lake Tahoe",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", warn: "tops/jpeg path",
+    rationale: "Scenic overlook of Emerald Bay and Fannette Island—stronger composition than P9042304, though needs an edited export to replace tops/jpeg path."
+  },
+  {
+    id: "P9042522", thumb: "P9042522", place: "Lake Tahoe",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", warn: "tops/jpeg path",
+    rationale: "Clear turquoise lakeside water and granite boulders at Lake Tahoe (check tops/jpeg source path)."
+  },
+  {
+    id: "P9042545", thumb: "P9042545", place: "Lake Tahoe",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", warn: "tops/jpeg path",
+    rationale: "Sunlit pines framing deep cobalt-blue Tahoe water (check tops/jpeg source path)."
+  },
+  {
+    id: "P9043031", thumb: "P9043031", place: "Lake Tahoe",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+", warn: "tops/jpeg path",
+    rationale: "Warm sunset alpenglow over Lake Tahoe and distant Sierra peaks (check tops/jpeg source path)."
+  },
+  {
+    id: "P9133729-6", thumb: "P9133729-6", place: "Los Angeles (Miscaptioned San José)",
+    verdict: "feed", badge: "KEEP IN FEED · FIX CAPTION", grade: "B", warn: "Miscaptioned as San José",
+    rationale: "Full-res check: street signs read 'Flower St' and 'PETROLEUM BUILDING' (714 W Olympic Blvd, Downtown LA, with the graffiti-tagged Oceanwide Plaza tower on the right)—currently miscaptioned as 'San José' in published.json!"
+  },
+  {
+    id: "PC210598", thumb: "PC210598", place: "Oʻahu",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Lush pleated green cliffs of the Koʻolau Range under tropical clouds."
+  },
+  {
+    id: "PC210653-2", thumb: "PC210653-2", place: "Oʻahu",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Tropical foliage and coastal viewpoint on Oʻahu."
+  },
+  {
+    id: "PC210786", thumb: "PC210786", place: "Oʻahu",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Turquoise shore break and sandy bay along the Oʻahu coast."
+  },
+  {
+    id: "PC210824", thumb: "PC210824", place: "Oʻahu",
+    verdict: "feed", badge: "KEEP IN FEED (3c)", grade: "B+",
+    rationale: "Dramatic volcanic sea cliffs and deep blue Pacific rollers."
+  }
+];
+
+const SECTIONS = [
+  {
+    key: "keep",
+    title: "1. Kept on the Wall (32 of 50 current wall frames — 100% Full-Res Verified)",
+    desc: "Your fixed Top 5 plus 27 wall frames verified at full resolution. Note rank-up recommendations for #48 (P6287264) and #49 (P5252760)."
+  },
+  {
+    key: "promote",
+    title: "2. Promoted to the Wall (18 Full-Res Verified A/A+ Gems)",
+    desc: "The 18 strongest frames from the 81 wall cuts and 48 feed-only photos (every single one verified at full resolution) to replace the 18 demotions and keep the Wall at 50."
+  },
+  {
+    key: "demote",
+    title: "3. Cut / Demoted from Current Wall (18 frames)",
+    desc: "Current wall frames with full-res flaws: street wires/haze (P7037348), 608×810 low-res crop (P5170624-2), Equinox/Uber traffic (P7048213), overcooked grading/vignettes (P6266135, P6064421), indoor store clutter (DSCF2410), foreground blobs, or crushed blacks."
+  },
+  {
+    key: "contender",
+    title: "4. Runner-Up Wall Contenders (6 Full-Res Verified frames)",
+    desc: "High-craft A- frames in the cuts and feed (all verified at full resolution) ready to swap onto the wall if you want a different subject balance."
+  },
+  {
+    key: "purge",
+    title: "5. Purge from Site / Rule Violations (15 frames)",
+    desc: "Unedited straight-out-of-camera JPEGs (bak/jpeg & tops/jpeg), accidental motion blurs, duplicate deer rear-ends, and the visceral gull/carcass shot (all verified at full res; P8091032 & P8091124 rescued to feed)."
+  },
+  {
+    key: "feed",
+    title: "6. Keep in Chronological Feed (/photos/all/ — 91 frames)",
+    desc: "Solid narrative, travel, and contextual frames that enrich the full chronological archive without diluting the 50-frame Wall."
+  }
+];
+
+function pillClass(verdict) {
+  switch (verdict) {
+    case "keep": return "pill-keep";
+    case "promote": return "pill-promote";
+    case "contender": return "pill-contender";
+    case "demote": return "pill-demote";
+    case "purge": return "pill-purge";
+    default: return "pill-feed";
+  }
+}
+
+function gradeClass(g) {
+  if (g === "A+" || g === "A") return "grade-A";
+  if (g.startsWith("C")) return "grade-C";
+  return "";
+}
+
+let activeFilter = "all";
+let searchQuery = "";
+let useFullResGrid = false;
+let currentVisibleFrames = [];
+
+function render() {
+  const container = document.getElementById("sectionsContainer");
+  container.innerHTML = "";
+  currentVisibleFrames = [];
+
+  const q = searchQuery.trim().toLowerCase();
+
+  // If "proposed-wall" filter is selected, show Keep (32) + Promote (18) together
+  // If "fullres-changes" filter is selected, show all sections that have fullResChanged items
+  const sectionsToRender = activeFilter === "proposed-wall"
+    ? [SECTIONS[0], SECTIONS[1]]
+    : (activeFilter === "all" || activeFilter === "fullres-changes")
+      ? SECTIONS
+      : SECTIONS.filter(s => s.key === activeFilter || (activeFilter === "demote" && s.key === "demote"));
+
+  sectionsToRender.forEach(sec => {
+    let items = FRAMES.filter(f => {
+      if (activeFilter === "fullres-changes") {
+        return f.fullResChanged && f.verdict === sec.key;
+      }
+      if (activeFilter === "demote") {
+        // Show all 18 frames cut from current wall (including DSCF5212 which is also a purge)
+        return f.verdict === "demote" || (f.id === "DSCF5212" && sec.key === "demote");
+      }
+      return f.verdict === sec.key;
+    });
+
+    if (q) {
+      items = items.filter(f =>
+        f.id.toLowerCase().includes(q) ||
+        f.place.toLowerCase().includes(q) ||
+        f.rationale.toLowerCase().includes(q) ||
+        f.badge.toLowerCase().includes(q)
+      );
+    }
+
+    if (items.length === 0) return;
+
+    const secEl = document.createElement("section");
+    secEl.className = "section-block";
+
+    const headerEl = document.createElement("div");
+    headerEl.className = "section-header";
+    headerEl.innerHTML = `
+      <h2>${sec.title} <span style="font-family:'IBM Plex Mono',monospace;font-size:0.85rem;color:var(--fg-mute)">(${items.length})</span></h2>
+      <span class="desc">${sec.desc}</span>
+    `;
+    secEl.appendChild(headerEl);
+
+    const gridEl = document.createElement("div");
+    gridEl.className = "grid";
+
+    items.forEach(item => {
+      const idx = currentVisibleFrames.length;
+      currentVisibleFrames.push(item);
+
+      const card = document.createElement("article");
+      card.className = "card";
+      card.dataset.verdict = item.verdict;
+
+      const stats = [];
+      if (item.wallRank) stats.push(`Wall #${item.wallRank}`);
+      if (item.oldCutRank) stats.push(`Old #${item.oldCutRank}`);
+      if (item.reddit) stats.push(`Reddit ↑${item.reddit}`);
+      if (item.ig) stats.push(`IG ♥${item.ig}`);
+
+      const imgSrc = useFullResGrid ? `photo/${item.thumb}.jpg` : `photo/${item.thumb}.thumb.jpg`;
+
+      card.innerHTML = `
+        <div class="thumb-wrap" data-idx="${idx}">
+          <img src="${imgSrc}" alt="${item.id}" loading="lazy">
+          <div class="card-badges">
+            <span class="verdict-pill ${pillClass(item.verdict)}">${item.badge}</span>
+            <span class="grade-pill ${gradeClass(item.grade)}">${item.grade}</span>
+          </div>
+          <div class="hover-rationale">
+            <div class="rat-action">${item.badge} · Grade ${item.grade}</div>
+            <p class="rat-text">${item.rationale}</p>
+            <div class="rat-meta">
+              <span>${item.id}</span>
+              <span>· ${item.place}</span>
+              ${stats.length ? `<span>· ${stats.join(" · ")}</span>` : ""}
+            </div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div class="meta-row-1">
+            <span class="frame-id">${item.id}</span>
+            <span class="place-tag">${item.place}</span>
+          </div>
+          <div class="meta-row-2">
+            ${stats.map(s => `<span class="stat-chip">${s}</span>`).join("")}
+            ${item.warn ? `<span class="warn-chip">⚠ ${item.warn}</span>` : ""}
+          </div>
+        </div>
+        <div class="inline-rationale">${item.rationale}</div>
+      `;
+
+      card.querySelector(".thumb-wrap").addEventListener("click", () => openLightbox(idx));
+      gridEl.appendChild(card);
+    });
+
+    secEl.appendChild(gridEl);
+    container.appendChild(secEl);
+  });
+}
+
+// Lightbox logic
+let currentLbIndex = -1;
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+const lbTitle = document.getElementById("lbTitle");
+const lbRationale = document.getElementById("lbRationale");
+const lbSubmeta = document.getElementById("lbSubmeta");
+
+function openLightbox(idx) {
+  if (idx < 0 || idx >= currentVisibleFrames.length) return;
+  currentLbIndex = idx;
+  const item = currentVisibleFrames[idx];
+  lbImg.src = `photo/${item.thumb}.jpg`;
+  lbTitle.textContent = `${item.id} · ${item.place} — [${item.badge} · Grade ${item.grade}]`;
+  lbRationale.textContent = item.rationale;
+  const metaParts = [`File: photo/${item.thumb}.jpg`];
+  if (item.wallRank) metaParts.push(`Current Wall #${item.wallRank}`);
+  if (item.oldCutRank) metaParts.push(`Cut from Old Rank #${item.oldCutRank}`);
+  if (item.reddit) metaParts.push(`Reddit Best: ${item.reddit}`);
+  if (item.ig) metaParts.push(`IG Likes: ${item.ig}`);
+  lbSubmeta.textContent = metaParts.join("  ·  ") + "   (Use ← / → keys to navigate)";
+  lb.classList.add("open");
+}
+
+function closeLightbox() {
+  lb.classList.remove("open");
+  lbImg.src = "";
+  currentLbIndex = -1;
+}
+
+document.getElementById("lbClose").addEventListener("click", closeLightbox);
+document.getElementById("lbStage").addEventListener("click", (e) => {
+  if (e.target.id === "lbStage") closeLightbox();
+});
+window.addEventListener("keydown", (e) => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowRight") openLightbox((currentLbIndex + 1) % currentVisibleFrames.length);
+  if (e.key === "ArrowLeft") openLightbox((currentLbIndex - 1 + currentVisibleFrames.length) % currentVisibleFrames.length);
+});
+
+// Controls
+document.getElementById("tabsBar").addEventListener("click", (e) => {
+  const btn = e.target.closest(".tab");
+  if (!btn) return;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
+  activeFilter = btn.dataset.filter;
+  render();
+});
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  searchQuery = e.target.value;
+  render();
+});
+
+document.getElementById("toggleFullResBtn").addEventListener("click", (e) => {
+  useFullResGrid = !useFullResGrid;
+  e.currentTarget.classList.toggle("active", useFullResGrid);
+  render();
+});
+
+document.getElementById("toggleInlineBtn").addEventListener("click", (e) => {
+  document.body.classList.toggle("always-show-rationale");
+  e.currentTarget.classList.toggle("active");
+});
+
+document.getElementById("toggleCompactBtn").addEventListener("click", (e) => {
+  document.body.classList.toggle("compact-grid");
+  e.currentTarget.classList.toggle("active");
+});
+
+document.getElementById("toggleThemeBtn").addEventListener("click", () => {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+});
+
+render();
+</script>
+</body>
+</html>
