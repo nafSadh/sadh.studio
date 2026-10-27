@@ -1,0 +1,513 @@
+# The wall at /photos/, the home of the site, in this order. Each of these is also in
+# feed.yaml (the feed shows everything); ./run.sh check flags any differences between the two.
+#   photo:    the camera ID; the file is photos/<photo>.jpg
+#   origin:   the edited file it was exported from
+#   location: shown under the photo
+#   date:     when it was taken (the feed runs newest first)
+#   caption:  optional, shown as the photo's title (identifying names only)
+#   ig:       Instagram post shortcode
+#   reddit:   its Reddit posts, each a post id and a sub (r/...)
+
+contents:
+  - photo: DSCF3795
+    origin: ~/photos/26.05.23 Yosemite/edits/DSCF3795.jpg
+    location: Yosemite
+    date: 2026-05-23 18:38
+    ig: DY3LkKOmsGu
+    reddit:
+      - post: 1uk4tfu
+        sub: r/NationalPark
+      - post: 1u8tmr1
+        sub: r/itookapicture
+      - post: 1v36r1y
+        sub: r/EarthPorn
+  - photo: P6064392
+    origin: ~/photos/26.06 dtSJ/edits/P6064392-2.jpg
+    location: San José
+    date: 2026-06-06 19:19
+    ig: DZoTIJ7lFmi
+    reddit:
+      - post: 1u5xlzn
+        sub: r/itookapicture
+      - post: 1u61dwd
+        sub: r/AccidentalWesAnderson
+  - photo: P5230972
+    origin: ~/photos/26.05.23 Yosemite/edits/P5230972.jpg
+    location: Yosemite
+    date: 2026-05-23 17:38
+    ig: DY3K4YpmhQ8
+    reddit:
+      - post: 1u9ilq0
+        sub: r/minimalistphotography
+  - photo: PA174308
+    origin: ~/photos/26.10.17 Panther/edits/PA174308-2.jpg
+    location: Panther Beach
+    date: 2026-10-17 17:47
+    ig: DeqgzNzlK5N
+  - photo: P5109495
+    origin: ~/photos/26.05.10 Shasta/edited/P5109495.jpg
+    location: Shasta–Cascade
+    date: 2026-05-10 10:15
+    reddit:
+      - post: 1u9mhsf
+        sub: r/EarthPorn
+      - post: 1unfzu4
+        sub: r/mountains
+  - photo: P7128816
+    origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128816.jpg
+    location: San Francisco
+    date: 2026-07-12 19:11
+    ig: DawJ8v_GU_H
+    reddit:
+      - post: 1uzg6us
+        sub: r/sanfrancisco
+      - post: 1v0bfte
+        sub: r/itookapicture
+      - post: 1v0b1ag
+        sub: r/pics
+      - post: 1uwxhj2
+        sub: r/CaliforniaPics
+      - post: 1uwx0yn
+        sub: r/LandscapePhotography
+      - post: 1vl5nqk
+        sub: r/M43
+      - post: 1uvsvac
+        sub: r/MostBeautiful
+  - photo: DSCF3842
+    origin: ~/photos/26.05.23 Yosemite/edits/DSCF3842-3.jpg
+    location: Yosemite
+    date: 2026-05-23 18:56
+    ig: DZ1AUjYml37
+    reddit:
+      - post: 1uc4e9l
+        sub: r/NationalPark
+      - post: 1ubae0q
+        sub: r/itookapicture
+      - post: 1ueugcx
+        sub: r/Fujifilm_X100VI
+      - post: 1ubz6p7
+        sub: r/Yosemite
+  - photo: P7159131
+    origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7159131.jpg
+    location: San José
+    date: 2026-07-15 20:05
+    ig: Da2TkXBlLW1
+    reddit:
+      - post: 1v54tky
+        sub: r/TheNightFeeling
+      - post: 1v35k3b
+        sub: r/minimalistphotography
+      - post: 1v41pby
+        sub: r/itookapicture
+  - photo: P5098825
+    origin: ~/photos/26.05.09 Shasta/edited/P5098825.jpg
+    location: Shasta–Cascade
+    date: 2026-05-09 16:19
+    ig: DYN5fpWGoWY
+    reddit:
+      - post: 1twd8jn
+        sub: r/EarthPorn
+      - post: 1twdh92
+        sub: r/Waterfalls
+      - post: 1wnqa3g
+        sub: r/itookapicture
+  - photo: P5231028
+    origin: ~/photos/26.05.23 Yosemite/edits/P5231028-3.jpg
+    location: Yosemite
+    date: 2026-05-23 18:00
+    ig: DZednzzFOgs
+    reddit:
+      - post: 1u3nkvr
+        sub: r/EarthPorn
+      - post: 1u572i3
+        sub: r/NationalPark
+      - post: 1v46ve4
+        sub: r/natureporn
+      - post: 1u3nla2
+        sub: r/Yosemite
+      - post: 1v46k31
+        sub: r/mountains
+      - post: 1v46wy7
+        sub: r/M43
+  - photo: P5231119
+    origin: ~/photos/26.05.23 Yosemite/edits/P5231119-3.jpg
+    location: Yosemite
+    date: 2026-05-23 18:16
+    reddit:
+      - post: 1uhtqco
+        sub: r/EarthPorn
+  - photo: P1034144
+    origin: ~/photos/26.01 Austin/edits/P1034144.jpg
+    location: Austin
+    date: 2026-01-01 00:00
+    ig: DTXSD-WFJIL
+    reddit:
+      - post: 1ui6vkj
+        sub: r/TheNightFeeling
+      - post: 1u74if6
+        sub: r/CityPorn
+  - photo: PC210616
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210616.jpg
+    location: Oʻahu
+    date: 2025-12-21 14:00
+    reddit:
+      - post: 1u8tziv
+        sub: r/MostBeautiful
+      - post: 1uagx4q
+        sub: r/itookapicture
+      - post: 1u8un43
+        sub: r/LandscapePhotography
+  - photo: P5252213
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5252213.jpg
+    location: Point Reyes
+    date: 2026-05-25 17:50
+    reddit:
+      - post: 1uj2xxm
+        sub: r/wildlifephotography
+  - photo: P7047961
+    origin: ~/photos/26.07.04 SF/selects/exports/P7047961.jpg
+    location: San Francisco
+    date: 2026-07-04 20:11
+    ig: Dad4iTmkt4g
+    reddit:
+      - post: 1uyi0qm
+        sub: r/TheNightFeeling
+      - post: 1v1ur9t
+        sub: r/itookapicture
+  - photo: P9042806
+    origin: ~/photos/26.09.04 Tahoe/edits/P9042806-2-3.jpg
+    location: Lake Tahoe
+    date: 2026-09-04 14:22
+    ig: DdPN9xNDwDm
+    reddit:
+      - post: 1xakqoo
+        sub: r/natureisbeautiful
+      - post: 1wf21op
+        sub: r/lakeporn
+  - photo: P5098471
+    origin: ~/photos/26.05.09 Shasta/edited/P5098471-2.jpg
+    location: Shasta–Cascade
+    date: 2026-05-09 00:00
+    reddit:
+      - post: 1ubz1j2
+        sub: r/itookapicture
+      - post: 1tthxpo
+        sub: r/photocritique
+  - photo: P7128799
+    origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128799-2.jpg
+    location: San Francisco
+    date: 2026-07-12 19:06
+    reddit:
+      - post: 1uyhc9g
+        sub: r/itookapicture
+  - photo: P5231057
+    origin: ~/photos/26.05.23 Yosemite/selects/exports/P5231057.jpg
+    location: Yosemite
+    date: 2026-05-23 18:04
+    ig: DY3_rsylVLc
+    reddit:
+      - post: 1urin4q
+        sub: r/BirdPhotography
+  - photo: PC200377
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC200377.jpg
+    location: Oʻahu
+    date: 2025-12-20 14:27
+    reddit:
+      - post: 1v6ob7y
+        sub: r/MostBeautiful
+      - post: 1v6mvoi
+        sub: r/seaporn
+  - photo: P7037348
+    origin: ~/photos/26.07 Misc/edits/P7037348.jpg
+    location: San Francisco
+    date: 2026-07-03 10:59
+    ig: DaWVtNlAZCl
+    reddit:
+      - post: 1ur9pzd
+        sub: r/itookapicture
+      - post: 1uripmr
+        sub: r/FoggyPics
+  - photo: P5170624
+    origin: ~/photos/26.05 Santa Cruz/edits/P5170624-2.jpg
+    location: Santa Cruz
+    date: 2026-05-17 14:51
+    ig: DYgT_fjFE8W
+    reddit:
+      - post: 1vbjxim
+        sub: r/wildlifephotography
+  - photo: DSCF3764
+    origin: ~/photos/26.05.23 Yosemite/edits/DSCF3764.jpg
+    location: Yosemite
+    date: 2026-05-23 18:17
+    reddit:
+      - post: 1u6zxks
+        sub: r/EarthPorn
+      - post: 1u703w2
+        sub: r/FujifilmX
+  - photo: P5263230
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5263230.jpg
+    location: Sonoma Coast
+    date: 2026-05-26 10:38
+    ig: DY5qXS3mrsy
+    reddit:
+      - post: 1u7ub30
+        sub: r/BirdPhotography
+  - photo: P9053375
+    origin: ~/photos/26.09.04 Tahoe/edits/P9053375.jpg
+    location: Lake Tahoe
+    date: 2026-09-05 16:04
+    ig: DdPN9xNDwDm
+    reddit:
+      - post: 1xakqoo
+        sub: r/natureisbeautiful
+  - photo: P5252934
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5252934.jpg
+    location: Point Reyes
+    date: 2026-05-25 19:06
+    ig: DY5Ff3lmllG
+  - photo: PA174020
+    origin: ~/photos/26.10.17 Panther/edits/PA174020-3-3.jpg
+    location: Panther Beach
+    date: 2026-10-17 17:12
+    ig: DeqgOh2FKmv
+  - photo: P7048213
+    origin: ~/photos/26.07.04 SF/selects/exports/P7048213.jpg
+    location: San Francisco
+    date: 2026-07-04 21:27
+    ig: Dad4iTmkt4g
+    reddit:
+      - post: 1v54yqz
+        sub: r/sanfrancisco
+      - post: 1updywd
+        sub: r/TheNightFeeling
+  - photo: P5251263
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5251263.jpg
+    location: Muir Beach
+    date: 2026-05-25 14:27
+    ig: DY4MuBrmwbK
+    reddit:
+      - post: 1tu84s5
+        sub: r/EarthPorn
+      - post: 1tu86d3
+        sub: r/FoggyPics
+  - photo: P7128817
+    origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128817-7.jpg
+    location: San Francisco
+    date: 2026-07-12 19:12
+    ig: Da9SQy9FOs8
+    reddit:
+      - post: 1v14imu
+        sub: r/itookapicture
+      - post: 1v14q8x
+        sub: r/SkyPorn
+      - post: 1v0ek5r
+        sub: r/MobileWallpaper
+      - post: 1v0b8tq
+        sub: r/LandscapePhotography
+      - post: 1v09gw6
+        sub: r/sunset
+  - photo: DSCF4052
+    origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4052.jpg
+    location: Point Reyes
+    date: 2026-05-25 17:56
+    ig: DY5Ff3lmllG
+    reddit:
+      - post: 1tz3qbk
+        sub: r/AccidentalWesAnderson
+      - post: 1tz4giz
+        sub: r/itookapicture
+      - post: 1ty24oc
+        sub: r/Fujifilm_X100VI
+  - photo: P5252974
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5252974.jpg
+    location: Point Reyes
+    date: 2026-05-25 19:09
+    ig: DY5q-3Aj2Lp
+    reddit:
+      - post: 1u56wyc
+        sub: r/BirdPhotography
+  - photo: P8091084
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091084.jpg
+    location: Santa Cruz
+    date: 2026-08-09 16:15
+    reddit:
+      - post: 1vprnb4
+        sub: r/GloriousSunRays
+  - photo: DSCF3136
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3136.jpg
+    location: Highway 1
+    date: 2026-03-14 18:12
+    ig: DYztW41lO0t
+  - photo: DSCF3636
+    origin: ~/photos/26.05.23 Yosemite/edits/DSCF3636.jpg
+    location: Yosemite
+    date: 2026-05-23 16:19
+    ig: DZBBYDxkgZB
+    reddit:
+      - post: 1tujbhy
+        sub: r/NationalPark
+      - post: 1ul2wzo
+        sub: r/natureisbeautiful
+      - post: 1twde33
+        sub: r/Yosemite
+      - post: 1twcz8l
+        sub: r/AmateurEarthPorn
+      - post: 1tuipsa
+        sub: r/LandscapePhotography
+  - photo: P8091154
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091154-3.jpg
+    location: Santa Cruz
+    date: 2026-08-09 16:28
+    reddit:
+      - post: 1vntiwz
+        sub: r/itookapicture
+  - photo: P9042185
+    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042185-2.jpg
+    location: Lake Tahoe
+    date: 2026-09-04 09:34
+    ig: DdPN9xNDwDm
+    reddit:
+      - post: 1whkqxp
+        sub: r/itookapicture
+      - post: 1xb7m0r
+        sub: r/FairytaleasFuck
+  - photo: P7047891
+    origin: ~/photos/26.07.04 SF/selects/exports/P7047891.jpg
+    location: San Francisco
+    date: 2026-07-04 18:07
+    ig: Dal_yB0mhhH
+    reddit:
+      - post: 1vny140
+        sub: r/FairytaleasFuck
+  - photo: DSCF2309
+    origin: ~/photos/26.01 Austin/edits/DSCF2309-2.jpg
+    location: Austin
+    date: 2026-01-01 19:07
+  - photo: P7128840
+    origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128840-2.jpg
+    location: San Francisco
+    date: 2026-07-12 19:15
+    ig: DbMaXeKD-fx
+    reddit:
+      - post: 1v5oo9v
+        sub: r/itookapicture
+      - post: 1v5iyyi
+        sub: r/calm
+      - post: 1v5gbaa
+        sub: r/NaturePhoto
+      - post: 1v7k5vi
+        sub: r/BotanicalPorn
+  - photo: DSCF1884
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/DSCF1884.jpg
+    location: Oʻahu
+    date: 2025-12-21 18:22
+  - photo: P6064344
+    origin: ~/photos/26.06 dtSJ/edits/P6064344.jpg
+    location: San José
+    date: 2026-06-06 19:11
+    ig: DZlMVhEkvx_
+    reddit:
+      - post: 1u5pd3u
+        sub: r/SanJose
+      - post: 1u5viaq
+        sub: r/ArchitecturalRevival
+  - photo: P1023333
+    origin: ~/photos/26.01 Austin/edits/P1023333.jpg
+    location: Austin
+    date: 2026-01-02 10:20
+  - photo: DSCF3492
+    origin: ~/photos/26.05.10 Shasta/edited/DSCF3492.jpg
+    location: Shasta–Cascade
+    date: 2026-05-10 09:58
+    ig: DYN5fpWGoWY
+  - photo: PC210671
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210671-2.jpg
+    location: Oʻahu
+    date: 2025-12-21 15:28
+    reddit:
+      - post: 1uxw751
+        sub: r/BirdPhotography
+  - photo: P5097801
+    origin: ~/photos/26.05.09 Shasta/edited/P5097801.jpg
+    location: Shasta–Cascade
+    date: 2026-05-09 09:28
+    ig: DYWAIwZlEdp
+  - photo: PC211047
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC211047-2.jpg
+    location: Oʻahu
+    date: 2025-12-21 19:54
+    reddit:
+      - post: 1u9ixzt
+        sub: r/SkyPorn
+  - photo: DSCF5212
+    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/DSCF5212.jpg
+    location: Lake Tahoe
+    date: 2026-09-05 17:49
+    ig: DdVONkalMm_
+  - photo: P7047554
+    origin: ~/photos/26.07.04 SF/selects/exports/P7047554.jpg
+    location: San Francisco
+    date: 2026-07-04 16:57
+    ig: DajdVsiGrFa
+    reddit:
+      - post: 1v4kvjd
+        sub: r/CaliforniaPics
+      - post: 1v548pg
+        sub: r/itookapicture
+  - photo: P3146792
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146792-2.jpg
+    location: Highway 1
+    date: 2026-03-14 16:39
+    reddit:
+      - post: 1uhqiyo
+        sub: r/MostBeautiful
+      - post: 1uhqo4w
+        sub: r/CaliforniaPics
+  - photo: P6286798
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286798.jpg
+    location: Monterey Coast
+    date: 2026-06-28 17:34
+    reddit:
+      - post: 1uqfwf6
+        sub: r/wildlifephotography
+  - photo: DSCF2410
+    origin: ~/photos/26.01 Austin/edits/DSCF2410.jpg
+    location: Austin
+    date: 2026-01-03 13:06
+  - photo: PC210709
+    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210709-2.jpg
+    location: Oʻahu
+    date: 2025-12-21 15:55
+  - photo: P6287264
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6287264.jpg
+    location: Monterey Coast
+    date: 2026-06-28 19:31
+    ig: DaKgMGslPWp
+    reddit:
+      - post: 1uj24i6
+        sub: r/minimalistphotography
+      - post: 1uj26lz
+        sub: r/itookapicture
+  - photo: P5252760
+    origin: ~/photos/26.05.25-26 Costal North/edits/P5252760.jpg
+    location: Point Reyes
+    date: 2026-05-25 18:26
+    ig: DY6OAlylI7b
+    reddit:
+      - post: 1vl5jns
+        sub: r/Lighthouses
+      - post: 1vmues2
+        sub: r/itookapicture
+  - photo: DSCF3494
+    origin: ~/photos/26.05.10 Shasta/edited/DSCF3494.jpg
+    location: Shasta–Cascade
+    date: 2026-05-10 09:58
+    ig: DYN5fpWGoWY
+  - photo: DSCF4576
+    origin: ~/photos/26.06.28 Monterey Coast/edits/DSCF4576-2.jpg
+    location: Monterey Coast
+    date: 2026-06-28 18:20
+    ig: DaQ9KXpvjfE
+    reddit:
+      - post: 1ungvms
+        sub: r/FujifilmX
