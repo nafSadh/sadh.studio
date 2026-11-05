@@ -171,11 +171,16 @@ ORDER = sorted(range(len(photos)), key=lambda i: photos[i]["dt"], reverse=True) 
 LAND = [i for i in ORDER if photos[i]["ar"] >= 1.0]   # landscape + square, reverse-chrono
 PORT = [i for i in ORDER if photos[i]["ar"] < 1.0]    # portrait, reverse-chrono (independent stream)
 
+# album cards ride the row layout as portrait-sized tiles: item ids >= CARD0 index CARDS
+CARD0, CARDS = 100000, []                     # CARDS: [(render(style) -> html, datetime)]
+def _ar(i):  return 0.75 if i >= CARD0 else photos[i]["ar"]
+def _dti(i): return CARDS[i - CARD0][1] if i >= CARD0 else photos[i]["dt"]
+
 def _pack(items, area, target_w, gap, extra=0):
     """Greedily pack indices into rows whose summed display widths (+gaps) fit target_w."""
     rows, cur, cw = [], [], 0.0
     for i in items:
-        w = (area * photos[i]["ar"]) ** 0.5 + extra
+        w = (area * _ar(i)) ** 0.5 + extra
         add = w + (gap if cur else 0)
         if cur and cw + add > target_w:
             rows.append(cur); cur, cw = [i], w
@@ -196,7 +201,7 @@ def alt_rows(area, target_w, gap, extra=0):
     out, a, b, take_land = [], 0, 0, len(lr) >= len(pr)
     if CHRONO_ROWS:   # feed: newest row first, whichever orientation it is
         while a < len(lr) or b < len(pr):
-            if b >= len(pr) or (a < len(lr) and photos[lr[a][0]]["dt"] >= photos[pr[b][0]]["dt"]): out.append(lr[a]); a += 1
+            if b >= len(pr) or (a < len(lr) and _dti(lr[a][0]) >= _dti(pr[b][0])): out.append(lr[a]); a += 1
             else: out.append(pr[b]); b += 1
         return out
     while a < len(lr) or b < len(pr):
@@ -214,6 +219,9 @@ def render_rows(rows, tile, numbered=False):
         html.append('<div class="grow">')
         for i in row:
             n += 1
+            if i >= CARD0:
+                w = round((DR_AREA * 0.75) ** 0.5)
+                html.append(CARDS[i - CARD0][0](f"width:{w}px;height:{round(w / 0.75)}px")); continue
             html.append(tile(i, photos[i], n) if numbered else tile(i, photos[i]))
         html.append('</div>')
     return "".join(html)
@@ -245,13 +253,30 @@ REDIRECT_TMPL = _load_tmpl("redirect.html")
 
 # /photos/ = the wall (home.yaml)
 # /photos/all/ = every listed photo, newest first; /photo/#<id> resolves against the full set
-def _darkroom_for(idx, kicker, order=None, feed=False):
+def _darkroom_for(idx, kicker, order=None, feed=False, after=""):
     global LAND, PORT, DR_STACK, CHRONO_ROWS
     DR_STACK = CHRONO_ROWS = feed
     order = order or ORDER
     LAND = [i for i in order if i in idx and photos[i]["ar"] >= 1.0]
     PORT = [i for i in order if i in idx and photos[i]["ar"] < 1.0]
-    wall_html = render_rows(alt_rows(DR_AREA, 1276, 22), dr_tile)
+    CARDS[:] = []
+    if feed:      # an album card sits among the portraits at the album's place in time
+        for a in ALBUMS:
+            if a.get("hidden"): continue
+            CARDS.append(((lambda a: lambda st: albums.card(a, " tile", st))(a), a["until"].replace(hour=23, minute=59)))
+            k = CARD0 + len(CARDS) - 1
+            PORT.insert(next((n for n, i in enumerate(PORT) if _dti(i) < CARDS[-1][1]), len(PORT)), k)
+    rows = alt_rows(DR_AREA, 1276, 22)
+    # both pages end with cards inside the last row: the wall -> gallery, newest albums, all albums;
+    # the feed -> the wall, all albums
+    wall_order = sorted((i for i in range(len(photos)) if photos[i]["wall"]), key=lambda i: photos[i]["order"])
+    thumbs = [photos[i]["src"] for i in wall_order][:3]
+    ends = (albums.feed_end_cards(ALBUMS, len(wall_order), thumbs) if feed
+            else albums.wall_cards(ALBUMS, len(photos), thumbs))
+    first = len(CARDS)
+    for fn in ends: CARDS.append((fn, datetime.min))
+    rows.append([CARD0 + n for n in range(first, len(CARDS))])      # their own row, after the last photos
+    wall_html = render_rows(rows, dr_tile)
     app_js = _subst(APP_JS_TMPL, {"PHOTOS_JSON": PHOTOS_JSON})
     return _subst(DARKROOM_TMPL, {
         "HTML_ATTRS": 'data-groups="1" ' if feed else "",
@@ -259,13 +284,19 @@ def _darkroom_for(idx, kicker, order=None, feed=False):
         "KICKER": kicker,
         "DR_WALL": wall_html,
         "APP_JS": app_js,
+        "AFTER_WALL": after,
     })
+
+import albums
+ALBUMS = albums.load()
+_t = APP_JS_TMPL.find("const root=document.documentElement"); _e = APP_JS_TMPL.find("// local file:// support")
+THEME_JS = APP_JS_TMPL[_t:_e]
 
 # wall order = the order in home.yaml
 ORDER_WALL = sorted((i for i in range(len(photos)) if photos[i]["wall"]), key=lambda i: photos[i]["order"])
 wall_idx = set(ORDER_WALL)
 all_idx  = {i for i in range(len(photos)) if GROUP_OF.get(i, i) == i}   # group members fold into their lead tile
-html_wall = _darkroom_for(wall_idx, f'studio.sadh &middot; {len(wall_idx)} frames &middot; <a href="/photos/all/">all {len(photos)} &rarr;</a>', ORDER_WALL)
+html_wall = _darkroom_for(wall_idx, 'studio.sadh', ORDER_WALL)
 html_all  = _darkroom_for(all_idx,  f'studio.sadh &middot; all {len(photos)} frames &middot; <a href="/photos/">&larr; the wall</a>', feed=True)
 for sub, html in (("photos", html_wall), (os.path.join("photos", "all"), html_all), ("photo", html_all)):
     os.makedirs(os.path.join(DEPLOY, sub), exist_ok=True)
@@ -289,11 +320,10 @@ open(os.path.join(DEPLOY, "index.html"), "w", encoding="utf-8").write(_subst(RED
 _keep = {p["id"] + ".jpg" for p in photos} | {p["id"] + ".thumb.jpg" for p in photos}
 for _n in os.listdir(os.path.join(DEPLOY, "photo")):
     if _n.endswith(".jpg") and _n not in _keep: os.remove(os.path.join(DEPLOY, "photo", _n))
-# Copy static /albums/** if present in repo root into _site/albums/
-if os.path.isdir(os.path.join(REPO, "albums")):
-    shutil.copytree(os.path.join(REPO, "albums"), os.path.join(DEPLOY, "albums"), dirs_exist_ok=True)
+# /albums/<slug>/ from albums/<slug>/album.yaml (hand-built pages copied as they are) + the /albums/ index
+albums.deploy(DEPLOY, DARKROOM_TMPL, STYLES_CSS, THEME_JS)
 open(os.path.join(DEPLOY, "CNAME"), "w").write(DOMAIN + "\n")
 open(os.path.join(DEPLOY, ".nojekyll"), "w").close()
 n = len([f for f in os.listdir(os.path.join(DEPLOY, "photo")) if f.endswith(".jpg") and not f.endswith(".thumb.jpg")])
-print(f"built _site/ -> /photos/ ({len(wall_idx)} on the wall), /photos/all/ + /photo/ ({len(photos)}), {n} fulls; / redirects to /photos/")
+print(f"built _site/ -> /photos/ ({len(wall_idx)} on the wall), /photos/all/ + /photo/ ({len(photos)}), {n} fulls, /albums/ ({len(ALBUMS)}); / redirects to /photos/")
 

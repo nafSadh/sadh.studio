@@ -1,0 +1,183 @@
+# hand-built page (index.html) is served as is; this file feeds /albums/ and the card in /photos/all/
+name: New York
+sub: in Fall 2026
+when: 2026 October
+date: '2026-10-23'
+until: '2026-10-26'
+source: 26.10 New York Trip
+hidden: false
+posts:
+- id: shapes
+  title: Shapes of NYC
+  frames:
+  - PA245369
+  - PA267141
+  - PA245152
+  - PA245173
+- id: harbor
+  title: Vibes of NYC
+  frames:
+  - PA244931
+  - PA245056
+  - PA245061
+  - PA244950
+  - PA245004
+  - PA244996
+- id: towers
+  title: Towers
+  frames:
+  - PA245379
+  - PA265959
+  - PA265935
+  - PA245069
+  - DSCF5884
+  - PA245602
+- id: wtc
+  title: WTC from different viewpoints
+  frames:
+  - PA245159
+  - PA245076
+  - PA266127
+  - PA265884
+  - PA245363
+- id: oculus
+  title: The Oculus
+  frames:
+  - PA245340
+  - PA245320
+  - PA245354
+- id: brooklyn-bridge
+  title: On Brooklyn Bridge
+  frames:
+  - PA266228
+  - PA266111
+  - PA266440
+  - PA265986
+  - PA265992
+  - PA266504
+  - PA266813
+  - PA266246
+  - PA267004
+  - PA266267
+  - PA266990
+  - PA266206
+  - PA266252
+- id: streets
+  title: Downtown streets
+  frames:
+  - PA244824
+  - PA245115
+  - PA245232
+  - DSCF5740
+  - PA245289
+  - PA244894
+  - PA245129
+  - PA244840
+  - PA244775
+  - PA244956
+  - PA244716
+  - PA244783
+- id: skyline
+  title: Skyline
+  frames:
+  - PA266416
+  - PA266314
+  - PA266376
+  - PA244938
+  - PA266883
+  - PA245390
+  - DSCF5902
+- id: park
+  title: Central Park fall
+  frames:
+  - DSCF5928
+  - PA245382
+  - DSCF5944
+  - PA245505
+  - PA245452
+  - PA245446
+  - PA245432
+  - PA245444
+  - PA245405
+  - PA245485
+  - PA245482
+  - PA245578
+  - DSCF5998
+  - PA245493
+  - DSCF6051
+- id: hudson
+  title: Hudson drive fall
+  frames:
+  - PA255874
+  - PA255745
+  - PA255665
+  - DSCF6232
+  - PA255750
+  - DSCF6222
+  - PA255786
+  - PA255679
+  - DSCF6199
+  - DSCF6343
+  - PA255817
+  - DSCF6308
+  - PA255806
+  - PA255822
+- id: cemetery
+  title: Sleepy Hollow
+  frames:
+  - DSCF6163
+  - DSCF6143
+  - DSCF6171
+- id: lighthouse
+  title: Lighthouse and water
+  frames:
+  - PA255635
+  - DSCF6085
+  - DSCF6098
+- id: coldspring
+  title: Cold Spring
+  frames:
+  - DSCF6256
+  - DSCF6332
+  - DSCF6261
+  - DSCF6246
+  - DSCF6288
+- id: soho
+  title: SoHo and Nolita
+  frames:
+  - DSCF6419
+  - DSCF6541
+  - DSCF6452
+  - DSCF6546
+  - DSCF6513
+  - DSCF6437
+  - DSCF6505
+  - DSCF6561
+  - DSCF6403
+  - DSCF6510
+  - DSCF6492
+  - DSCF6533
+  - DSCF6589
+- id: halloween
+  title: Halloween
+  frames:
+  - DSCF6478
+  - DSCF6468
+  - DSCF6470
+  - DSCF6346
+  - DSCF6060
+- id: gate
+  title: At the gate
+  frames:
+  - PA234589
+  - PA234568
+  - DSCF5584
+- id: window
+  title: Aerial views
+  frames:
+  - DSCF5611
+  - PA234642
+  - PA234652
+  - PA234661
+  - PA234666
+  - DSCF5635

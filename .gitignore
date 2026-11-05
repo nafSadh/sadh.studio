@@ -2,3 +2,4 @@
 _site/
 .cache/
 __pycache__/
+albums/*/img/

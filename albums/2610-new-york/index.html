@@ -100,7 +100,7 @@ function strip(frames, title, all){ all = all || frames;
   const s = document.createElement("div"); s.className = "strip";
   frames.forEach((f, i) => {
     const fig = document.createElement("figure"); fig.tabIndex = 0; if (f.w > f.h) fig.className = "l";
-    fig.innerHTML = `<img src="img/${IMG[f.id]}?v=${f.v||""}" alt="${f.id}" loading="lazy" decoding="async"><span class="n">${all.indexOf(f) + 1}</span><span class="pid">${f.id}</span>`;
+    fig.innerHTML = `<img src="https://img.sadh.studio/albums/2610-new-york/${IMG[f.id]}?v=${f.v||""}" alt="${f.id}" loading="lazy" decoding="async"><span class="n">${all.indexOf(f) + 1}</span><span class="pid">${f.id}</span>`;
     const go = () => { lbList = all; lbI = all.indexOf(f); lbTitle = title; show(); };
     fig.onclick = go; fig.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
     s.appendChild(fig);
@@ -120,7 +120,7 @@ function spy(){ let cur = ""; document.querySelectorAll(".post").forEach(h => { 
   nav.querySelectorAll("a").forEach(a => { const on = a.dataset.k === cur; a.classList.toggle("on", on); if (on) a.scrollIntoView({block:"nearest", inline:"nearest"}); }); }
 let st; addEventListener("scroll", () => { clearTimeout(st); st = setTimeout(spy, 80); }, {passive:true}); spy();
 const lb = document.getElementById("lb"), img = document.getElementById("lbImg");
-function show(){ const f = lbList[lbI]; img.src = `img/${IMG[f.id]}?v=${f.v||""}`; document.getElementById("lbCount").textContent = `${lbI + 1} / ${lbList.length}`;
+function show(){ const f = lbList[lbI]; img.src = `https://img.sadh.studio/albums/2610-new-york/${IMG[f.id]}?v=${f.v||""}`; document.getElementById("lbCount").textContent = `${lbI + 1} / ${lbList.length}`;
   document.getElementById("lbCap").textContent = `${f.id} · ${lbTitle}`; lb.hidden = false; }
 function step(k){ lbI = (lbI + k + lbList.length) % lbList.length; show(); }
 document.getElementById("lbClose").onclick = () => lb.hidden = true;

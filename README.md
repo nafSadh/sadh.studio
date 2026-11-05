@@ -68,3 +68,16 @@ location (from another photo of the same ~/photos album, or `--location`).
     ./run.sh check    # sanity check
 
 Needs Python 3 with `pyyaml` and `pillow`.
+
+## Albums
+
+`albums/<slug>/` (slug `YYMM-name`): one per shoot, keeping the shoot's post structure from
+`~/photos/posts/<shoot>/`. `album.yaml` holds the name, the card text (`when`, `name`, `sub`), and the
+posts with their frames in order; `img/<id>.jpg` are the 1400px web copies. Pages render at
+`/albums/<slug>/` from `_build/templates/album.html` (the New York page's design); a folder with its
+own `index.html` (2610-new-york) is served as is. `/albums/` lists them, and `/photos/all/` carries a
+text card for each at its place in time. `hidden: true` builds the page but leaves it unlisted.
+
+    ./run.sh albums                       # port every shoot in ~/photos/posts (keeps edited album.yaml)
+    ./run.sh albums "26.10.17 Panther"    # one shoot; add --force to regenerate album.yaml
+    ./run.sh sync                         # images to Cloudflare R2; then set albums/IMG_BASE
