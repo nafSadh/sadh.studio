@@ -1,58 +1,43 @@
 # album: one section per post, frames in order. Edit freely; albums_port.py keeps this file
 # unless run with --force. hidden: true builds the page but keeps it off /albums/ and the feed.
 name: Santa Cruz
-sub: ''
+sub: West Cliff
 when: 2026 May
 date: '2026-04-26'
 until: '2026-05-17'
 source: 26.05 Santa Cruz
 hidden: false
 posts:
-- id: surfers
-  title: Surfers, dots on the void
+- id: wildlife
+  title: Sea otters & seabirds
   frames:
-  - P4267260
-  - P4267367
-  - P4267395
-  - P4267464
-  - P4267355
-  - P5170741
-  - P5027665
-  - P5170419
-  - P5170581
   - P5170624
+  - P5170581
   - P5170623
+  - P4267287
+  - P5170419
+  - P5170441
+  - P5170717
+- id: surfers
+  title: Surfers & the lineup
+  frames:
+  - P4267367
+  - P5170741
+  - P4267395
+  - P4267355
 - id: seascapes
-  title: Hazy seascapes, layered
+  title: Hazy bay & cliffside
   frames:
   - P4267520
+  - P5170637
   - P4267388
-  - P4267378
-  - P5170435
-  - P5027619
-- id: birds
-  title: Birds smaller than you think
-  frames:
-  - P5170717
-  - P5170441
-  - P4267287
-  - P5170519
-  - P5027581
-  - P5170610
 - id: painterly
-  title: Painterly close
+  title: Sailboats, sea-lavender & spray
   frames:
+  - P5027665
   - P5027645
   - P5170476
-  - P5027657
-  - P5027662
-- id: afternoon
-  title: Coastal afternoon, people in it
-  frames:
-  - P5170637
-  - P5170734
-  - P5170749
 cover:
 - P5170624
 - P5170419
-- P5170581
+- P5027665

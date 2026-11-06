@@ -9,16 +9,20 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 BUCKET="${R2_BUCKET:-sadh-studio}"
 ACCOUNT=b404bedb1195032ed85340a9cfa87d11
-# keys live beside the repos, outside any of them: ~/src/.config/rclone/rclone.conf
-export RCLONE_CONFIG="${RCLONE_CONFIG:-$(cd .. && pwd)/.config/rclone/rclone.conf}"
-mkdir -p "$(dirname "$RCLONE_CONFIG")"
-
 # first run: install rclone and set up the "r2" remote (asks for the token's two keys once)
 if ! command -v rclone >/dev/null; then
   command -v brew >/dev/null || { echo "install rclone first: https://rclone.org/install/"; exit 1; }
   brew install rclone
 fi
+if [ -z "${RCLONE_CONFIG:-}" ] && ! rclone listremotes 2>/dev/null | grep -qx "r2:"; then
+  # keys live beside the repos, outside any of them: ~/src/.config/rclone/rclone.conf
+  export RCLONE_CONFIG="$(cd .. && pwd)/.config/rclone/rclone.conf"
+  mkdir -p "$(dirname "$RCLONE_CONFIG")"
+fi
 if ! rclone listremotes | grep -qx "r2:"; then
+  : "${RCLONE_CONFIG:=$(cd .. && pwd)/.config/rclone/rclone.conf}"
+  export RCLONE_CONFIG
+  mkdir -p "$(dirname "$RCLONE_CONFIG")"
   echo "R2 > Manage API tokens > Create Account API token (Object Read & Write, bucket $BUCKET)"
   read -rp "Access Key ID: " KEY_ID
   read -rsp "Secret Access Key (hidden): " KEY_SECRET; echo

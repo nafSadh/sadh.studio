@@ -49,8 +49,8 @@ posts:
 - id: brooklyn-bridge
   title: On Brooklyn Bridge
   frames:
-  - PA266228
   - PA266111
+  - PA266228
   - PA266440
   - PA265986
   - PA265992
@@ -134,6 +134,7 @@ posts:
   - PA255635
   - DSCF6085
   - DSCF6098
+  - PA255634
 - id: coldspring
   title: Cold Spring
   frames:
@@ -181,3 +182,10 @@ posts:
   - PA234661
   - PA234666
   - DSCF5635
+cover:
+- PA266111
+- PA245446
+- DSCF6419
+- DSCF6222
+- PA245363
+- PA245405

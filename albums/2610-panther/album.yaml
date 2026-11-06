@@ -8,44 +8,36 @@ until: '2026-10-17'
 source: 26.10.17 Panther
 hidden: false
 posts:
-- id: panther
-  title: Panther Beach
+- id: bluff
+  title: Golden hour on the bluff
   frames:
-  - DSCF5306
-  - PA173903
-  - PA173919
-  - PA173967
-  - PA173977
-  - DSCF5357
-  - DSCF5394
   - DSCF5426
-  - DSCF5435
-  - PA174016
   - PA174020
-  - PA174026
-  - DSCF5456
-  - DSCF5440
-  - PA174072
-  - DSCF5485
-  - PA174096
-  - PA174134
-  - PA174142
-  - PA174154
+  - PA173903
   - PA174239
-  - DSCF5533
-  - PA174279
-  - PA174281
-  - PA174297
-  - PA174308
-  - PA174312
-  - PA174343
-  - PA174353
-  - PA174364
-  - PA174380
-  - PA174400
-  - DSCF5563
+  - PA173967
+  - PA174026
+  - PA173977
+- id: silhouettes
+  title: Silhouettes at sunset & dusk
+  frames:
+  - PA173919
+  - PA174096
+  - PA174072
+  - PA174154
   - PA174414
+  - DSCF5563
+- id: sea-cave
+  title: Inside the sea-cave & blue hour
+  frames:
+  - PA174308
+  - PA174343
+  - PA174297
+  - PA174380
+  - PA174279
+  - PA174364
+  - DSCF5533
 cover:
-- PA174020
 - PA174308
-- PA173919
+- DSCF5426
+- PA174020

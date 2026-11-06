@@ -267,7 +267,7 @@ def _darkroom_for(idx, kicker, order=None, feed=False, after=""):
             k = CARD0 + len(CARDS) - 1
             PORT.insert(next((n for n, i in enumerate(PORT) if _dti(i) < CARDS[-1][1]), len(PORT)), k)
     rows = alt_rows(DR_AREA, 1276, 22)
-    # both pages end with cards inside the last row: the wall -> gallery, newest albums, all albums;
+    # both pages end with two cards inside the last row: the wall -> gallery, all albums;
     # the feed -> the wall, all albums
     wall_order = sorted((i for i in range(len(photos)) if photos[i]["wall"]), key=lambda i: photos[i]["order"])
     thumbs = [photos[i]["src"] for i in wall_order][:3]

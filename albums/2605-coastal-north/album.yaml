@@ -1,193 +1,97 @@
 # album: one section per post, frames in order. Edit freely; albums_port.py keeps this file
 # unless run with --force. hidden: true builds the page but keeps it off /albums/ and the feed.
 name: Coastal North
-sub: ''
+sub: Marin to Mendocino
 when: 2026 May
 date: '2026-05-25'
 until: '2026-05-26'
-source: 26.05 Coastal North
+source: 26.05.25 Coastal North
 hidden: false
 posts:
 - id: muir
-  title: Muir
+  title: Muir Beach to Bolinas Lagoon
   frames:
-  - P5263303
   - P5251263
-  - DSCF3980
   - P5251461
-  - P5251945
-  - P5251604
-- id: sf-from-muir
-  title: SF from Muir
-  frames:
-  - P5251526
   - P5251437
   - P5251546
-- id: ptreyes-bluffs
-  title: Point Reyes bluffs
-  frames:
-  - DSCF4052
-  - P5251982
-  - P5252777
-  - P5252406
-  - DSCF4151
-  - DSCF4174
-  - P5252907
-  - P5252934
-  - DSCF4250
-- id: ptreyes-lighthouse
-  title: Point Reyes lighthouse
-  frames:
-  - P5252760
-  - P5252475
-  - DSCF4129
-- id: bodega-sonoma
-  title: Bodega and Sonoma
-  frames:
-  - DSCF4296
-  - DSCF4304
-  - P5263451
-  - DSCF4425
-  - P5263801
-  - P5263833
-  - P5263843
-- id: russian-river-tall
-  title: Russian River
-  frames:
-  - DSCF4408
-  - P5263486
-- id: green-curves
-  title: Green curves
-  frames:
-  - P5251927
   - P5251271
   - P5251535
-  - P5251942
-  - P5253150
-  - P5263544
-- id: coastal-verticals
-  title: Coastal verticals
-  frames:
   - P5251425
-  - DSCF3971
-  - DSCF3996
-  - DSCF4028
-- id: streets
-  title: Streets
+  - P5251876
+- id: point-reyes-ranches
+  title: Point Reyes ranches & hills
   frames:
-  - DSCF4264
-  - DSCF4391
-  - P5263590
-  - P5263671
-  - P5263702
-  - P5263738
-- id: flowers
-  title: Flowers
-  frames:
-  - P5251476
-  - P5251470
-  - P5252267
-  - P5252856
-  - P5253047
+  - DSCF3980
   - P5252009
-  - P5253050
-  - P5251635
-  - P5251679
-  - P5252092
-  - P5252638
+  - P5251945
+  - P5251982
+  - P5251927
+  - DSCF4028
+  - P5253150
+- id: point-reyes
+  title: Point Reyes Lighthouse & headlands
+  frames:
+  - P5252760
+  - DSCF4129
+  - DSCF4052
+  - DSCF4250
+  - DSCF4174
+  - DSCF4151
+  - P5252406
+  - P5252122
+  - DSCF4097
+  - P5252934
+  - P5252424
   - P5253064
-- id: seabirds
-  title: Seabirds
+- id: sonoma-mendocino
+  title: Bodega, Sonoma Coast & Mendocino
   frames:
-  - P5252403
-  - P5251628
-  - P5252387
-  - P5252393
-- id: sparrow
-  title: Sparrow
+  - P5263833
+  - P5263801
+  - DSCF4425
+  - DSCF4304
+  - DSCF4296
+  - P5263451
+  - DSCF4408
+  - P5263544
+  - P5263590
+  - DSCF4264
+- id: wildlife
+  title: Deer, vultures & songbirds
   frames:
-  - P5252974
-  - P5251687
-  - P5252081
-- id: egret
-  title: Egret
-  frames:
-  - P5251780
-  - P5251746
-  - P5251785
-  - P5251793
-- id: turkey-vulture
-  title: Turkey vulture
-  frames:
-  - P5251872
-  - P5251868
-  - P5251869
-  - P5263159
-- id: deer
-  title: Deer
-  frames:
-  - P5252253
   - P5252213
-  - P5252219
-  - P5252237
-- id: flying-on-blue
-  title: Flying on blue
-  frames:
-  - P5263431
-  - P5252650
-- id: estuary-marsh
-  title: Estuary and marsh
-  frames:
-  - P5263230
-  - P5263179
-  - P5263208
-  - P5263195
-- id: quail
-  title: Quail
-  frames:
-  - P5263253
-- id: gull
-  title: Gull
-  frames:
-  - P5263264
-  - P5263361
-  - P5263368
-- id: blackbird
-  title: Blackbird
-  frames:
+  - P5252253
   - P5263920
-- id: oystercatcher
-  title: Oystercatcher
+  - P5252974
+  - P5252081
+  - P5263230
+  - P5263208
+  - P5251872
+- id: seabirds
+  title: Seabirds & shorebirds
   frames:
   - P5264043
-  - P5264009
-  - P5264046
-  - P5264055
-- id: pond-birds
-  title: Pond birds
-  frames:
-  - P5264164
-  - P5264102
-  - P5264128
-  - P5264190
-- id: pelican
-  title: Pelican
-  frames:
-  - P5264212
-  - P5264142
-  - P5264180
+  - P5263368
   - P5264218
-- id: abstracts
-  title: Abstracts
+  - P5264180
+  - P5263264
+  - P5251780
+  - P5263303
+  - P5252387
+- id: flora
+  title: Coastal wildflowers & grasses
   frames:
-  - P5252330
-  - P5252122
-  - P5252317
-  - DSCF4097
-  - P5252533
-  - P5251876
-  - P5252424
+  - P5252092
+  - P5251635
+  - P5251679
+  - P5252638
+  - P5253050
+  - P5251476
 cover:
-- DSCF4052
-- P5251263
 - P5252760
+- P5251263
+- DSCF4052
+- P5252934
+- P5263833
+- P5252213

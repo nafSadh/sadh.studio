@@ -8,82 +8,67 @@ until: '2026-07-04'
 source: 26.07.04 SF
 hidden: false
 posts:
-- id: picturesque
-  title: Picturesque SF
+- id: harbor
+  title: Fog on the bay
   frames:
-  - P7047583
-  - P7047489
   - P7047707
-  - P7047741
   - P7047749
-  - P7048029
+  - P7047583
 - id: quiet
-  title: Quiet SF
+  title: Quiet verticals
   frames:
-  - P7047570
+  - P7047554
+  - P7047621
   - P7047928
   - P7047930
-  - P7047554
   - P7047562
-  - P7047621
-  - P7047622
-  - P7047524
-  - P7047882
 - id: face
   title: The city's face
   frames:
-  - P7047614
-  - P7047855
-  - P7047822
   - P7047891
   - P7047872
+  - P7047614
+  - P7047855
   - P7047920
-  - P7047590
+  - P7047489
 - id: streets
-  title: The streets
+  title: July Fourth on the streets
   frames:
-  - P7047475
-  - P7047550
-  - P7047600
   - P7047631
-  - P7047639
-  - P7047772
+  - P7047550
   - P7047862
-  - P7047954
-  - P7047961
-  - P7048070
   - P7048170
   - P7048173
-  - P7048177
+  - P7047772
+  - P7047475
+  - P7047954
   - P7048194
-  - P7048213
-  - P7048281
-  - P7048327
 - id: fireworks
   title: Karl ate the fireworks
   frames:
-  - P7047870
-  - P7048066
+  - P7047961
+  - P7048070
   - P7048128
-  - P7048139
+  - P7048066
   - P7048133
   - P7048144
   - P7048156
+  - P7048029
 - id: neon
   title: Neon after dark
   frames:
-  - P7048217
-  - P7047959
-  - P7048223
-  - P7048251
+  - P7048213
+  - P7048314
+  - P7048289
   - P7048325
   - P7048188
-  - P7048296
-  - P7048314
-  - P7048323
-  - P7048289
   - P7048332
+  - P7048251
+  - P7048223
 cover:
-- P7047554
-- P7047961
 - P7048213
+- P7048066
+- P7047707
+- P7047583
+- P7048029
+- P7047891

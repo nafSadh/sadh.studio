@@ -471,7 +471,7 @@ contents:
     date: 2026-07-12 16:28
     stack:
       - photo: P7128503
-        origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128503.jpg
+        origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128503-3.jpg
         reddit:
           - post: 1v2bwii
             sub: r/AccidentalWesAnderson
@@ -600,10 +600,6 @@ contents:
     location: San Francisco
     date: 2026-07-04 18:00
     ig: Dal_yB0mhhH
-  - photo: P7047822
-    origin: ~/photos/26.07.04 SF/selects/exports/P7047822.jpg
-    location: San Francisco
-    date: 2026-07-04 17:54
   - photos: P7047621
     location: San Francisco
     date: 2026-07-04 17:20
@@ -823,16 +819,16 @@ contents:
       - post: 1u5viaq
         sub: r/ArchitecturalRevival
   - photo: P5264218
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5264218.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5264218.jpg
     location: Mendocino
     date: 2026-05-26 16:41
     ig: DY5sZ-_jxF8
   - photo: P5264043
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5264043.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5264043.jpg
     location: Mendocino
     date: 2026-05-26 16:35
   - photo: P5263920
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263920.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263920.jpg
     location: Mendocino
     date: 2026-05-26 16:32
     ig: DZEI4c6mjr1
@@ -851,28 +847,28 @@ contents:
           - post: 1w8pv3z
             sub: r/seaporn
       - photo: P5263843
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5263843.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5263843.jpg
   - photo: P5263801
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263801.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263801.jpg
     location: Mendocino
     date: 2026-05-26 15:40
     ig: DY-zHemAT0R
   - photo: P5263368
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263368.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263368.jpg
     location: Sonoma Coast
     date: 2026-05-26 11:37
   - photo: DSCF4304
-    origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4304.jpg
+    origin: ~/photos/26.05 Coastal North/edits/DSCF4304.jpg
     location: Sonoma Coast
     date: 2026-05-26 11:19
     ig: DY-zHemAT0R
   - photo: P5263253
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263253.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263253.jpg
     location: Sonoma Coast
     date: 2026-05-26 10:39
     ig: DY5nevuATZH
   - photo: P5263230
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263230.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263230.jpg
     location: Sonoma Coast
     date: 2026-05-26 10:38
     ig: DY5qXS3mrsy
@@ -880,19 +876,19 @@ contents:
       - post: 1u7ub30
         sub: r/BirdPhotography
   - photo: DSCF4264
-    origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4264.jpg
+    origin: ~/photos/26.05 Coastal North/edits/DSCF4264.jpg
     location: Sonoma Coast
     date: 2026-05-26 10:24
     ig: DY6PHNelDfT
   - photo: P5253050
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5253050.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5253050.jpg
     location: Point Reyes
     date: 2026-05-25 19:17
     reddit:
       - post: 1viouik
         sub: r/macrophotography
   - photo: P5252974
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252974.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252974.jpg
     location: Point Reyes
     date: 2026-05-25 19:09
     ig: DY5q-3Aj2Lp
@@ -904,16 +900,16 @@ contents:
     date: 2026-05-25 19:06
     stack:
       - photo: P5252934
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5252934.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5252934.jpg
         ig: DY5Ff3lmllG
       - photo: P5253064
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5253064.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5253064.jpg
   - photo: P5252907
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252907.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252907.jpg
     location: Point Reyes
     date: 2026-05-25 18:59
   - photo: DSCF4151
-    origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4151.jpg
+    origin: ~/photos/26.05 Coastal North/edits/DSCF4151.jpg
     location: Point Reyes
     date: 2026-05-25 18:51
   - photos: P5252760
@@ -921,7 +917,7 @@ contents:
     date: 2026-05-25 18:26
     stack:
       - photo: P5252760
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5252760.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5252760.jpg
         ig: DY6OAlylI7b
         reddit:
           - post: 1vl5jns
@@ -929,14 +925,14 @@ contents:
           - post: 1vmues2
             sub: r/itookapicture
       - photo: DSCF4129
-        origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4129.jpg
+        origin: ~/photos/26.05 Coastal North/edits/DSCF4129.jpg
         ig: DY6OAlylI7b
   - photo: P5252638
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252638-2.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252638-2.jpg
     location: Point Reyes
     date: 2026-05-25 18:19
   - photo: P5252406
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252406.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252406.jpg
     location: Point Reyes
     date: 2026-05-25 18:07
     reddit:
@@ -949,7 +945,7 @@ contents:
     date: 2026-05-25 17:56
     stack:
       - photo: DSCF4052
-        origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4052.jpg
+        origin: ~/photos/26.05 Coastal North/edits/DSCF4052.jpg
         ig: DY5Ff3lmllG
         reddit:
           - post: 1tz3qbk
@@ -959,7 +955,7 @@ contents:
           - post: 1ty24oc
             sub: r/Fujifilm_X100VI
       - photo: DSCF4174
-        origin: ~/photos/26.05.25-26 Costal North/edits/DSCF4174.jpg
+        origin: ~/photos/26.05 Coastal North/edits/DSCF4174.jpg
         reddit:
           - post: 1utxcle
             sub: r/itookapicture
@@ -968,57 +964,57 @@ contents:
     date: 2026-05-25 17:50
     stack:
       - photo: P5252213
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5252213.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5252213.jpg
         reddit:
           - post: 1uj2xxm
             sub: r/wildlifephotography
       - photo: P5252219
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5252219.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5252219.jpg
       - photo: P5252253
-        origin: ~/photos/26.05.25-26 Costal North/edits/P5252253.jpg
+        origin: ~/photos/26.05 Coastal North/edits/P5252253.jpg
   - photo: P5252092
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252092.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252092.jpg
     location: Point Reyes
     date: 2026-05-25 17:36
     reddit:
       - post: 1u82oxt
         sub: r/EarthPorn
   - photo: P5252009
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5252009.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5252009.jpg
     location: Point Reyes
     date: 2026-05-25 17:19
   - photo: P5251945
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251945.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251945.jpg
     location: Point Reyes
     date: 2026-05-25 16:57
     ig: DY4MuBrmwbK
   - photo: P5251876
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251876.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251876.jpg
     location: Bolinas Lagoon
     date: 2026-05-25 16:15
     reddit:
       - post: 1utxsxt
         sub: r/minimalistphotography
   - photo: P5251872
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251872.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251872.jpg
     location: Bolinas Lagoon
     date: 2026-05-25 16:14
     ig: DY6PoOTlJ2C
   - photo: P5251635
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251635.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251635.jpg
     location: Muir Beach
     date: 2026-05-25 15:30
   - photo: P5251476
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251476.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251476.jpg
     location: Muir Beach
     date: 2026-05-25 15:17
   - photo: P5251461
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251461.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251461.jpg
     location: Muir Beach
     date: 2026-05-25 15:16
     ig: DY4MuBrmwbK
   - photo: P5251263
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5251263.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5251263.jpg
     location: Muir Beach
     date: 2026-05-25 14:27
     ig: DY4MuBrmwbK
@@ -1028,7 +1024,7 @@ contents:
       - post: 1tu86d3
         sub: r/FoggyPics
   - photo: P5263303
-    origin: ~/photos/26.05.25-26 Costal North/edits/P5263303-2.jpg
+    origin: ~/photos/26.05 Coastal North/edits/P5263303-2.jpg
     location: Sonoma Coast
     date: 2026-05-25 00:00
   - photo: P5231225
@@ -1243,6 +1239,10 @@ contents:
     reddit:
       - post: 1ut5ijy
         sub: r/itookapicture
+  - photo: P5110350
+    origin: ~/photos/26.05 Miro/edits/P5110350-2.jpg
+    location: San José
+    date: 2026-05-11 19:06
   - photos: P5100220
     location: Shasta–Cascade
     date: 2026-05-10 13:32
@@ -1362,8 +1362,6 @@ contents:
       - photo: P5099064
         origin: ~/photos/26.05.09 Shasta/edited/P5099064.jpg
         ig: DYWAtigFL-y
-      - photo: P5099089
-        origin: ~/photos/26.05.09 Shasta/edited/P5099089.jpg
   - photo: DSCF3451
     origin: ~/photos/26.05.09 Shasta/edited/DSCF3451.jpg
     location: Shasta–Cascade
@@ -1467,6 +1465,10 @@ contents:
     origin: ~/photos/26.05 Santa Cruz/edits/P5170476.jpg
     location: Santa Cruz
     date: 2026-05-01 00:00
+  - photo: P4057087
+    origin: ~/photos/26.04.05 Napa/selects/jpeg/P4057087.JPG
+    location: Napa
+    date: 2026-04-05 14:59
   - photo: DSCF3222
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3222.jpg
     location: Highway 1
@@ -1620,53 +1622,53 @@ contents:
       - post: 1u74if6
         sub: r/CityPorn
   - photo: PC221220
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC221220.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC221220.jpg
     location: Oʻahu
     date: 2025-12-22 09:25
   - photo: PC221216
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC221216.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC221216.jpg
     location: Oʻahu
     date: 2025-12-22 09:24
   - photo: PC211099
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC211099.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC211099.jpg
     location: Oʻahu
     date: 2025-12-21 19:59
     reddit:
       - post: 1u8ub16
         sub: r/CityPorn
   - photo: PC211047
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC211047-2.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC211047-2.jpg
     location: Oʻahu
     date: 2025-12-21 19:54
     reddit:
       - post: 1u9ixzt
         sub: r/SkyPorn
   - photo: PC210966
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210966.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210966.jpg
     location: Oʻahu
     date: 2025-12-21 19:38
   - photo: DSCF1884
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/DSCF1884.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/DSCF1884.jpg
     location: Oʻahu
     date: 2025-12-21 18:22
   - photo: PC210838
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210838-2.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210838-2.jpg
     location: Oʻahu
     date: 2025-12-21 17:11
   - photo: PC210824
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210824.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210824.jpg
     location: Oʻahu
     date: 2025-12-21 16:49
   - photo: PC210786
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210786.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210786.jpg
     location: Oʻahu
     date: 2025-12-21 16:21
   - photo: PC210709
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210709-2.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210709-2.jpg
     location: Oʻahu
     date: 2025-12-21 15:55
   - photo: PC210671
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210671-2.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210671-2.jpg
     location: Oʻahu
     date: 2025-12-21 15:28
     reddit:
@@ -1677,7 +1679,7 @@ contents:
     date: 2025-12-21 14:00
     stack:
       - photo: PC210616
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210616.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210616.jpg
         reddit:
           - post: 1u8tziv
             sub: r/MostBeautiful
@@ -1686,13 +1688,13 @@ contents:
           - post: 1u8un43
             sub: r/LandscapePhotography
       - photo: PC210653
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210653-2.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210653-2.jpg
   - photo: PC210598
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210598.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210598.jpg
     location: Oʻahu
     date: 2025-12-21 13:49
   - photo: PC210564
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210564-2.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210564-2.jpg
     location: Oʻahu
     date: 2025-12-21 13:23
   - photos: PC210541
@@ -1700,17 +1702,17 @@ contents:
     date: 2025-12-21 12:55
     stack:
       - photo: PC210541
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210541.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210541.jpg
         reddit:
           - post: 1v7kbeo
             sub: r/scenery
       - photo: PC210521
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210521.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210521.jpg
         reddit:
           - post: 1vdcrey
             sub: r/LandscapePhotography
   - photo: PC210503
-    origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC210503.jpg
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210503.jpg
     location: Oʻahu
     date: 2025-12-21 12:37
     reddit:
@@ -1721,11 +1723,11 @@ contents:
     date: 2025-12-20 14:27
     stack:
       - photo: PC200377
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC200377.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC200377.jpg
         reddit:
           - post: 1v6ob7y
             sub: r/MostBeautiful
           - post: 1v6mvoi
             sub: r/seaporn
       - photo: PC200370
-        origin: ~/photos/25.12.19-25 Hawaii - Oahu/edited/PC200370.jpg
+        origin: ~/photos/25.12 Hawaii - Oahu/edited/PC200370.jpg

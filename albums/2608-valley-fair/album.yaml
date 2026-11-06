@@ -1,0 +1,31 @@
+# album: one section per post, frames in order. Edit freely; albums_port.py keeps this file
+# unless run with --force. hidden: true builds the page but keeps it off /albums/ and the feed.
+name: Valley Fair
+sub: Afternoon
+when: 2026 August
+date: '2026-08-08'
+until: '2026-08-08'
+source: 26.08.08 Valley Fair
+hidden: true
+posts:
+- id: patisserie
+  title: Patisserie & espresso
+  frames:
+  - DSCF5042
+  - DSCF5054
+  - DSCF5040
+  - DSCF5046
+  - DSCF5048
+  - DSCF5050
+  - DSCF5060
+- id: escalators
+  title: Escalators & late light
+  frames:
+  - DSCF5063
+  - DSCF5067
+  - DSCF5069
+  - DSCF5070
+cover:
+- DSCF5042
+- DSCF5054
+- DSCF5063

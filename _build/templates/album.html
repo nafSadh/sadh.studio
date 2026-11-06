@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{TITLE_TEXT}} · sadh.studio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
-/* Layout: one section per post; every tile has the same pixel area (3:4 portrait, 4:3 landscape), wrapping with page scroll only */
+/* Layout: one section per post; tiles in frame order at each photo's own aspect ratio, about the same pixel area each, rows filled to the width */
 :root{--bg:#f3f2ef;--fg:#1d1f22;--muted:#6c6f73;--rule:#d9d7d1;--accent:#2f4a7a;--shade:rgba(14,15,17,.94);
---display:"Instrument Serif","Iowan Old Style",Georgia,serif;--body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--row:260px}
+--display:"Fraunces","Iowan Old Style",Georgia,serif;--body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--row:260px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141518;--fg:#e9e7e2;--muted:#9a9ca1;--rule:#2c2e33;--accent:#9db4dc;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#141518;--fg:#e9e7e2;--muted:#9a9ca1;--rule:#2c2e33;--accent:#9db4dc;color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .wrap{max-width:1500px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
 header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 32px;border-bottom:1px solid var(--rule);padding-bottom:20px}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,7vw,76px);line-height:.95;margin:0;text-wrap:balance}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(36px,6vw,68px);line-height:.98;letter-spacing:-.025em;margin:0;text-wrap:balance}
 h1 em{font-style:italic;color:var(--accent)}
 .meta{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em;display:flex;flex-direction:column;gap:2px;text-align:right}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:10px 18px;padding:10px 0;margin-top:8px;background:var(--bg);border-bottom:1px solid var(--rule)}
@@ -64,7 +64,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;font-fa
 .post{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule);scroll-margin-top:60px}.post:only-child{margin-top:12px;border-top:0}
 .post .hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 .post .num{font-family:var(--display);font-size:clamp(38px,5vw,56px);line-height:.9;color:var(--accent);min-width:1.4em}
-.post h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.4vw,38px);margin:0;line-height:1.05}
+.post h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;margin:0;line-height:1.08}
 .post .meta2{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .post .cap{margin:8px 0 0;color:var(--muted);max-width:62ch;font-style:italic}
 .strip{display:flex;flex-wrap:wrap;gap:8px;padding:16px 0 6px}.strip+.strip{padding-top:2px}
@@ -93,7 +93,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;font-fa
   <button class="next" id="lbNext" aria-label="Next photo">›</button>
   <div class="info"><div id="lbCap"></div></div>
 </div>
-<script>const IMG={{IMG_JSON}}, BASE={{IMG_BASE}};
+<script>const IMG={{IMG_JSON}}, RBASE={{IMG_BASE}}, BASE=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?"img/":RBASE;
 
 const D = {{DATA_JSON}};
 const root = document.getElementById("sections"), nav = document.getElementById("chnav");
@@ -101,8 +101,9 @@ let lbList = [], lbI = 0, lbTitle = "";
 function strip(frames, title, all){ all = all || frames;
   const s = document.createElement("div"); s.className = "strip";
   frames.forEach((f, i) => {
-    const fig = document.createElement("figure"); fig.tabIndex = 0; if (f.w > f.h) fig.className = "l";
-    fig.innerHTML = `<img src="${BASE}${IMG[f.id]}?v=${f.v||""}" alt="${f.id}" loading="lazy" decoding="async"><span class="n">${all.indexOf(f) + 1}</span><span class="pid">${f.id}</span>`;
+    const fig = document.createElement("figure"); fig.tabIndex = 0; if (f.w > f.h) fig.className = "l"; fig.dataset.r = (f.w / f.h).toFixed(4);
+    const u = `${BASE}${IMG[f.id]}?v=${f.v||""}`, ru = `${RBASE}${IMG[f.id]}?v=${f.v||""}`;
+    fig.innerHTML = `<img src="${u}" onerror="if(this.src!==this.dataset.r&&this.dataset.r)this.src=this.dataset.r" data-r="${ru}" alt="${f.id}" loading="lazy" decoding="async"><span class="n">${all.indexOf(f) + 1}</span><span class="pid">${f.id}</span>`;
     const go = () => { lbList = all; lbI = all.indexOf(f); lbTitle = title; show(); };
     fig.onclick = go; fig.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
     s.appendChild(fig);
@@ -115,7 +116,7 @@ D.posts.forEach(p => {
   n++;
   const el = document.createElement("section"); el.className = "post"; el.id = "p-" + p.id;
   el.innerHTML = ONE ? "" : `<div class="hd"><span class="num">${n}</span><div><h3>${p.t}</h3><span class="meta2">${p.f.length} frames</span></div></div>`;
-  { const P = p.f.filter(f => f.w <= f.h), L = p.f.filter(f => f.w > f.h); const g = (p.f[0] && p.f[0].w > p.f[0].h) ? [L, P] : [P, L]; g.forEach(x => { if (x.length) el.appendChild(strip(x, p.t, p.f)); }); } root.appendChild(el);
+  el.appendChild(strip(p.f, p.t)); root.appendChild(el);   // one strip per post, in frame order
   nav.insertAdjacentHTML("beforeend", `<a href="#p-${p.id}" data-k="p-${p.id}"><b>${n}</b> ${p.t.split(",")[0]}</a>`);
 });
 document.getElementById("cnt").textContent = (ONE ? "" : D.posts.length + " sets · ") + D.posts.reduce((a, p) => a + p.f.length, 0) + " frames";
@@ -123,7 +124,7 @@ function spy(){ let cur = ""; document.querySelectorAll(".post").forEach(h => { 
   nav.querySelectorAll("a").forEach(a => { const on = a.dataset.k === cur; a.classList.toggle("on", on); if (on) a.scrollIntoView({block:"nearest", inline:"nearest"}); }); }
 let st; addEventListener("scroll", () => { clearTimeout(st); st = setTimeout(spy, 80); }, {passive:true}); spy();
 const lb = document.getElementById("lb"), img = document.getElementById("lbImg");
-function show(){ const f = lbList[lbI]; img.src = `${BASE}${IMG[f.id]}?v=${f.v||""}`; document.getElementById("lbCount").textContent = `${lbI + 1} / ${lbList.length}`;
+function show(){ const f = lbList[lbI]; img.onerror = () => { const ru = `${RBASE}${IMG[f.id]}?v=${f.v||""}`; if (img.src !== ru && RBASE) img.src = ru; }; img.src = `${BASE}${IMG[f.id]}?v=${f.v||""}`; document.getElementById("lbCount").textContent = `${lbI + 1} / ${lbList.length}`;
   document.getElementById("lbCap").textContent = `${f.id} · ${lbTitle}`; lb.hidden = false; }
 function step(k){ lbI = (lbI + k + lbList.length) % lbList.length; show(); }
 document.getElementById("lbClose").onclick = () => lb.hidden = true;
@@ -133,14 +134,24 @@ addEventListener("keydown", e => { if (lb.hidden) return; if (e.key === "Escape"
 let tx = null; img.addEventListener("touchstart", e => tx = e.touches[0].clientX, {passive:true});
 img.addEventListener("touchend", e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); tx = null; });
 
-// equal-area tiles: a portrait (p x 4p/3) and a landscape (4p/3 x p) cover the same pixels.
-// 4 portraits and 3 landscapes span the same width, so p is picked to make both kinds of row fill it.
+// rows in frame order, every photo at its own aspect ratio (nothing cropped).
+// Each photo's natural size covers about the same pixels (a 3:4 portrait p x 4p/3, a 4:3 landscape 4p/3 x p,
+// so 4 portraits or 3 landscapes fill a row as before); photos are packed in order, then each row
+// shares one height and is scaled to fill the width. A short row (the last, or one cut early by a wide
+// photo) keeps close to its natural size instead of being blown up.
 function justify(){ const G = 8;
-  document.querySelectorAll(".strip").forEach(s => { const W = s.clientWidth;
+  document.querySelectorAll(".strip").forEach(s => { const W = s.clientWidth; if (!W) return;
     const k = W < 640 ? 0 : Math.max(1, Math.round((W + G) / (4 * (230 + G))));
-    const p = k ? (W - (4 * k - 1) * G) / (4 * k) : (W - G) / 2;
-    [...s.children].forEach(f => { const l = f.classList.contains("l");
-      f.style.width = Math.floor(l ? Math.min(p * 4 / 3, W) : p) + "px"; f.style.height = Math.floor(l ? Math.min(p, W * .75) : p * 4 / 3) + "px"; }); }); }
+    const p = k ? (W - (4 * k - 1) * G) / (4 * k) : (W - G) / 2, A = p * p * 4 / 3;
+    const nat = r => Math.sqrt(A * r), rows = []; let row = [], used = 0;
+    [...s.children].forEach(f => { const r = +f.dataset.r || 1;
+      if (row.length && used + G + nat(r) > W + 1) { rows.push(row); row = []; used = 0; }
+      used += (row.length ? G : 0) + nat(r); row.push([f, r]); });
+    if (row.length) rows.push(row);
+    rows.forEach((rw, i) => { const R = rw.reduce((a, x) => a + x[1], 0), hn = rw.reduce((a, x) => a + nat(x[1]), 0) / R;
+      let h = (W - G * (rw.length - 1)) / R;
+      h = Math.min(h, hn * (i === rows.length - 1 ? 1 : 1.35));
+      rw.forEach(([f, r]) => { f.style.width = Math.floor(h * r) + "px"; f.style.height = Math.floor(h) + "px"; }); }); }); }
 justify(); let jt; new ResizeObserver(() => { clearTimeout(jt); jt = setTimeout(justify, 60); }).observe(document.body);
 </script>
 </html>

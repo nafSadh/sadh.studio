@@ -1,49 +1,46 @@
 # album: one section per post, frames in order. Edit freely; albums_port.py keeps this file
 # unless run with --force. hidden: true builds the page but keeps it off /albums/ and the feed.
 name: Tahoe
-sub: ''
+sub: '& Fallen Leaf'
 when: 2026 September
 date: '2026-09-04'
 until: '2026-09-06'
-source: 26.09.04 Tahoe
+source: 26.09 Tahoe
 hidden: false
 posts:
-- id: tahoe
-  title: Tahoe
+- id: lake-tahoe
+  title: Lake Tahoe through the pines
   frames:
+  - P9042806
   - P9053375
   - P9042185
-  - P9042545
-  - P9042304
-  - P9042806
   - P9043031
+  - P9042304
+  - P9042545
   - P9042522
   - P9053349
-- id: fallen-leaf-lake
-  title: Fallen leaf lake
+- id: fallen-leaf
+  title: Fallen Leaf Lake
   frames:
   - DSCF5212
-  - P9053517
-  - P9053536
-  - P9053543
   - P9053541
-  - DSCF5224
-- id: landscapes-from-the-trip
-  title: Landscapes from the trip
+  - P9053517
+  - P9053543
+- id: emerald-bay
+  title: Granite & Emerald Bay
   frames:
   - P9042335
   - P9042225
   - P9043189
   - P9043151
-  - DSCF5195
-- id: the-drive-home
-  title: The drive home
+  - P9043216
+- id: highway-88
+  title: Along Highway 88
   frames:
   - P9063615
-  - P9063576
   - P9063661
-  - P9063611
+  - P9063570
 cover:
-- P9042185
 - P9042806
 - P9053375
+- DSCF5212

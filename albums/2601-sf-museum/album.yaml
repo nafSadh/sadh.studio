@@ -1,0 +1,23 @@
+# album: one section per post, frames in order. Edit freely; albums_port.py keeps this file
+# unless run with --force. hidden: true builds the page but keeps it off /albums/ and the feed.
+name: San Francisco
+sub: de Young & Golden Gate Park
+when: 2026 January
+date: '2026-01-11'
+until: '2026-01-11'
+source: 26.01.11 SF Museum
+hidden: false
+posts:
+- id: de-young
+  title: A day at the de Young
+  frames:
+  - P1115006
+  - P1115010
+  - P1114947
+  - P1114978
+  - P1114952
+  - P1114999
+cover:
+- P1115006
+- P1115010
+- P1114952

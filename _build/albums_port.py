@@ -28,14 +28,66 @@ MONTHS = "January February March April May June July August September October No
 
 # the card/heading text per shoot; anything not listed uses the folder name
 NAMES = {
+    "25.12 Hawaii - Oahu": ("Oʻahu", "in Winter 2025"),
+    "25.12.13 Walk": ("San Francisco", "Mission Walk"),
+    "26.01 Austin": ("Austin", "Texas"),
+    "26.01.16 Yosemite": ("Yosemite", "in Winter"),
+    "26.01.31 Carmel": ("Carmel", "by-the-Sea"),
+    "26.05 Misc": ("Apartment Studies", "Window Light, Macros & Dusk"),
+    "26.05 Shasta": ("Shasta", "Cascade"),
+    "26.05 Santa Cruz": ("Santa Cruz", "West Cliff"),
+    "26.05.23 Yosemite": ("Yosemite", "in Spring"),
+    "26.05.25 Coastal North": ("Coastal North", "Marin to Mendocino"),
+    "26.06 dtSJ": ("San José", "Downtown"),
+    "26.06.20 Rose Garden": ("Rose Garden", "San José"),
+    "26.06.27 Clouds & Chefs": ("Silicon Valley", "Clouds & Hills"),
+    "26.06.28 Monterey Coast": ("Monterey", "Coast"),
+    "26.07.04 SF": ("San Francisco", "Fourth of July"),
+    "26.07.12 SF Clouds and Colors": ("San Francisco", "Clouds and Colors"),
+    "26.08 LA Trip": ("LA Trip", "Santa Barbara, Malibu & Cachuma"),
+    "26.08.09 Santa Cruz": ("Santa Cruz", "Redwoods & Coast"),
+    "26.09 Tahoe": ("Tahoe", "& Fallen Leaf"),
+    "26.09.13 dtLA": ("Los Angeles", "Downtown"),
     "26.10.17 Panther": ("Panther", "Beach"),
     "26.10 New York Trip": ("New York", "in Fall 2026"),
-    "26.06 dtSJ": ("San José", "Downtown"),
-    "26.07.04 SF": ("San Francisco", "Fourth of July"),
-    "26.06.28 Monterey Coast": ("Monterey", "Coast"),
-    "26.05.23 Yosemite": ("Yosemite", ""),
 }
-HIDDEN = {"26.07.15 Rooftop Pizza"}     # friends' dinner: ported but not listed until Sadh says so
+SLUGS = {
+    "25.12 Hawaii - Oahu": "2512-oahu",
+    "25.12 Misc": "2512-dtsj-rooftop",
+    "25.12.13 Walk": "2512-walk",
+    "25.12.14 Walk": "2605-apt-studies",
+    "25.12.15 dtSJ Rooftop": "2512-dtsj-rooftop",
+    "25.12.27 Party": "2512-party",
+    "25.12.27 Portraits": "2512-portraits",
+    "25.12.28 Brunch": "2512-brunch",
+    "25.12.29-30 Miro": "2605-apt-studies",
+    "25.12.31 to HNY": "2512-new-years-eve",
+    "26.01 Macros": "2605-apt-studies",
+    "26.01 Miro": "2601-miro",
+    "26.01.10 Biryani by Bal": "2601-biryani",
+    "26.01.11 SF Museum": "2601-sf-museum",
+    "26.01.31 Carmel": "2601-carmel",
+    "26.03.20 Knoxville Eid": "2603-knoxville-eid",
+    "26.04.05 Napa": "2604-napa",
+    "26.04.18 H Cowell": "2604-henry-cowell",
+    "26.05 Miro": "2605-apt-studies",
+    "26.05 Misc": "2605-apt-studies",
+    "26.05.17 Campbell": "2605-campbell",
+    "26.06.27 Clouds & Chefs": "2606-clouds",
+    "26.07 Misc": "2607-misc",
+    "26.07.12 SF Clouds and Colors": "2607-sf-clouds",
+    "26.07.15 Rooftop Pizza": "2607-rooftop-pizza",
+    "26.07.18 Miro Chef's Dinner": "2607-chefs-dinner",
+    "26.07.31 HMB": "2607-half-moon-bay",
+    "26.08 LA Trip": "2608-la-trip",
+    "26.08 Misc": "2608-august-walks",
+    "26.08.07 SJ Rose Garden": "2608-rose-garden",
+    "26.08.07 Zoom Burst": "2605-apt-studies",
+    "26.08.08 Valley Fair": "2608-valley-fair",
+    "26.08.28 Lights and Darks": "2608-lights-and-darks",
+    "26.10 Portraits": "2610-portraits",
+}
+HIDDEN = set()
 
 
 def human(name):
@@ -64,9 +116,10 @@ def short_title(t):
 
 
 def slug_of(shoot):
+    if shoot in SLUGS: return SLUGS[shoot]
     m = re.match(r"(\d\d)\.(\d\d)(?:\.\d\d)?\s+(.*)", shoot)
     name = NAMES.get(shoot, (m.group(3) if m else shoot, ""))[0]
-    s = re.sub(r"[^a-z0-9]+", "-", name.lower().replace("é", "e")).strip("-")
+    s = re.sub(r"[^a-z0-9]+", "-", name.lower().replace("é", "e").replace("ʻ", "")).strip("-")
     return f"{m.group(1)}{m.group(2)}-{s}" if m else s
 
 
@@ -138,13 +191,14 @@ def read_posts(sdir):
 
 
 EDITS = None
+EDIT_DIRS = ("edits", "edited", "exports", "badger-jpeg", "cabin-jpeg", "Selected")
 def edits_index(photos_root):
     global EDITS
     if EDITS is None:
         EDITS = {}
         for root, dirs, files in os.walk(photos_root):
             dirs[:] = [d for d in dirs if not d.startswith((".", "_")) and d != "posts"]
-            if os.path.basename(root) not in ("edits", "edited", "exports"): continue
+            if os.path.basename(root) not in EDIT_DIRS: continue
             for f in files:
                 m = ID_RE.match(f)
                 if m and f.lower().endswith((".jpg", ".jpeg")):
@@ -186,14 +240,24 @@ def port(photos_root, shoot, force=False):
     if os.path.exists(os.path.join(out, "index.html")):
         print(f"  {slug}: hand-built page, left alone"); return
     os.makedirs(os.path.join(out, "img"), exist_ok=True)
-    posts, seen, missing, dts = read_posts(sdir), set(), [], []
+    y = os.path.join(out, "album.yaml")
+    if os.path.exists(y) and not force:
+        doc = yaml.safe_load(open(y, encoding="utf-8")) or {}
+        posts = [{"id": p.get("id"), "title": p.get("title"),
+                  "frames": [(str(fid), None, None) for fid in (p.get("frames") or [])]}
+                 for p in (doc.get("posts") or [])]
+    else:
+        posts = read_posts(sdir) if os.path.isdir(sdir) else []
+    seen, missing, dts = set(), [], []
     for p in posts:
         keep = []
         for fid, hint, file in p["frames"]:
             if not fid or fid in seen: continue
-            src = source_for(fid, hint, file, shoot, photos_root, sdir)
-            if not src: missing.append(fid); continue
             dst = os.path.join(out, "img", fid + ".jpg")
+            src = source_for(fid, hint, file, shoot, photos_root, sdir) if os.path.isdir(sdir) else source_for(fid, hint, file, shoot, photos_root, os.path.join(photos_root, shoot))
+            if not src and os.path.exists(dst):
+                seen.add(fid); keep.append(fid); continue
+            if not src: missing.append(fid); continue
             im = Image.open(src); d = taken(im) or id_date(fid, 2000 + int(shoot[:2]))
             if d: dts.append(d)
             if not (os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src)):
@@ -205,7 +269,6 @@ def port(photos_root, shoot, force=False):
     posts = [p for p in posts if p["frames"]]
     for f in os.listdir(os.path.join(out, "img")):           # drop images no longer in the album
         if f.endswith(".jpg") and f[:-4] not in seen: os.remove(os.path.join(out, "img", f))
-    y = os.path.join(out, "album.yaml")
     if force or not os.path.exists(y):
         m = re.match(r"(\d\d)\.(\d\d)(?:\.(\d\d))?\s+(.*)", shoot)
         first = min(dts) if dts else datetime(2000 + int(m.group(1)), int(m.group(2)), int(m.group(3) or 1))

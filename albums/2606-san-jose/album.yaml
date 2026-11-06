@@ -4,46 +4,55 @@ name: San José
 sub: Downtown
 when: 2026 June
 date: '2026-06-06'
-until: '2026-06-06'
+until: '2026-06-21'
 source: 26.06 dtSJ
 hidden: false
 posts:
 - id: facades
-  title: Facades
+  title: Facades, stairwells & glass canyon
   frames:
-  - P6064336
   - P6064360
+  - P6064376
   - P6064344
-  - P6064390
   - P6064392
-- id: flags
-  title: Flags
-  frames:
-  - P6064504
-  - P6064501
-  - P6064384
-- id: tunnel
-  title: Tunnel
-  frames:
-  - P6064479
-  - P6064406
-  - P6064408
-  - P6064409
-  - P6064428
-- id: arches
-  title: Arches
-  frames:
-  - P6064485
-  - P6064444
-  - P6064440
-- id: geometry
-  title: Geometry
-  frames:
-  - P6064421
-  - P6064469
   - P6064513
   - P6064507
+  - P6064510
+- id: flags-and-dusk
+  title: Flags, palms & twilight poles
+  frames:
+  - P6064384
+  - P6064501
+  - P6064504
+  - P6064421
+  - P6064469
+  - P6064451
+- id: tunnel
+  title: Sonic Runway tunnel
+  frames:
+  - P6064406
+  - P6064409
+  - P6064428
+  - P6064479
+- id: arches-and-angles
+  title: Gold volume, shadows & arch flyover
+  frames:
+  - P6064341
+  - P6064333
+  - P6064470
+  - P6064440
+  - P6064485
+- id: world-cup-walk
+  title: San Pedro & Paseo banners
+  frames:
+  - P6216058
+  - P6216038
+  - P6216019
+  - P6216050
+  - P6216002
+  - P6215961
+  - P6215940
 cover:
-- P6064344
 - P6064392
-- P6064421
+- P6064344
+- P6064485
