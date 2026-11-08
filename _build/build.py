@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Static-site generator for sadh.studio (still movements).
 
-Reads:  home.yaml (the wall, in order), feed.yaml (the rest of the feed), photos/<id>.jpg, CNAME
-Writes: _site/**  (the wall at /photos/, the feed at /photos/all/ and /photo/, one page per
-        photo at /photo/<id>/, plus /photo/<id>.jpg and /photo/<id>.thumb.jpg)
+Reads:  home.yaml (the wall, in order), feed.yaml (the gallery/feed), photos/<id>.jpg, CNAME
+Writes: _site/**  (the wall at /photos/, the gallery/feed at /gallery/, /feed/, /photos/all/ and /photo/,
+        one page per photo at /photo/<id>/, plus /photo/<id>.jpg and /photo/<id>.thumb.jpg)
 
 The generated tree is what the GitHub Actions workflow uploads to Pages.
 Run locally with ./run.sh (build + serve). Photo files are the web exports (long edge
@@ -155,11 +155,27 @@ GROUP_LEAD = {mem[0]: mem for mem in GROUPS.values()}             # lead index -
 GROUP_OF   = {i: mem[0] for mem in GROUPS.values() for i in mem}  # any member -> lead index
 DR_STACK = False                                                   # set while rendering the feed
 
+import albums
+ALBUMS = albums.load()
+PHOTO_ALBUM = {}
+for _a in ALBUMS:
+    if _a.get("hidden"): continue
+    _one = len(_a.get("posts") or []) == 1
+    for _post in _a.get("posts") or []:
+        _href = f"/albums/{_a['slug']}/" + ("" if _one else f"#p-{_post.get('id')}")
+        for _fid in _post.get("frames") or []:
+            _fid = str(_fid)
+            if _fid not in PHOTO_ALBUM or PHOTO_ALBUM[_fid][2]:
+                PHOTO_ALBUM[_fid] = (_a.get("name") or _a["slug"], _href, _a["slug"].startswith("2600-"))
+
 # JS metadata (no base64 here)
 meta_js = [{
-    "id": p["id"], "t": p["title"], "pl": p["place"], "fn": p["filename"], "full": q(p["file"]), "ar": p["ar"],
+    "id": p["id"], "t": p["title"], "pl": p["place"], "dt": p["dt"].strftime("%Y %b") if p.get("dt") else "",
+    "fn": p["filename"], "full": q(p["file"]), "ar": p["ar"],
     "r": [{"s": s["sub"], "d": s["display"], "url": s["url"]} for s in p["reddit"]],
-    "ig": p["instagram"], "px": p["fivehundredpx"], "th": p["src"], "v": GROUP_LEAD.get(i),
+    "ig": p["instagram"], "px": p["fivehundredpx"],
+    "al": {"n": PHOTO_ALBUM[p["id"]][0], "u": PHOTO_ALBUM[p["id"]][1]} if p["id"] in PHOTO_ALBUM else None,
+    "th": p["src"], "v": GROUP_LEAD.get(i),
 } for i, p in enumerate(photos)]
 PHOTOS_JSON = json.dumps(meta_js, ensure_ascii=False)
 
@@ -252,7 +268,7 @@ NOT_FOUND_HTML = _load_tmpl("404.html")
 REDIRECT_TMPL = _load_tmpl("redirect.html")
 
 # /photos/ = the wall (home.yaml)
-# /photos/all/ = every listed photo, newest first; /photo/#<id> resolves against the full set
+# /gallery/ (also /feed/, /photos/all/, /photo/) = curated gallery/feed, newest first; /photo/#<id> resolves against the feed
 def _darkroom_for(idx, kicker, order=None, feed=False, after=""):
     global LAND, PORT, DR_STACK, CHRONO_ROWS
     DR_STACK = CHRONO_ROWS = feed
@@ -260,9 +276,11 @@ def _darkroom_for(idx, kicker, order=None, feed=False, after=""):
     LAND = [i for i in order if i in idx and photos[i]["ar"] >= 1.0]
     PORT = [i for i in order if i in idx and photos[i]["ar"] < 1.0]
     CARDS[:] = []
-    if feed:      # an album card sits among the portraits at the album's place in time
+    if feed:      # an album card sits among the portraits at the album's place in time (only for dated albums represented in the feed)
+        feed_pids = {p["id"] for p in photos}
         for a in ALBUMS:
-            if a.get("hidden"): continue
+            if a.get("hidden") or (a["until"] - a["date"]).days > 45: continue
+            if not any(f in feed_pids for p in (a.get("posts") or []) for f in (p.get("frames") or [])): continue
             CARDS.append(((lambda a: lambda st: albums.card(a, " tile", st))(a), a["until"].replace(hour=23, minute=59)))
             k = CARD0 + len(CARDS) - 1
             PORT.insert(next((n for n, i in enumerate(PORT) if _dti(i) < CARDS[-1][1]), len(PORT)), k)
@@ -287,8 +305,6 @@ def _darkroom_for(idx, kicker, order=None, feed=False, after=""):
         "AFTER_WALL": after,
     })
 
-import albums
-ALBUMS = albums.load()
 _t = APP_JS_TMPL.find("const root=document.documentElement"); _e = APP_JS_TMPL.find("// local file:// support")
 THEME_JS = APP_JS_TMPL[_t:_e]
 
@@ -297,8 +313,8 @@ ORDER_WALL = sorted((i for i in range(len(photos)) if photos[i]["wall"]), key=la
 wall_idx = set(ORDER_WALL)
 all_idx  = {i for i in range(len(photos)) if GROUP_OF.get(i, i) == i}   # group members fold into their lead tile
 html_wall = _darkroom_for(wall_idx, 'studio.sadh', ORDER_WALL)
-html_all  = _darkroom_for(all_idx,  f'studio.sadh &middot; all {len(photos)} frames &middot; <a href="/photos/">&larr; the wall</a>', feed=True)
-for sub, html in (("photos", html_wall), (os.path.join("photos", "all"), html_all), ("photo", html_all)):
+html_all  = _darkroom_for(all_idx,  f'<span>studio.sadh &middot; gallery &middot; {len(photos)} frames &middot; <a href="/photos/">&larr; home</a> &middot; <a href="/albums/">albums &rarr;</a></span>', feed=True)
+for sub, html in (("photos", html_wall), ("gallery", html_all), ("feed", html_all), (os.path.join("photos", "all"), html_all), ("photo", html_all)):
     os.makedirs(os.path.join(DEPLOY, sub), exist_ok=True)
     open(os.path.join(DEPLOY, sub, "index.html"), "w", encoding="utf-8").write(html)
 
@@ -321,9 +337,10 @@ _keep = {p["id"] + ".jpg" for p in photos} | {p["id"] + ".thumb.jpg" for p in ph
 for _n in os.listdir(os.path.join(DEPLOY, "photo")):
     if _n.endswith(".jpg") and _n not in _keep: os.remove(os.path.join(DEPLOY, "photo", _n))
 # /albums/<slug>/ from albums/<slug>/album.yaml (hand-built pages copied as they are) + the /albums/ index
-albums.deploy(DEPLOY, DARKROOM_TMPL, STYLES_CSS, THEME_JS)
+_feed_info = {p["id"]: {"hi": q(p["file"]), "t": p["title"], "r": [{"s": s["sub"], "url": s["url"]} for s in p["reddit"]], "ig": p["instagram"]} for p in photos}
+albums.deploy(DEPLOY, DARKROOM_TMPL, STYLES_CSS, THEME_JS, _feed_info)
 open(os.path.join(DEPLOY, "CNAME"), "w").write(DOMAIN + "\n")
 open(os.path.join(DEPLOY, ".nojekyll"), "w").close()
 n = len([f for f in os.listdir(os.path.join(DEPLOY, "photo")) if f.endswith(".jpg") and not f.endswith(".thumb.jpg")])
-print(f"built _site/ -> /photos/ ({len(wall_idx)} on the wall), /photos/all/ + /photo/ ({len(photos)}), {n} fulls, /albums/ ({len(ALBUMS)}); / redirects to /photos/")
+print(f"built _site/ -> /photos/ ({len(wall_idx)} on the wall), /gallery/ + /photos/all/ + /photo/ ({len(photos)}), {n} fulls, /albums/ ({len(ALBUMS)}); / redirects to /photos/")
 

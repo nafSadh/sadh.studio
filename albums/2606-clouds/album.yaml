@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: golden-hills
   title: Cumulus over the Diablo Range
+  nav: Diablo Range
   frames:
   - P6266135
   - P6266128
@@ -18,6 +19,7 @@ posts:
   - P6266180
 - id: dusk
   title: Sunset to moonrise
+  nav: Moonrise
   frames:
   - P6266278
   - P6266248

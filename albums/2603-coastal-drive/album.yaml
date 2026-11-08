@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: hmb
   title: Half Moon Bay morning
+  nav: Half Moon
   frames:
   - DSCF2881
   - DSCF2895
@@ -22,35 +23,41 @@ posts:
   - DSCF3007
 - id: horses
   title: The horse riders
+  nav: Horses
   frames:
   - P3146567
   - P3146561
   - P3146635
 - id: pigeon-point
   title: Pigeon Point
+  nav: Pigeon Point
   frames:
   - P3146703
   - DSCF3043
   - P3146721
 - id: santa-cruz
   title: Santa Cruz from the water
+  nav: Santa Cruz
   frames:
   - P3146743
   - DSCF3092
 - id: capitola
   title: Capitola afternoon
+  nav: Capitola
   frames:
   - P3146792
   - DSCF3104
   - DSCF3110
 - id: sunset
   title: Sunset across the coast
+  nav: Sunset
   frames:
   - DSCF3136
   - DSCF3189
   - P3146893
 - id: carmel
   title: Carmel at night
+  nav: Carmel
   frames:
   - DSCF3221
   - DSCF3228

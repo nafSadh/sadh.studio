@@ -8,32 +8,38 @@ until: '2026-10-18'
 source: 26.10 Portraits
 hidden: false
 posts:
-- id: frames
-  title: Candid portraits & party moments
+- id: friends
+  title: Friends & party moments
+  nav: Friends
   frames:
-  - PA184542
   - PA184436
   - PA184444
   - PA184472
   - PA184514
   - PA184521
   - PA184538
-  - PA184543
+  - P9063606
+  - P9053367
+  - P9053313
+  - P9053297
+  - P9053278
+  - P9053276
+  - P9042656
+  - P9042381
+  - P9042192
+  - P9042181
+  - P9042148
   - P1165165
   - P1104821
   - PC272385
   - PC272377
   - PC272360
-  - PC272348
-  - PC272337
   - PC272327
   - DSCF2215
   - DSCF2219
-  - DSCF2225
   - DSCF2236
   - DSCF2241
   - DSCF2242
-  - DSCF2249
   - DSCF2254
   - DSCF2260
   - DSCF2262
@@ -42,7 +48,18 @@ posts:
   - DSCF2270
   - DSCF2271
   - DSCF2278
+- id: me
+  title: Portraits & moments with me
+  nav: With me
+  frames:
+  - PA184542
+  - PA184543
+  - P9042173
+  - PC272337
+  - PC272348
+  - DSCF2249
+  - DSCF2225
 cover:
-- PA184542
+- P9053278
 - PA184436
 - PC272377

@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: makapuu
   title: Makapuʻu & turquoise cliffs
+  nav: Makapuʻu
   frames:
   - PC210616
   - PC210596
@@ -22,6 +23,7 @@ posts:
   - PC210634
 - id: catamarans
   title: Waikīkī, catamarans & Diamond Head
+  nav: Waikīkī
   frames:
   - PC200377
   - PC200370
@@ -30,6 +32,7 @@ posts:
   - PC221216
 - id: windward
   title: Rainforest, Mānoa & Tantalus
+  nav: Rainforest
   frames:
   - PC210709
   - PC210867
@@ -40,12 +43,14 @@ posts:
   - PC210879
 - id: flora-fauna
   title: Island details
+  nav: Details
   frames:
   - PC210671
   - PC210786
   - PC210756
 - id: dawn-dusk
   title: Dawn & dusk, palms & Diamond Head
+  nav: Twilight
   frames:
   - PC221220
   - PC210966

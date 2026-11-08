@@ -10,6 +10,7 @@ hidden: true
 posts:
 - id: patisserie
   title: Patisserie & espresso
+  nav: Patisserie
   frames:
   - DSCF5042
   - DSCF5054
@@ -20,6 +21,7 @@ posts:
   - DSCF5060
 - id: escalators
   title: Escalators & late light
+  nav: Escalators
   frames:
   - DSCF5063
   - DSCF5067

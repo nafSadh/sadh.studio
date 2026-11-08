@@ -10,12 +10,14 @@ hidden: false
 posts:
 - id: glass-golden-hour
   title: Glass & golden hour
+  nav: Golden hour
   frames:
   - P7158879
   - P7158891
   - P7158955
 - id: dusk-moon
   title: Sunset to moonrise
+  nav: Moonrise
   frames:
   - P7159073
   - P7159129

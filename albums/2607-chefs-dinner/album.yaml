@@ -10,6 +10,7 @@ hidden: true
 posts:
 - id: scene
   title: Candlelight & dusk geometry
+  nav: Candlelight
   frames:
   - P7170004
   - P7170218
@@ -22,6 +23,7 @@ posts:
   - P7170277
 - id: courses
   title: From the kitchen
+  nav: Courses
   frames:
   - P7170066
   - P7170102

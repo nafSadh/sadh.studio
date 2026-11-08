@@ -10,6 +10,7 @@ hidden: true
 posts:
 - id: window-light
   title: Window light & profiles
+  nav: Window light
   frames:
   - PA184440
   - PA184445
@@ -24,6 +25,7 @@ posts:
   - PA184503
 - id: room
   title: Across the room
+  nav: Room
   frames:
   - PA184516
   - PA184514

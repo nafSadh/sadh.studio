@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: redwoods
   title: Henry Cowell redwoods
+  nav: Redwoods
   frames:
   - P8091084
   - P8091154
@@ -21,10 +22,12 @@ posts:
   - P8091082
 - id: town-cliff
   title: Town & West Cliff
+  nav: West Cliff
   frames:
   - P8091032
 - id: valley-light
   title: Castle Rock overlook & valley haze
+  nav: Castle Rock
   frames:
   - P8091229
   - P8091283

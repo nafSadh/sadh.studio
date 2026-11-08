@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: coast-and-cottages
   title: Cypress horizon & fairytale roofs
+  nav: Cottages
   frames:
   - DSCF2575
   - DSCF2585
@@ -18,6 +19,7 @@ posts:
   - DSCF2612
 - id: courtyards
   title: Courtyards, stone paths & arcades
+  nav: Courtyards
   frames:
   - DSCF2583
   - DSCF2642
@@ -26,6 +28,7 @@ posts:
   - DSCF2616
 - id: shop-windows
   title: Storefront glass & coffee roaster
+  nav: Storefronts
   frames:
   - DSCF2588
   - DSCF2603
@@ -33,6 +36,7 @@ posts:
   - DSCF2666
 - id: bakery-and-evening
   title: Bakery window & evening glow
+  nav: Evening
   frames:
   - DSCF2596
   - DSCF2605

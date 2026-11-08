@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: buds-leaves
   title: Buds & backlit leaves
+  nav: Buds
   frames:
   - P6205262
   - P6204751
@@ -19,6 +20,7 @@ posts:
   - P6205138
 - id: petals
   title: Petals up close
+  nav: Petals
   frames:
   - P6205332
   - P6205375
@@ -27,6 +29,7 @@ posts:
   - P6204945
 - id: fountain
   title: At the fountain
+  nav: Fountain
   frames:
   - P6205762
   - P6205752

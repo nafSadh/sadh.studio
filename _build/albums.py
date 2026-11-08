@@ -142,9 +142,9 @@ def card(a, cls="", style=""):
 
 
 def feed_end_cards(albums, n_wall, wall_thumbs):
-    """End of the feed: back to the wall, and all albums."""
+    """End of the feed: back to home, and all albums."""
     listed = [a for a in albums if not a.get("hidden")]
-    return [lambda st: card_html("/photos/", "the wall", "Still movements", "", f"{n_wall} frames", wall_thumbs, " more tile", st),
+    return [lambda st: card_html("/photos/", "home", "Still movements", "", f"{n_wall} frames", wall_thumbs, " more tile", st),
             lambda st: card_html("/albums/", "albums", "All albums", "", f"{len(listed)} albums",
                                  [a["covers"][0] for a in listed if a.get("covers")][:3], " more tile", st)]
 
@@ -152,7 +152,7 @@ def feed_end_cards(albums, n_wall, wall_thumbs):
 def wall_cards(albums, n_photos, wall_thumbs):
     """End of the wall: the gallery and all albums."""
     listed = [a for a in albums if not a.get("hidden")]
-    return [lambda st: card_html("/photos/all/", "gallery", "All photos", "", f"{n_photos} frames", wall_thumbs, " more tile", st),
+    return [lambda st: card_html("/gallery/", "gallery", "The feed", "", f"{n_photos} frames", wall_thumbs, " more tile", st),
             lambda st: card_html("/albums/", "albums", "All albums", "", f"{len(listed)} albums",
                                  [a["covers"][0] for a in listed if a.get("covers")][:3], " more tile", st)]
 
@@ -161,7 +161,7 @@ INDEX_CSS = """
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));grid-auto-flow:dense;gap:36px 24px;margin-top:40px}
 .al{display:flex;flex-direction:column;color:inherit;text-decoration:none}
 .al.wide{grid-column:span 2;container-type:inline-size}
-.al .mos{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:4px;aspect-ratio:4/3;overflow:hidden;background:var(--rule)}
+.al .mos{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:4px;aspect-ratio:4/3;overflow:hidden;background:var(--bg2);border-radius:2px;box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 86%),0 18px 40px -24px rgba(11,14,24,.38);transition:box-shadow .3s ease}
 .al.wide .mos{gap:0;aspect-ratio:auto;height:calc((100cqw - 24px) * 3 / 8)}
 .al .mos img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;transition:transform .45s ease}
 .al .mos img:first-child{grid-row:1/3}.al .mos img:only-child{grid-column:1/3}
@@ -177,21 +177,32 @@ INDEX_CSS = """
 .al .mos.m-7b{grid-template-columns:minmax(0,16fr) minmax(0,17fr) minmax(0,16fr) minmax(0,17fr) minmax(0,16fr)}.al .mos.m-7b img:nth-child(1){grid-column:1;grid-row:1/3}.al .mos.m-7b img:nth-child(4){grid-column:3;grid-row:1/3}.al .mos.m-7b img:nth-child(7){grid-column:5;grid-row:1/3}
 .al .mos.m-7c{grid-template-columns:minmax(0,22fr) minmax(0,15fr) minmax(0,15fr) minmax(0,15fr)}
 .al .mos.m-7d{grid-template-columns:minmax(0,22fr) minmax(0,16fr) minmax(0,16fr) minmax(0,16fr) minmax(0,22fr)}.al .mos.m-7d img:nth-child(1){grid-column:1;grid-row:1/3}.al .mos.m-7d img:nth-child(2){grid-column:2/4;grid-row:1}.al .mos.m-7d img:nth-child(7){grid-column:5;grid-row:1/3}
+.al:hover .mos{box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 40%),0 22px 48px -20px color-mix(in oklab,var(--accent),transparent 68%)}
 .al:hover .mos img{transform:scale(1.03)}
 .al .when{display:flex;align-items:baseline;gap:6px;margin-bottom:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .al .when .n{color:var(--muted)}
 .al h2{font-family:var(--display);font-weight:400;font-size:clamp(25px,2.5vw,33px);letter-spacing:-.02em;line-height:1.08;margin:12px 0 0}
-.al h2 em{font-style:italic;color:var(--accent)}
+.al h2 em{font-style:italic;color:var(--bruple)}
 .al:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.meta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule)}.meta a:hover{border-bottom-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.al .mos,.al .mos img{transition:none}.al:hover .mos img{transform:none}}
 @media (max-width:680px){.grid{grid-template-columns:1fr;gap:28px}.al.wide{grid-column:span 1;container-type:normal}.al.wide .mos{height:auto;aspect-ratio:4/3;grid-template-columns:minmax(0,3fr) minmax(0,2fr) minmax(0,2fr)!important;grid-template-rows:minmax(0,1fr) minmax(0,1fr)!important}.al.wide .mos img{grid-column:auto!important;grid-row:auto!important}.al.wide .mos img:first-child{grid-row:1/3!important}.al.wide .mos img:nth-child(n+6){display:none}}
 """
+
+THEME_BTN = ('<button type="button" class="cbtn tbtn" id="tbtn">'
+             '<span class="t-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg><span class="sr">Switch to dark theme</span></span>'
+             '<span class="t-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.6"/><line x1="12" y1="1.7" x2="12" y2="3.7"/><line x1="12" y1="20.3" x2="12" y2="22.3"/><line x1="4.3" y1="4.3" x2="5.7" y2="5.7"/><line x1="18.3" y1="18.3" x2="19.7" y2="19.7"/><line x1="1.7" y1="12" x2="3.7" y2="12"/><line x1="20.3" y1="12" x2="22.3" y2="12"/><line x1="4.3" y1="19.7" x2="5.7" y2="18.3"/><line x1="18.3" y1="5.7" x2="19.7" y2="4.3"/></svg><span class="sr">Switch to light theme</span></span>'
+             '</button>')
+THEME_SCRIPT = ('<script>(()=>{const K="sadh-photos-theme",de=document.documentElement,m=document.querySelector(\'meta[name="color-scheme"]\'),b=document.getElementById("tbtn");'
+                'const apply=v=>{if(v==="light"||v==="dark"){de.dataset.theme=v;if(m)m.content=v;}else{delete de.dataset.theme;if(m)m.content="light dark";}};'
+                'if(b)b.onclick=()=>{const sys=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";const cur=de.dataset.theme||sys,next=cur==="dark"?"light":"dark";'
+                'apply(next===sys?null:next);try{next===sys?localStorage.removeItem(K):localStorage.setItem(K,next);}catch{}};'
+                'addEventListener("storage",e=>{if(e.key===K)apply(e.newValue);});})();</script></body></html>\n')
 
 
 def index_page(tmpl, listed):
     """/albums/ in the album pages' own look: their head and styles, a grid of albums."""
-    head = tmpl[:tmpl.find('<div class="wrap">')].replace("{{TITLE_TEXT}} · sadh.studio", "Albums · sadh.studio")
-    head = head.replace("</style>", INDEX_CSS + "</style>", 1)
+    head = tmpl[:tmpl.find('<div class="wrap')].replace("{{TITLE_TEXT}} · sadh.studio", "Albums · sadh.studio")
+    head = head.replace("</style>", INDEX_CSS + "</style>", 1).replace("<body>", '<body class="is-one">', 1)
     cards = []
     for a in listed:
         limit = 7 if a.get("wide") else 3
@@ -203,15 +214,23 @@ def index_page(tmpl, listed):
                      f'<span class="mos {a.get("mosaic", "")}">{imgs}</span>'
                      f'<h2>{esc(a.get("name"))}{sub}</h2></a>')
     total = sum(a["n"] for a in listed)
-    return (head + '<div class="wrap">\n  <header class="top"><h1>Albums <em>by sadh</em></h1>\n'
-            f'  <div class="meta"><span>{len(listed)} albums &middot; {total} frames</span>'
-            '<a href="/photos/">the wall</a><a href="/photos/all/">all photos</a></div></header>\n'
+    return (head + '<div class="wrap">\n  <header class="top"><div class="mast-txt">'
+            f'<div class="kicker"><span>sadh.studio</span><span class="sep">&middot;</span><span>{len(listed)} albums &middot; {total} frames</span></div>'
+            '<h1>Albums <em>by sadh</em></h1></div>\n'
+            f'  <nav class="mnav" aria-label="Site"><a class="cbtn" href="/photos/">home</a><a class="cbtn" href="/gallery/">gallery</a>{THEME_BTN}</nav></header>\n'
             f'  <div class="grid">{"".join(cards)}</div>\n'
-            '  <footer>photographs &copy; 2026 nafsadh &middot; <a href="/photos/" style="color:inherit">sadh.studio</a></footer>\n</div>\n')
+            '  <footer>photographs &copy; 2026 nafsadh &middot; <a href="/photos/">sadh.studio</a></footer>\n</div>\n'
+            + THEME_SCRIPT)
 
 
-def render_page(a, tmpl, base):
-    d = os.path.join(ADIR, a["slug"]); img = {}; posts = []
+def _short_nav(title):
+    w = [x for x in re.split(r"[\s,&/—–-]+", str(title or "").strip())
+         if x and x.lower() not in {"the", "a", "an", "of", "in", "on", "at", "to", "from", "and", "over", "across", "along", "through", "inside"}]
+    return " ".join(w[:2]) if w else str(title or "")
+
+
+def render_page(a, tmpl, base, feed_info=None):
+    d = os.path.join(ADIR, a["slug"]); img = {}; posts = []; feed_info = feed_info or {}
     mf = os.path.join(d, "meta.json")
     meta = json.load(open(mf, encoding="utf-8")) if os.path.isfile(mf) else {}
     new_meta = {}
@@ -219,6 +238,7 @@ def render_page(a, tmpl, base):
     for p in a.get("posts") or []:
         fr = []
         for fid in p.get("frames") or []:
+            fid = str(fid)
             f = os.path.join(d, "img", f"{fid}.jpg")
             if os.path.isfile(f):
                 w, h = Image.open(f).size; v = _hash(f)
@@ -228,10 +248,19 @@ def render_page(a, tmpl, base):
                 new_meta[fid] = [w, h, v]
             else:
                 print(f"  ! album {a['slug']}: no img/{fid}.jpg"); continue
-            fr.append({"id": fid, "w": w, "h": h, "v": v}); img[fid] = f"{fid}.jpg"
+            item = {"id": fid, "w": w, "h": h, "v": v}
+            fi = feed_info.get(fid)
+            if fi:
+                item["hi"] = fi["hi"]
+                if fi.get("t"): item["t"] = fi["t"]
+                if fi.get("r"): item["r"] = fi["r"]
+                if fi.get("ig"): item["ig"] = fi["ig"]
+            fr.append(item); img[fid] = f"{fid}.jpg"
         if not fr: continue
         o = "portrait" if all(x["w"] <= x["h"] for x in fr) else "landscape" if all(x["w"] > x["h"] for x in fr) else "mixed"
-        posts.append({"id": str(p.get("id")), "t": str(p.get("title") or ""), "day": "", "cap": "", "o": o, "f": fr})
+        t = str(p.get("title") or "")
+        s = str(p.get("nav") or _short_nav(t))
+        posts.append({"id": str(p.get("id")), "t": t, "s": s, "day": "", "cap": "", "o": o, "f": fr})
     if has_idir and new_meta != meta:
         with open(mf, "w", encoding="utf-8") as out_f:
             json.dump(new_meta, out_f, separators=(",", ":"), sort_keys=True)
@@ -245,18 +274,20 @@ def render_page(a, tmpl, base):
     return page
 
 
-def deploy(out, darkroom_tmpl, styles_css, theme_js):
+def deploy(out, darkroom_tmpl, styles_css, theme_js, feed_info=None):
     """Write /albums/<slug>/ for every album and the /albums/ index."""
     albums, base = load(), img_base()
     tmpl = open(os.path.join(HERE, "templates", "album.html"), encoding="utf-8").read()
-    root = os.path.join(out, "albums"); shutil.rmtree(root, ignore_errors=True); os.makedirs(root)
+    root = os.path.join(out, "albums"); shutil.rmtree(root, ignore_errors=True); os.makedirs(root, exist_ok=True)
     for a in albums:
         src, dst = os.path.join(ADIR, a["slug"]), os.path.join(root, a["slug"])
         if a["hand"]:
-            shutil.copytree(src, dst, ignore=shutil.ignore_patterns("album.yaml", "meta.json", ".DS_Store", *(["img"] if base else [])))
+            shutil.copytree(src, dst, dirs_exist_ok=True, ignore=shutil.ignore_patterns("album.yaml", "meta.json", "abc.html", ".DS_Store", *(["img"] if base else [])))
+            if base and not os.environ.get("GITHUB_ACTIONS") and os.path.isdir(os.path.join(src, "img")) and not os.path.exists(os.path.join(dst, "img")):
+                os.symlink(os.path.join(src, "img"), os.path.join(dst, "img"))
             continue
-        os.makedirs(dst)
-        open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(render_page(a, tmpl, base))
+        os.makedirs(dst, exist_ok=True)
+        open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(render_page(a, tmpl, base, feed_info))
         if os.path.isdir(os.path.join(src, "covers")):
             shutil.copytree(os.path.join(src, "covers"), os.path.join(dst, "covers"))
         if os.path.isdir(os.path.join(src, "img")):

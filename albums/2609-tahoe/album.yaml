@@ -8,39 +8,60 @@ until: '2026-09-06'
 source: 26.09 Tahoe
 hidden: false
 posts:
-- id: lake-tahoe
-  title: Lake Tahoe through the pines
+- id: emerald-bay
+  title: Emerald Bay & Rubicon trail
+  nav: Emerald Bay
   frames:
+  - P9042225
+  - P9042204
+  - P9042335
+  - P9043189
+  - P9042346
+  - P9042587
+  - P9042304
+  - P9043031
+  - P9042898
+  - P9042545
+  - P9043216
+- id: pines-and-wildlife
+  title: Pines, creek & wildlife
+  nav: Pines
+  frames:
+  - DSCF5108
+  - P9053322
+  - P9042575
+  - P9042624
+  - P9042185
+  - DSCF5130
+  - P9042508
+  - P9042771
+- id: lake-and-fallen-leaf
+  title: Lake Tahoe & Fallen Leaf
+  nav: Fallen Leaf
+  frames:
+  - P9042853
+  - P9053332
+  - P9053386
+  - DSCF5195
   - P9042806
   - P9053375
-  - P9042185
-  - P9043031
-  - P9042304
-  - P9042545
   - P9042522
   - P9053349
-- id: fallen-leaf
-  title: Fallen Leaf Lake
-  frames:
   - DSCF5212
-  - P9053541
   - P9053517
+  - P9053536
+  - P9053541
   - P9053543
-- id: emerald-bay
-  title: Granite & Emerald Bay
-  frames:
-  - P9042335
-  - P9042225
-  - P9043189
-  - P9043151
-  - P9043216
+  - DSCF5224
 - id: highway-88
   title: Along Highway 88
+  nav: Highway 88
   frames:
+  - P9063576
   - P9063615
   - P9063661
-  - P9063570
+  - P9063581
 cover:
 - P9042806
-- P9053375
+- P9042225
 - DSCF5212

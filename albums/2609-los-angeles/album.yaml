@@ -8,23 +8,17 @@ until: '2026-09-13'
 source: 26.09.13 dtLA
 hidden: false
 posts:
-- id: broadway-deco
-  title: Broadway Art Deco & theatres
+- id: downtown
+  title: Downtown Los Angeles
   frames:
   - P9133838
   - P9133839
   - P9133841
   - P9133844
   - P9133801
-- id: surfaces
-  title: Frames, seams & atrium gold
-  frames:
   - P9133693
   - P9133708
   - P9133799
-- id: streets
-  title: Downtown streets & murals
-  frames:
   - P9133729
   - P9133765
   - P9133772

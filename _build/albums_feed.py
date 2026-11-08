@@ -15,17 +15,20 @@ import albums_port as ap
 REPO = ap.REPO
 PLACES = {                       # feed `location` values that belong to each album
     "2512-oahu": ["Oahu", "Oʻahu", "Honolulu", "Waikiki", "Hawaii", "Makapu"],
+    "2512-walk": ["San Francisco"],
     "2601-austin": ["Austin"],
+    "2601-sf-museum": ["San Francisco"],
     "2601-yosemite": ["Yosemite"],
     "2603-coastal-drive": ["Highway 1", "Half Moon Bay", "Carmel", "Capitola", "Pigeon Point"],
     "2605-coastal-north": ["Mendocino", "Point Reyes", "Sonoma Coast", "Muir Beach", "Bolinas Lagoon"],
     "2605-santa-cruz": ["Santa Cruz"], "2605-shasta": ["Shasta–Cascade", "Shasta"], "2605-yosemite": ["Yosemite"],
     "2606-clouds": ["San José", "Silicon Valley"],
     "2606-monterey": ["Monterey Coast", "Monterey"], "2606-rose-garden": ["Rose Garden", "Municipal Rose Garden"],
-    "2606-san-jose": ["San José"], "2607-rooftop-pizza": [],
+    "2606-san-jose": ["San José"], "2607-half-moon-bay": ["Half Moon Bay"], "2607-rooftop-pizza": [],
     "2607-san-francisco": ["San Francisco"], "2607-sf-clouds": ["San Francisco", "Baker Beach", "Fort Funston", "Lands End"],
     "2608-santa-cruz": ["Santa Cruz", "Henry Cowell"], "2609-los-angeles": ["Los Angeles"],
     "2609-tahoe": ["Lake Tahoe", "Fallen Leaf"], "2610-panther": ["Panther Beach"],
+    "2610-new-york": ["New York", "Hudson Valley", "Sleepy Hollow", "Cold Spring"],
 }
 
 def feed_frames():

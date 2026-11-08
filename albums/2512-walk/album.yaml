@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: walls-and-doors
   title: Walls, doors & ironwork
+  nav: Ironwork
   frames:
   - DSCF1266
   - DSCF1284
@@ -17,11 +18,13 @@ posts:
   - DSCF1382
 - id: glass-and-bloom
   title: Sunlit glass & winter bloom
+  nav: Winter bloom
   frames:
   - DSCF1317
   - DSCF1451
 - id: mission-corners
   title: Sidewalks & corners, afternoon to dusk
+  nav: Corners
   frames:
   - DSCF1293
   - DSCF1404

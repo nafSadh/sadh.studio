@@ -9,13 +9,15 @@ hidden: false
 posts:
 - id: shapes
   title: Shapes of NYC
+  nav: Shapes
   frames:
   - PA245369
   - PA267141
   - PA245152
   - PA245173
-- id: harbor
-  title: Vibes of NYC
+- id: vibes
+  title: Vibes & strides of New York
+  nav: Vibes
   frames:
   - PA244931
   - PA245056
@@ -23,8 +25,24 @@ posts:
   - PA244950
   - PA245004
   - PA244996
+  - PA244824
+  - PA245115
+  - PA245232
+  - DSCF5740
+  - PA245289
+  - PA244894
+  - PA245129
+  - PA244840
+  - PA244775
+  - PA244956
+  - PA244716
+  - PA244783
+  - PA244938
+  - DSCF5902
+  - DSCF5928
 - id: towers
-  title: Towers
+  title: Towers & skyline
+  nav: Towers
   frames:
   - PA245379
   - PA265959
@@ -32,8 +50,14 @@ posts:
   - PA245069
   - DSCF5884
   - PA245602
+  - PA266416
+  - PA266314
+  - PA266376
+  - PA266883
+  - PA245390
 - id: wtc
   title: WTC from different viewpoints
+  nav: WTC
   frames:
   - PA245159
   - PA245076
@@ -42,12 +66,14 @@ posts:
   - PA245363
 - id: oculus
   title: The Oculus
+  nav: Oculus
   frames:
   - PA245340
   - PA245320
   - PA245354
 - id: brooklyn-bridge
   title: On Brooklyn Bridge
+  nav: Brooklyn Bridge
   frames:
   - PA266111
   - PA266228
@@ -62,35 +88,10 @@ posts:
   - PA266990
   - PA266206
   - PA266252
-- id: streets
-  title: Downtown streets
-  frames:
-  - PA244824
-  - PA245115
-  - PA245232
-  - DSCF5740
-  - PA245289
-  - PA244894
-  - PA245129
-  - PA244840
-  - PA244775
-  - PA244956
-  - PA244716
-  - PA244783
-- id: skyline
-  title: Skyline
-  frames:
-  - PA266416
-  - PA266314
-  - PA266376
-  - PA244938
-  - PA266883
-  - PA245390
-  - DSCF5902
 - id: park
   title: Central Park fall
+  nav: Central Park
   frames:
-  - DSCF5928
   - PA245382
   - DSCF5944
   - PA245505
@@ -107,6 +108,7 @@ posts:
   - DSCF6051
 - id: hudson
   title: Hudson drive fall
+  nav: Hudson
   frames:
   - PA255874
   - PA255745
@@ -124,12 +126,14 @@ posts:
   - PA255822
 - id: cemetery
   title: Sleepy Hollow
+  nav: Sleepy Hollow
   frames:
   - DSCF6163
   - DSCF6143
   - DSCF6171
 - id: lighthouse
   title: Lighthouse and water
+  nav: Lighthouse
   frames:
   - PA255635
   - DSCF6085
@@ -137,6 +141,7 @@ posts:
   - PA255634
 - id: coldspring
   title: Cold Spring
+  nav: Cold Spring
   frames:
   - DSCF6256
   - DSCF6332
@@ -144,7 +149,8 @@ posts:
   - DSCF6246
   - DSCF6288
 - id: soho
-  title: SoHo and Nolita
+  title: Atmospheric SoHo & Nolita
+  nav: SoHo
   frames:
   - DSCF6419
   - DSCF6541
@@ -161,6 +167,7 @@ posts:
   - DSCF6589
 - id: halloween
   title: Halloween
+  nav: Halloween
   frames:
   - DSCF6478
   - DSCF6468
@@ -169,12 +176,14 @@ posts:
   - DSCF6060
 - id: gate
   title: At the gate
+  nav: Gate
   frames:
   - PA234589
   - PA234568
   - DSCF5584
 - id: window
   title: Aerial views
+  nav: Aerial
   frames:
   - DSCF5611
   - PA234642

@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: granite
   title: Light passing across granite
+  nav: Granite
   frames:
   - DSCF3842
   - P5231028
@@ -22,6 +23,7 @@ posts:
   - DSCF3764
 - id: foliage
   title: Through foliage
+  nav: Foliage
   frames:
   - DSCF3795
   - DSCF3798
@@ -30,12 +32,14 @@ posts:
   - DSCF3711
 - id: ravens
   title: Ravens of Tunnel View
+  nav: Ravens
   frames:
   - P5231057
   - P5231082
   - P5231058
 - id: drive
   title: The climb in & road home
+  nav: Road home
   frames:
   - P5230972
   - P5230980

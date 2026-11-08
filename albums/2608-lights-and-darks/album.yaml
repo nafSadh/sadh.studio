@@ -10,12 +10,14 @@ hidden: false
 posts:
 - id: window-glass
   title: Window glass & reflections
+  nav: Reflections
   frames:
   - P8281783
   - P8281911
   - P8281828
 - id: dusk
   title: Golden dusk to alpenglow
+  nav: Alpenglow
   frames:
   - P8281888
   - P8281865

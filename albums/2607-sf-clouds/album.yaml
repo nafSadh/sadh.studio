@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: baker-beach
   title: Golden Gate from Baker Beach
+  nav: Baker Beach
   frames:
   - P7128816
   - P7128799
@@ -19,6 +20,7 @@ posts:
   - P7128675
 - id: pelicans-sky
   title: Pelicans & mackerel skies
+  nav: Pelicans
   frames:
   - P7128684
   - P7128737
@@ -29,6 +31,7 @@ posts:
   - P7128744
 - id: fort-funston
   title: Fort Funston
+  nav: Fort Funston
   frames:
   - P7128406
   - DSCF4714
@@ -36,6 +39,7 @@ posts:
   - P7128380
 - id: lands-end
   title: Legion of Honor & Outer Sunset
+  nav: Lands End
   frames:
   - DSCF4752
   - P7128460
@@ -45,6 +49,7 @@ posts:
   - P7128578
 - id: buckwheat
   title: Rim-lit buckwheat & last snags
+  nav: Buckwheat
   frames:
   - P7128852
   - P7128840

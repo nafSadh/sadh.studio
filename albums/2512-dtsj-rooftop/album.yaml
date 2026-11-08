@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: dusk
   title: Rooftop dusk over downtown
+  nav: Dusk
   frames:
   - PC150029
   - PC150056
@@ -17,12 +18,14 @@ posts:
   - PC150062
 - id: geometry
   title: Glass, railings & facade
+  nav: Glass
   frames:
   - PC150036
   - PC150060
   - PC150047
 - id: storm-light
   title: Storm light over the ridges
+  nav: Storm light
   frames:
   - PC170077
   - PC170078

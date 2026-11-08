@@ -10,12 +10,14 @@ hidden: false
 posts:
 - id: harbor
   title: Fog on the bay
+  nav: Bay fog
   frames:
   - P7047707
   - P7047749
   - P7047583
 - id: quiet
   title: Quiet verticals
+  nav: Verticals
   frames:
   - P7047554
   - P7047621
@@ -24,6 +26,7 @@ posts:
   - P7047562
 - id: face
   title: The city's face
+  nav: City face
   frames:
   - P7047891
   - P7047872
@@ -33,6 +36,7 @@ posts:
   - P7047489
 - id: streets
   title: July Fourth on the streets
+  nav: July Fourth
   frames:
   - P7047631
   - P7047550
@@ -45,6 +49,7 @@ posts:
   - P7048194
 - id: fireworks
   title: Karl ate the fireworks
+  nav: Fireworks
   frames:
   - P7047961
   - P7048070
@@ -56,6 +61,7 @@ posts:
   - P7048029
 - id: neon
   title: Neon after dark
+  nav: Neon
   frames:
   - P7048213
   - P7048314

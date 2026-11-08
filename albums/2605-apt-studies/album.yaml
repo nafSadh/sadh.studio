@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: window-light
   title: Window light & domestic objects
+  nav: Window light
   frames:
   - P5120375
   - P5120378
@@ -19,18 +20,21 @@ posts:
   - PC140016
 - id: surfaces-macros
   title: Surfaces & shoots up close
+  nav: Surfaces
   frames:
   - P5120384
   - P1104734
   - P1104761
 - id: glass-and-moonrise
   title: Glass, leaf & balcony moonrise
+  nav: Moonrise
   frames:
   - P7190452
   - P7180405
   - P7280511
 - id: approach-dusk
   title: Approach path & coastal range dusk
+  nav: Dusk
   frames:
   - P5110228
   - P5110236
@@ -41,6 +45,7 @@ posts:
   - P7180387
 - id: motion-study
   title: Zoom-burst motion studies
+  nav: Motion
   frames:
   - P8070732
   - P8070769

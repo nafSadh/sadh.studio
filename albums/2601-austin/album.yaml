@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: sail-tower-lake
   title: The sail tower & Lady Bird Lake
+  nav: Lady Bird
   frames:
   - P1033999
   - P1034124
@@ -18,6 +19,7 @@ posts:
   - P1034144
 - id: congress-ave
   title: Congress Avenue
+  nav: Congress Ave
   frames:
   - DSCF2286
   - DSCF2309
@@ -25,6 +27,7 @@ posts:
   - P1044674
 - id: downtown-glass
   title: Towers, cranes & scaffolding
+  nav: Towers
   frames:
   - P1044620
   - P1044618
@@ -34,6 +37,7 @@ posts:
   - P1023642
 - id: capitol-campus
   title: Capitol vista & UT Tower
+  nav: Capitol
   frames:
   - P1023333
   - P1044564
@@ -42,6 +46,7 @@ posts:
   - P1044513
 - id: south-congress-grids
   title: South Congress rows & grids
+  nav: South Congress
   frames:
   - DSCF2410
   - DSCF2376
@@ -49,6 +54,7 @@ posts:
   - DSCF2370
 - id: glass-and-rotunda
   title: Rotunda oculus, colored glass & neon
+  nav: Rotunda
   frames:
   - P1044214
   - P1044670

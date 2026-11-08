@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: wildlife
   title: Sea otters & seabirds
+  nav: Wildlife
   frames:
   - P5170624
   - P5170581
@@ -20,6 +21,7 @@ posts:
   - P5170717
 - id: surfers
   title: Surfers & the lineup
+  nav: Surfers
   frames:
   - P4267367
   - P5170741
@@ -27,12 +29,14 @@ posts:
   - P4267355
 - id: seascapes
   title: Hazy bay & cliffside
+  nav: Cliffside
   frames:
   - P4267520
   - P5170637
   - P4267388
 - id: painterly
   title: Sailboats, sea-lavender & spray
+  nav: Sailboats
   frames:
   - P5027665
   - P5027645

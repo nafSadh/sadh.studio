@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: pacific-grove
   title: Pacific Grove, on foot
+  nav: Pacific Grove
   frames:
   - P6286390
   - DSCF4497
@@ -18,18 +19,21 @@ posts:
   - DSCF4514
 - id: squirrels
   title: Ground squirrels
+  nav: Squirrels
   frames:
   - P6286798
   - P6286534
   - P6286764
 - id: gulls
   title: Gull portraits
+  nav: Gulls
   frames:
   - P6286740
   - P6286745
   - P6286682
 - id: coast
   title: The coast, afternoon to dusk
+  nav: Coast
   frames:
   - P6286524
   - P6286619
@@ -45,6 +49,7 @@ posts:
   - P6287224
 - id: big-sky
   title: Birds in a big sky
+  nav: Big sky
   frames:
   - P6287032
   - P6287036
@@ -52,6 +57,7 @@ posts:
   - P6287264
 - id: details
   title: Found details
+  nav: Details
   frames:
   - P6286928
   - P6286409

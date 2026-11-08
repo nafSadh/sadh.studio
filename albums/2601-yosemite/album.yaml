@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: granite-overlooks
   title: Burn scar, Tunnel View & Dewey Point
+  nav: Tunnel View
   frames:
   - P1185378
   - P1185536
@@ -21,6 +22,7 @@ posts:
   - P1186151
 - id: snowshoe-trails
   title: Badger Pass snowshoe
+  nav: Badger Pass
   frames:
   - P1185987
   - P1186002
@@ -28,6 +30,7 @@ posts:
   - P1186112
 - id: snow-and-dusk
   title: Surface hoar & Sierra dusk
+  nav: Sierra dusk
   frames:
   - P1186065
   - P1186076

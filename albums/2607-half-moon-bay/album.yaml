@@ -10,17 +10,21 @@ hidden: false
 posts:
 - id: bluffs
   title: Bluffs, pergola & surf
+  nav: Bluffs
   frames:
   - DSCF4858
   - DSCF4863
   - DSCF4887
+  - DSCF4865
   - DSCF4895
+  - DSCF4896
   - DSCF4938
   - DSCF4940
   - DSCF4883
   - DSCF4866
 - id: pianos-garden
   title: Yard piano
+  nav: Yard piano
   frames:
   - DSCF4978
 cover:

@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: facades
   title: Facades, stairwells & glass canyon
+  nav: Facades
   frames:
   - P6064360
   - P6064376
@@ -20,6 +21,7 @@ posts:
   - P6064510
 - id: flags-and-dusk
   title: Flags, palms & twilight poles
+  nav: Twilight
   frames:
   - P6064384
   - P6064501
@@ -29,6 +31,7 @@ posts:
   - P6064451
 - id: tunnel
   title: Sonic Runway tunnel
+  nav: Sonic Runway
   frames:
   - P6064406
   - P6064409
@@ -36,6 +39,7 @@ posts:
   - P6064479
 - id: arches-and-angles
   title: Gold volume, shadows & arch flyover
+  nav: Arches
   frames:
   - P6064341
   - P6064333
@@ -44,6 +48,7 @@ posts:
   - P6064485
 - id: world-cup-walk
   title: San Pedro & Paseo banners
+  nav: San Pedro
   frames:
   - P6216058
   - P6216038

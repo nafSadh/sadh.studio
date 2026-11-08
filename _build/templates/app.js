@@ -8,9 +8,11 @@ const photoEls=[...document.querySelectorAll('[data-i]')];   // DOM order == vis
 const RICO='<svg class="ico" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="11" r="8" opacity=".18"/><path d="M16.7 8.9a1.5 1.5 0 10-2.2-1.3 8.4 8.4 0 00-3.9-1l.7-3.1 2.2.5a1.1 1.1 0 101.1-1.2 1.1 1.1 0 00-1 .6l-2.5-.6-.95 4.2a8.4 8.4 0 00-4 1A1.5 1.5 0 103.3 8.9a3 3 0 00-.05.6c0 2.9 3 5.2 6.75 5.2s6.75-2.3 6.75-5.2a3 3 0 00-.05-.6zM7 10.4a1.05 1.05 0 112.1 0 1.05 1.05 0 01-2.1 0zm5.85 2.9c-.85.85-3.55.9-3.85.9s-3-.05-3.85-.9a.35.35 0 01.5-.5c.6.6 2.85.65 3.35.65s2.75-.05 3.35-.65a.35.35 0 11.5.5zm-.7-1.85a1.05 1.05 0 110-2.1 1.05 1.05 0 010 2.1z"/></svg>';
 const IGICO='<svg class="ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="13" height="13" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14" cy="6" r="1" fill="currentColor" stroke="none"/></svg>';
 const PXICO='<svg class="ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="14" height="14" rx="3"/><circle cx="10" cy="10" r="3.1"/></svg>';
+const ALICO='<svg class="ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="9" height="13" rx="1.5"/><path d="M14 5h3.5v5.2H14zM14 11.8h3.5V16.5H14z"/></svg>';
 const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbtitle=document.getElementById('lbtitle'),lbmeta=document.getElementById('lbmeta'),lblinks=document.getElementById('lblinks'),lbalts=document.getElementById('lbalts');
 const GROUPED=document.documentElement.dataset.groups==='1';   // feed: a tile may hold several frames of one scene
 let idx=-1,curAr=1;
+const escH=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function chip(cls,ico,label,url){return url
   ?'<a class="lk '+cls+'" href="'+url+'" target="_blank" rel="noopener">'+ico+label+'</a>'
   :'';}   // no link, no chip
@@ -62,13 +64,17 @@ function show(i,k){if(i<0||i>=photoEls.length)return;idx=i;k=k||0;curK=k;const e
   curFull=p.full;lbi.onerror=()=>{lbi.onerror=null;lbi.src=thumb;};
   if(LOADED.has(p.full))lbi.src=p.full;else{lbi.src=thumb;warm(p.full,()=>{if(curFull===p.full)lbi.src=p.full;});}
   document.documentElement.classList.add('lb-lock');setTimeout(()=>{warm(fullAt(1));warm(fullAt(-1));},60);
-  lbtitle.textContent=p.t;lbmeta.innerHTML=p.pl+'  &middot;  '+p.fn+(vs?'  &middot;  '+(k+1)+' of '+vs.length:'')+'  &middot;  '+(i+1)+' / '+photoEls.length;
+  lbtitle.textContent=p.t||p.pl;
+  const metaParts=[];if(p.t&&p.pl)metaParts.push(escH(p.pl));if(p.dt)metaParts.push(escH(p.dt));metaParts.push(escH(p.id));
+  if(vs)metaParts.push((k+1)+' of '+vs.length);metaParts.push((i+1)+' / '+photoEls.length);
+  lbmeta.innerHTML=metaParts.join(' &nbsp;&middot;&nbsp; ');
   if(lbalts){lbalts.textContent='';lbalts.hidden=!vs;
     if(vs)vs.forEach((j,n)=>{const b=document.createElement('button');b.type='button';b.className='alt'+(n===k?' on':'');
       b.setAttribute('aria-pressed',n===k);b.setAttribute('aria-label','show '+PHOTOS[j].fn);b.title=PHOTOS[j].fn;
       const im=document.createElement('img');im.src=PHOTOS[j].th;im.alt='';b.append(im);
       b.addEventListener('click',e=>{e.stopPropagation();if(n!==k)show(i,n);});lbalts.append(b);});}
-  let h='';p.r.forEach(s=>{h+=chip('reddit',RICO,s.s,s.url||('https://www.reddit.com/'+s.s));});
+  let h='';if(p.al)h+='<a class="lk alb" href="'+p.al.u+'">'+ALICO+escH(p.al.n)+' &rarr;</a>';
+  p.r.forEach(s=>{h+=chip('reddit',RICO,s.s,s.url||('https://www.reddit.com/'+s.s));});
   h+=chip('ig',IGICO,'Instagram',p.ig);
   lblinks.innerHTML=h;
   lb.classList.remove('lb-side','lb-below');
@@ -129,8 +135,8 @@ if(document.querySelector('.throwlight')&&!matchMedia('(prefers-reduced-motion:r
 if(location.protocol==='file:'){
   const m=location.pathname.match(/^(.*\/_site)\//);
   const base=m?m[1]:location.pathname.replace(/\/index\.html$/,'').replace(/\/$/,'');
-  const fixUrl=u=>(u&&u.startsWith('/')&&!u.startsWith('//'))?base+(u.endsWith('/')?u+'index.html':u):u;
-  PHOTOS.forEach(p=>{p.full=fixUrl(p.full);p.th=fixUrl(p.th);});
+  const fixUrl=u=>{if(!u||!u.startsWith('/')||u.startsWith('//'))return u;const h=u.indexOf('#'),p=h<0?u:u.slice(0,h),s=h<0?'':u.slice(h);return base+(p.endsWith('/')?p+'index.html':p)+s;};
+  PHOTOS.forEach(p=>{p.full=fixUrl(p.full);p.th=fixUrl(p.th);if(p.al)p.al.u=fixUrl(p.al.u);});
   document.querySelectorAll('img[src^="/"]').forEach(im=>{im.setAttribute('src',fixUrl(im.getAttribute('src')));});
   document.querySelectorAll('a[href^="/"]').forEach(a=>{a.setAttribute('href',fixUrl(a.getAttribute('href')));});
 }

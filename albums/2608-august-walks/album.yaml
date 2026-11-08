@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: soma-towers
   title: Towers & granite oculus
+  nav: Towers
   frames:
   - P8292065
   - P8292070
@@ -18,6 +19,7 @@ posts:
   - P8292077
 - id: market-hayes
   title: Market streetcar & Hayes Valley
+  nav: Hayes Valley
   frames:
   - P8292093
   - P8292095

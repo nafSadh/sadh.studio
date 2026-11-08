@@ -326,13 +326,6 @@ contents:
     reddit:
       - post: 1u56wyc
         sub: r/BirdPhotography
-  - photo: P8091084
-    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091084.jpg
-    location: Santa Cruz
-    date: 2026-08-09 16:15
-    reddit:
-      - post: 1vprnb4
-        sub: r/GloriousSunRays
   - photo: DSCF3136
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3136.jpg
     location: Highway 1
@@ -354,15 +347,8 @@ contents:
         sub: r/AmateurEarthPorn
       - post: 1tuipsa
         sub: r/LandscapePhotography
-  - photo: P8091154
-    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091154-3.jpg
-    location: Santa Cruz
-    date: 2026-08-09 16:28
-    reddit:
-      - post: 1vntiwz
-        sub: r/itookapicture
   - photo: P9042185
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042185-2.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042185-2.jpg
     location: Lake Tahoe
     date: 2026-09-04 09:34
     ig: DdPN9xNDwDm
@@ -397,10 +383,6 @@ contents:
         sub: r/NaturePhoto
       - post: 1v7k5vi
         sub: r/BotanicalPorn
-  - photo: DSCF1884
-    origin: ~/photos/25.12 Hawaii - Oahu/edited/DSCF1884.jpg
-    location: Oʻahu
-    date: 2025-12-21 18:22
   - photo: P6064344
     origin: ~/photos/26.06 dtSJ/edits/P6064344.jpg
     location: San José
@@ -440,7 +422,7 @@ contents:
       - post: 1u9ixzt
         sub: r/SkyPorn
   - photo: DSCF5212
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/DSCF5212.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/DSCF5212.jpg
     location: Lake Tahoe
     date: 2026-09-05 17:49
     ig: DdVONkalMm_

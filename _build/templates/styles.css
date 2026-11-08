@@ -40,15 +40,15 @@ html.lb-lock,html.lb-lock body{overflow:hidden}
 .lb.lb-side .panel{width:clamp(230px,23vw,330px);justify-content:center;align-items:flex-start;text-align:left;padding:30px 34px}
 .lb.lb-below .panel{align-items:center;text-align:center;padding:6px 20px 26px}
 .lb.lb-side .links{justify-content:flex-start}
-.lb .lbtitle{font-family:var(--serif-alt);font-style:italic;font-weight:500;font-size:clamp(15px,2vw,20px);color:var(--ink);line-height:1.15}
-.lb .lbmeta{font-family:var(--mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin:6px 0 13px}
-.links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.lk{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:8.5px;letter-spacing:.6px;
+.lb .lbtitle{font-family:var(--serif-alt);font-style:italic;font-weight:500;font-size:clamp(18px,2.2vw,24px);color:var(--ink);line-height:1.15}
+.lb .lbmeta{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);margin:4px 0 10px;line-height:1.6}
+.links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.links:empty{display:none}
+.lk{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.6px;
   text-transform:uppercase;color:var(--dim);text-decoration:none;border:1px solid var(--border);padding:5px 9px;
   transition:color .2s,border-color .2s,background .2s;background:color-mix(in srgb,var(--bg-2),transparent 40%)}
 .lk:hover{color:var(--ink);border-color:var(--accent);background:var(--accent-soft)}
 .lk .ico{width:11px;height:11px;flex:0 0 auto}
-.lk.reddit .ico{color:var(--reddit)}.lk.ig .ico{color:#d6336c}.lk.px .ico{color:var(--cyan)}
+.lk.reddit .ico{color:var(--reddit)}.lk.ig .ico{color:#d6336c}.lk.px .ico{color:var(--cyan)}.lk.alb .ico{color:var(--accent)}
 .lk.todo{opacity:.5;border-style:dashed;cursor:default}.lk.todo:hover{color:var(--dim);border-color:var(--border);background:transparent}
 .lk b{color:var(--accent);font-weight:500}
 .alts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:-4px 0 4px}.lb.lb-side .alts{justify-content:flex-start}
@@ -121,7 +121,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .lb img{box-shadow:0 0 0 1px color-mix(in srgb,var(--ink),transparent 92%),0 0 90px -16px color-mix(in srgb,var(--lbglow,var(--accent)),transparent 52%),0 44px 120px color-mix(in srgb,var(--ink),transparent 78%)}
 .lb .panel::before{content:'';width:42px;height:1px;background:color-mix(in srgb,var(--lbglow,var(--accent)),#000 32%);align-self:center;margin-bottom:9px;flex:0 0 auto}
 .lb.lb-side .panel::before{align-self:flex-start}
-.lb .lbtitle{font-family:var(--serif-alt);font-style:italic;font-weight:500;font-size:19px;color:var(--ink)}
+.lb .lbtitle{font-family:var(--serif-alt);font-style:italic;font-weight:500;font-size:clamp(19px,2.2vw,24px);color:var(--ink)}
 .lb .lbmeta{color:var(--dim)}
 
 /* albums: cards with a three-photo mosaic -- on /albums/, and as tiles inside the wall and feed rows */

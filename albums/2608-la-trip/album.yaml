@@ -8,28 +8,24 @@ until: '2026-08-17'
 source: 26.08 LA Trip
 hidden: false
 posts:
-- id: rails-coast
-  title: Santa Barbara rails & lanterns
+- id: coast-and-hills
+  title: Rails, coast & hills
+  nav: Coast
   frames:
   - P8141390
-  - P8141448
-  - P8141498
-- id: mugu-malibu
-  title: Point Mugu & Malibu
-  frames:
   - P8141556
+  - P8171676
   - P8141558
+  - P8141448
   - P8141621
-- id: la-dusk
-  title: Dusk in LA
+- id: twilight
+  title: Lanterns, chrome & twilight
+  nav: Twilight
   frames:
+  - P8141498
   - P8141651
   - P8141657
-- id: cachuma
-  title: Lake Cachuma
-  frames:
   - P8171750
-  - P8171676
 cover:
 - P8141390
 - P8141556

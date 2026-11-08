@@ -10,16 +10,18 @@ hidden: false
 posts:
 - id: bluff
   title: Golden hour on the bluff
+  nav: Bluff
   frames:
   - DSCF5426
   - PA174020
+  - PA174026
   - PA173903
   - PA174239
   - PA173967
-  - PA174026
   - PA173977
 - id: silhouettes
   title: Silhouettes at sunset & dusk
+  nav: Silhouettes
   frames:
   - PA173919
   - PA174096
@@ -29,15 +31,15 @@ posts:
   - DSCF5563
 - id: sea-cave
   title: Inside the sea-cave & blue hour
+  nav: Sea cave
   frames:
-  - PA174308
+  - PA174312
   - PA174343
-  - PA174297
   - PA174380
   - PA174279
   - PA174364
   - DSCF5533
 cover:
-- PA174308
+- PA174312
 - DSCF5426
 - PA174020

@@ -1,4 +1,4 @@
-# The feed at /photos/all/, newest first: every photo on the site.
+# The gallery/feed at /gallery/ (and /photos/all/), newest first.
 #   - photo: <ID>          a single photo
 #   - photos: <cover ID>   a stack of the same scene, one tile in the feed; stack: lists its
 #                          photos, the cover first
@@ -9,6 +9,252 @@
 # flags any differences between the two.
 
 contents:
+  - photo: DSCF6589
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6589.jpg
+    location: New York
+    date: 2026-10-26 14:09
+  - photo: DSCF6546
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6546.jpg
+    location: New York
+    date: 2026-10-26 13:48
+  - photo: DSCF6541
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6541.jpg
+    location: New York
+    date: 2026-10-26 13:45
+  - photos: DSCF6513
+    location: New York
+    date: 2026-10-26 12:10
+    stack:
+      - photo: DSCF6513
+        origin: ~/photos/26.10 New York Trip/edits/DSCF6513.jpg
+      - photo: DSCF6505
+        origin: ~/photos/26.10 New York Trip/edits/DSCF6505.jpg
+  - photo: DSCF6510
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6510-2.jpg
+    location: New York
+    date: 2026-10-26 12:01
+  - photo: DSCF6492
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6492.jpg
+    location: New York
+    date: 2026-10-26 11:58
+  - photo: DSCF6468
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6468.jpg
+    location: New York
+    date: 2026-10-26 11:53
+  - photo: DSCF6452
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6452.jpg
+    location: New York
+    date: 2026-10-26 11:49
+  - photo: DSCF6437
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6437.jpg
+    location: New York
+    date: 2026-10-26 11:46
+  - photo: DSCF6419
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6419.jpg
+    location: New York
+    date: 2026-10-26 11:44
+  - photo: PA267141
+    origin: ~/photos/26.10 New York Trip/edits/PA267141.jpg
+    location: New York
+    date: 2026-10-26 09:44
+  - photo: PA266883
+    origin: ~/photos/26.10 New York Trip/edits/PA266883.jpg
+    location: New York
+    date: 2026-10-26 09:24
+  - photo: PA266416
+    origin: ~/photos/26.10 New York Trip/edits/PA266416-2.jpg
+    location: New York
+    date: 2026-10-26 08:57
+  - photo: PA266314
+    origin: ~/photos/26.10 New York Trip/edits/PA266314.jpg
+    location: New York
+    date: 2026-10-26 08:48
+  - photo: PA266267
+    origin: ~/photos/26.10 New York Trip/edits/PA266267.jpg
+    location: New York
+    date: 2026-10-26 08:47
+  - photos: PA266111
+    location: New York
+    date: 2026-10-26 08:34
+    stack:
+      - photo: PA266111
+        origin: ~/photos/26.10 New York Trip/edits/PA266111.jpg
+      - photo: PA266228
+        origin: ~/photos/26.10 New York Trip/edits/PA266228.jpg
+      - photo: PA266440
+        origin: ~/photos/26.10 New York Trip/edits/PA266440.jpg
+  - photos: PA265992
+    location: New York
+    date: 2026-10-26 08:23
+    stack:
+      - photo: PA265992
+        origin: ~/photos/26.10 New York Trip/edits/PA265992.jpg
+      - photo: PA266246
+        origin: ~/photos/26.10 New York Trip/edits/PA266246.jpg
+  - photo: PA265986
+    origin: ~/photos/26.10 New York Trip/edits/PA265986-2.jpg
+    location: New York
+    date: 2026-10-26 08:22
+  - photo: PA265959
+    origin: ~/photos/26.10 New York Trip/edits/PA265959.jpg
+    location: New York
+    date: 2026-10-26 08:18
+  - photo: PA265884
+    origin: ~/photos/26.10 New York Trip/edits/PA265884.jpg
+    location: New York
+    date: 2026-10-26 07:55
+  - photo: PA255874
+    origin: ~/photos/26.10 New York Trip/edits/PA255874.jpg
+    location: Hudson Valley
+    date: 2026-10-25 16:59
+  - photo: DSCF6346
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6346.jpg
+    location: Hudson Valley
+    date: 2026-10-25 16:27
+  - photos: PA255786
+    location: Hudson Valley
+    date: 2026-10-25 16:02
+    stack:
+      - photo: PA255786
+        origin: ~/photos/26.10 New York Trip/edits/PA255786.jpg
+      - photo: PA255806
+        origin: ~/photos/26.10 New York Trip/edits/PA255806.jpg
+  - photo: DSCF6288
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6288.jpg
+    location: Hudson Valley
+    date: 2026-10-25 15:57
+  - photos: DSCF6256
+    location: Hudson Valley
+    date: 2026-10-25 15:09
+    stack:
+      - photo: DSCF6256
+        origin: ~/photos/26.10 New York Trip/edits/DSCF6256.jpg
+      - photo: DSCF6246
+        origin: ~/photos/26.10 New York Trip/edits/DSCF6246.jpg
+  - photo: DSCF6222
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6222.jpg
+    location: Hudson Valley
+    date: 2026-10-25 14:32
+  - photo: PA255750
+    origin: ~/photos/26.10 New York Trip/edits/PA255750.jpg
+    location: Hudson Valley
+    date: 2026-10-25 14:30
+  - photo: DSCF6163
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6163.jpg
+    location: Hudson Valley
+    date: 2026-10-25 13:48
+  - photos: PA255635
+    location: Hudson Valley
+    date: 2026-10-25 12:55
+    stack:
+      - photo: PA255635
+        origin: ~/photos/26.10 New York Trip/edits/PA255635.jpg
+      - photo: PA255634
+        origin: ~/photos/26.10 New York Trip/edits/PA255634.jpg
+      - photo: DSCF6085
+        origin: ~/photos/26.10 New York Trip/edits/DSCF6085.jpg
+  - photo: PA245602
+    origin: ~/photos/26.10 New York Trip/edits/PA245602.jpg
+    location: New York
+    date: 2026-10-24 19:35
+  - photo: DSCF6051
+    origin: ~/photos/26.10 New York Trip/edits/DSCF6051.jpg
+    location: New York
+    date: 2026-10-24 17:06
+  - photos: PA245452
+    location: New York
+    date: 2026-10-24 16:22
+    stack:
+      - photo: PA245452
+        origin: ~/photos/26.10 New York Trip/edits/PA245452.jpg
+      - photo: PA245446
+        origin: ~/photos/26.10 New York Trip/edits/PA245446.jpg
+      - photo: PA245444
+        origin: ~/photos/26.10 New York Trip/edits/PA245444.jpg
+  - photo: PA245432
+    origin: ~/photos/26.10 New York Trip/edits/PA245432.jpg
+    location: New York
+    date: 2026-10-24 16:18
+  - photos: DSCF5928
+    location: New York
+    date: 2026-10-24 16:13
+    stack:
+      - photo: DSCF5928
+        origin: ~/photos/26.10 New York Trip/edits/DSCF5928-2.jpg
+      - photo: PA245390
+        origin: ~/photos/26.10 New York Trip/edits/PA245390-2.jpg
+  - photos: PA245405
+    location: New York
+    date: 2026-10-24 16:08
+    stack:
+      - photo: PA245405
+        origin: ~/photos/26.10 New York Trip/edits/PA245405.jpg
+      - photo: PA245482
+        origin: ~/photos/26.10 New York Trip/edits/PA245482-2.jpg
+  - photo: DSCF5884
+    origin: ~/photos/26.10 New York Trip/edits/DSCF5884.jpg
+    location: New York
+    date: 2026-10-24 15:56
+  - photo: PA245369
+    origin: ~/photos/26.10 New York Trip/edits/PA245369.jpg
+    location: New York
+    date: 2026-10-24 14:16
+  - photos: PA245363
+    location: New York
+    date: 2026-10-24 14:08
+    stack:
+      - photo: PA245363
+        origin: ~/photos/26.10 New York Trip/edits/PA245363-2.jpg
+      - photo: PA245159
+        origin: ~/photos/26.10 New York Trip/edits/PA245159.jpg
+  - photo: PA245340
+    origin: ~/photos/26.10 New York Trip/edits/PA245340-2.jpg
+    location: New York
+    date: 2026-10-24 13:53
+  - photo: PA245320
+    origin: ~/photos/26.10 New York Trip/edits/PA245320-C.jpg
+    location: New York
+    date: 2026-10-24 13:50
+  - photo: PA245232
+    origin: ~/photos/26.10 New York Trip/edits/PA245232.jpg
+    location: New York
+    date: 2026-10-24 13:36
+  - photo: PA245152
+    origin: ~/photos/26.10 New York Trip/edits/PA245152.jpg
+    location: New York
+    date: 2026-10-24 13:18
+  - photo: PA245115
+    origin: ~/photos/26.10 New York Trip/edits/PA245115.jpg
+    location: New York
+    date: 2026-10-24 13:05
+  - photo: PA245061
+    origin: ~/photos/26.10 New York Trip/edits/PA245061.jpg
+    location: New York
+    date: 2026-10-24 12:52
+  - photos: PA245056
+    location: New York
+    date: 2026-10-24 12:51
+    stack:
+      - photo: PA245056
+        origin: ~/photos/26.10 New York Trip/edits/PA245056-2.jpg
+      - photo: PA245004
+        origin: ~/photos/26.10 New York Trip/edits/PA245004-3-3.jpg
+  - photo: PA244931
+    origin: ~/photos/26.10 New York Trip/edits/PA244931-3.jpg
+    location: New York
+    date: 2026-10-24 12:16
+  - photo: PA244824
+    origin: ~/photos/26.10 New York Trip/edits/PA244824.jpg
+    location: New York
+    date: 2026-10-24 11:50
+  - photo: PA244783
+    origin: ~/photos/26.10 New York Trip/edits/PA244783.jpg
+    location: New York
+    date: 2026-10-24 11:41
+  - photo: PA244775
+    origin: ~/photos/26.10 New York Trip/edits/PA244775-A-3.jpg
+    location: New York
+    date: 2026-10-24 11:40
   - photo: DSCF5563
     origin: ~/photos/26.10.17 Panther/edits/DSCF5563-2.jpg
     location: Panther Beach
@@ -160,6 +406,30 @@ contents:
         ig: DeqgOh2FKmv
       - photo: DSCF5306
         origin: ~/photos/26.10.17 Panther/edits/DSCF5306.jpg
+  - photo: P9133841
+    origin: ~/photos/26.09.13 dtLA/selects/exports/P9133841-2.jpg
+    location: Los Angeles
+    date: 2026-09-13 10:07
+  - photo: P9133844
+    origin: ~/photos/26.09.13 dtLA/selects/exports/P9133844-2.jpg
+    location: Los Angeles
+    date: 2026-09-13 10:07
+  - photos: P9133838
+    location: Los Angeles
+    date: 2026-09-13 09:54
+    stack:
+      - photo: P9133838
+        origin: ~/photos/26.09.13 dtLA/selects/exports/P9133838-2.jpg
+      - photo: P9133839
+        origin: ~/photos/26.09.13 dtLA/selects/exports/P9133839-2.jpg
+  - photo: P9133799
+    origin: ~/photos/26.09.13 dtLA/selects/exports/P9133799.jpg
+    location: Los Angeles
+    date: 2026-09-13 09:36
+  - photo: P9133765
+    origin: ~/photos/26.09.13 dtLA/selects/exports/P9133765-2.jpg
+    location: Los Angeles
+    date: 2026-09-13 09:11
   - photo: P9133729
     origin: ~/photos/26.09.13 dtLA/edits/P9133729-6.jpg
     location: Los Angeles
@@ -167,6 +437,10 @@ contents:
     reddit:
       - post: 1xbfsdi
         sub: r/CityPorn
+  - photo: P9133708
+    origin: ~/photos/26.09.13 dtLA/edits/P9133708.jpg
+    location: Los Angeles
+    date: 2026-09-13 08:59
   - photo: P9133693
     origin: ~/photos/26.09.13 dtLA/edits/P9133693-2-5.jpg
     location: Los Angeles
@@ -175,12 +449,28 @@ contents:
       - post: 1wl78rx
         sub: r/itookapicture
   - photo: P9063661
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9063661.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9063661.jpg
     location: Lake Tahoe
     date: 2026-09-06 12:36
     ig: Ddb1V50FNcJ
+  - photo: P9063615
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9063615.jpg
+    location: Lake Tahoe
+    date: 2026-09-06 12:07
+  - photo: P9063570
+    origin: ~/photos/26.09.04 Tahoe/edits/P9063570.jpg
+    location: Lake Tahoe
+    date: 2026-09-06 11:47
+  - photo: P9053541
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9053541.jpg
+    location: Lake Tahoe
+    date: 2026-09-05 17:58
+  - photo: P9053517
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9053517.jpg
+    location: Lake Tahoe
+    date: 2026-09-05 17:55
   - photo: DSCF5212
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/DSCF5212.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/DSCF5212.jpg
     location: Lake Tahoe
     date: 2026-09-05 17:49
     ig: DdVONkalMm_
@@ -193,12 +483,16 @@ contents:
       - post: 1xakqoo
         sub: r/natureisbeautiful
   - photo: P9053349
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9053349.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9053349.jpg
     location: Lake Tahoe
     date: 2026-09-05 15:58
     ig: DdPN9xNDwDm
+  - photo: P9043151
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9043151.jpg
+    location: Lake Tahoe
+    date: 2026-09-04 15:30
   - photo: P9043031
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9043031.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9043031.jpg
     location: Lake Tahoe
     date: 2026-09-04 15:01
     ig: DdPN9xNDwDm
@@ -213,12 +507,12 @@ contents:
       - post: 1wf21op
         sub: r/lakeporn
   - photo: P9042545
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042545.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042545.jpg
     location: Lake Tahoe
     date: 2026-09-04 13:22
     ig: DdPN9xNDwDm
   - photo: P9042522
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042522.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042522.jpg
     location: Lake Tahoe
     date: 2026-09-04 13:21
     ig: DdPN9xNDwDm
@@ -227,13 +521,13 @@ contents:
     date: 2026-09-04 12:39
     stack:
       - photo: P9042304
-        origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042304.jpg
+        origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042304.jpg
         ig: DdPN9xNDwDm
       - photo: P9042225
-        origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042225.jpg
+        origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042225.jpg
         ig: Ddb0P98GiSl
   - photo: P9042185
-    origin: ~/photos/26.09.04 Tahoe/tops/jpeg/P9042185-2.jpg
+    origin: ~/photos/26.09.04 Tahoe/edits/jpeg/P9042185-2.jpg
     location: Lake Tahoe
     date: 2026-09-04 09:34
     ig: DdPN9xNDwDm
@@ -242,6 +536,42 @@ contents:
         sub: r/itookapicture
       - post: 1xb7m0r
         sub: r/FairytaleasFuck
+  - photo: P8292144
+    origin: ~/photos/26.08 Misc/bak/jpeg/P8292144.JPG
+    location: San Francisco
+    date: 2026-08-29 16:20
+  - photo: P8292095
+    origin: ~/photos/26.08 Misc/bak/jpeg/P8292095.JPG
+    location: San Francisco
+    date: 2026-08-29 13:41
+  - photo: P8292093
+    origin: ~/photos/26.08 Misc/bak/jpeg/P8292093.JPG
+    location: San Francisco
+    date: 2026-08-29 13:39
+  - photo: P8292077
+    origin: ~/photos/26.08 Misc/bak/jpeg/P8292077.JPG
+    location: San Francisco
+    date: 2026-08-29 13:32
+  - photo: P8292065
+    origin: ~/photos/26.08 Misc/bak/jpeg/P8292065.JPG
+    location: San Francisco
+    date: 2026-08-29 13:29
+  - photo: P8281911
+    origin: ~/photos/26.08.28 Lights and Darks/selects/jpeg/P8281911.JPG
+    location: San José
+    date: 2026-08-28 18:49
+  - photo: P8281888
+    origin: ~/photos/26.08.28 Lights and Darks/selects/jpeg/P8281888.JPG
+    location: San José
+    date: 2026-08-28 18:42
+  - photo: P8281872
+    origin: ~/photos/26.08.28 Lights and Darks/selects/jpeg/P8281872.JPG
+    location: San José
+    date: 2026-08-28 18:36
+  - photo: P8281828
+    origin: ~/photos/26.08.28 Lights and Darks/selects/jpeg/P8281828.JPG
+    location: San José
+    date: 2026-08-28 16:35
   - photo: P8281783
     origin: ~/photos/26.08.28 Lights and Darks/edits/P8281783-2-4.jpg
     location: San José
@@ -250,6 +580,14 @@ contents:
     reddit:
       - post: 1w71j0q
         sub: r/M43
+  - photo: P8171750
+    origin: ~/photos/26.08 LA Trip/edits/P8171750-2.jpg
+    location: California Coast
+    date: 2026-08-17 17:28
+  - photo: P8141621
+    origin: ~/photos/26.08 LA Trip/selects/jpeg/P8141621.JPG
+    location: California Coast
+    date: 2026-08-14 16:49
   - photo: P8141558
     origin: ~/photos/26.08 LA Trip/edits/P8141558-2.jpg
     location: California coast
@@ -258,14 +596,34 @@ contents:
     origin: ~/photos/26.08 LA Trip/edits/P8141556.jpg
     location: California coast
     date: 2026-08-14 16:22
+  - photo: P8141553
+    origin: ~/photos/26.08 LA Trip/edits/P8141553.jpg
+    location: California Coast
+    date: 2026-08-14 14:41
+  - photo: P8141545
+    origin: ~/photos/26.08 LA Trip/edits/P8141545.jpg
+    location: California Coast
+    date: 2026-08-14 14:38
   - photo: P8141498
     origin: ~/photos/26.08 LA Trip/edits/P8141498.jpg
     location: California coast
     date: 2026-08-14 14:24
+  - photo: P8141448
+    origin: ~/photos/26.08 LA Trip/edits/P8141448-2.jpg
+    location: California Coast
+    date: 2026-08-14 11:36
   - photo: P8141390
     origin: ~/photos/26.08 LA Trip/edits/P8141390-2.jpg
     location: California coast
     date: 2026-08-14 11:33
+  - photo: P8091283
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091283.jpg
+    location: Santa Cruz
+    date: 2026-08-09 19:05
+  - photo: P8091229
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091229.jpg
+    location: Santa Cruz
+    date: 2026-08-09 18:01
   - photo: P8091224
     origin: ~/photos/26.08.09 Santa Cruz/edits/P8091224.jpg
     location: Santa Cruz
@@ -285,6 +643,10 @@ contents:
     reddit:
       - post: 1vntiwz
         sub: r/itookapicture
+  - photo: P8091158
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091158.jpg
+    location: Santa Cruz
+    date: 2026-08-09 16:28
   - photo: P8091124
     origin: ~/photos/26.08.09 Santa Cruz/edits/P8091124.jpg
     location: Santa Cruz
@@ -296,6 +658,10 @@ contents:
     reddit:
       - post: 1vprnb4
         sub: r/GloriousSunRays
+  - photo: P8091082
+    origin: ~/photos/26.08.09 Santa Cruz/edits/P8091082.jpg
+    location: Santa Cruz
+    date: 2026-08-09 16:15
   - photo: P8091032
     origin: ~/photos/26.08.09 Santa Cruz/edits/P8091032.jpg
     location: Santa Cruz
@@ -307,6 +673,38 @@ contents:
     reddit:
       - post: 1w119uj
         sub: r/itookapicture
+  - photo: DSCF4940
+    origin: ~/photos/26.07.31 HMB/edits/DSCF4940.jpg
+    location: Half Moon Bay
+    date: 2026-07-31 18:39
+  - photo: DSCF4938
+    origin: ~/photos/26.07.31 HMB/selects/jpeg/DSCF4938.JPG
+    location: Half Moon Bay
+    date: 2026-07-31 18:38
+  - photo: DSCF4895
+    origin: ~/photos/26.07.31 HMB/edits/DSCF4895.jpg
+    location: Half Moon Bay
+    date: 2026-07-31 18:31
+  - photo: DSCF4896
+    origin: ~/photos/26.07.31 HMB/edits/DSCF4896.jpg
+    location: Half Moon Bay
+    date: 2026-07-31 18:31
+  - photo: DSCF4865
+    origin: ~/photos/26.07.31 HMB/edits/DSCF4865.jpg
+    location: Half Moon Bay
+    date: 2026-07-31 18:16
+  - photo: DSCF4863
+    origin: ~/photos/26.07.31 HMB/edits/DSCF4863.jpg
+    location: Half Moon Bay
+    date: 2026-07-31 18:14
+  - photo: P7190427
+    origin: ~/photos/26.07 Misc/selects/jpeg/P7190427.JPG
+    location: San Francisco
+    date: 2026-07-19 09:14
+  - photo: P7159141
+    origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7159141.jpg
+    location: San José
+    date: 2026-07-15 20:13
   - photos: P7159131
     location: San José
     date: 2026-07-15 20:05
@@ -336,6 +734,14 @@ contents:
         origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7159073.jpg
       - photo: P7159129
         origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7159129.jpg
+  - photo: P7158955
+    origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7158955.jpg
+    location: San José
+    date: 2026-07-15 19:08
+  - photo: P7158879
+    origin: ~/photos/26.07.15 Rooftop Pizza/edits/P7158879.jpg
+    location: San José
+    date: 2026-07-15 17:31
   - photo: P7128852
     origin: ~/photos/26.07.12 SF Clouds and Colors/edits/P7128852.2-3.jpg
     location: San Francisco
@@ -686,6 +1092,18 @@ contents:
         sub: r/minimalistphotography
       - post: 1uj26lz
         sub: r/itookapicture
+  - photo: P6287168
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6287168.jpg
+    location: Monterey Coast
+    date: 2026-06-28 19:18
+  - photo: DSCF4622
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/DSCF4622.jpg
+    location: Monterey Coast
+    date: 2026-06-28 19:13
+  - photo: P6287089
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6287089.jpg
+    location: Monterey Coast
+    date: 2026-06-28 18:52
   - photo: P6287036
     origin: ~/photos/26.06.28 Monterey Coast/edits/P6287036.jpg
     location: Monterey Coast
@@ -693,11 +1111,23 @@ contents:
     reddit:
       - post: 1wdszid
         sub: r/minimalistphotography
+  - photos: P6287032
+    location: Monterey Coast
+    date: 2026-06-28 18:49
+    stack:
+      - photo: P6287032
+        origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6287032.jpg
+      - photo: P6287107
+        origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6287107.jpg
   - photo: P6286958
     origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286958.jpg
     location: Monterey Coast
     date: 2026-06-28 18:38
     ig: DaTaGbHEvw1
+  - photo: P6286910
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286910.jpg
+    location: Monterey Coast
+    date: 2026-06-28 18:26
   - photo: DSCF4576
     origin: ~/photos/26.06.28 Monterey Coast/edits/DSCF4576-2.jpg
     location: Monterey Coast
@@ -706,6 +1136,10 @@ contents:
     reddit:
       - post: 1ungvms
         sub: r/FujifilmX
+  - photo: P6286874
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286874.jpg
+    location: Monterey Coast
+    date: 2026-06-28 18:12
   - photo: DSCF4555
     origin: ~/photos/26.06.28 Monterey Coast/edits/DSCF4555.jpg
     location: Monterey Coast
@@ -718,10 +1152,30 @@ contents:
     reddit:
       - post: 1uqfwf6
         sub: r/wildlifephotography
+  - photo: P6286764
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286764.jpg
+    location: Monterey Coast
+    date: 2026-06-28 17:33
+  - photos: P6286745
+    location: Monterey Coast
+    date: 2026-06-28 17:32
+    stack:
+      - photo: P6286745
+        origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286745.jpg
+      - photo: P6286682
+        origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286682.jpg
+  - photo: P6286524
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286524.jpg
+    location: Monterey Coast
+    date: 2026-06-28 17:19
   - photo: P6286409
     origin: ~/photos/26.06.28 Monterey Coast/selects/exports/P6286409.jpg
     location: Monterey Coast
     date: 2026-06-28 16:38
+  - photo: DSCF4507
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/DSCF4507.jpg
+    location: Monterey Coast
+    date: 2026-06-28 15:26
   - photo: P6286397
     origin: ~/photos/26.06.28 Monterey Coast/edits/P6286397.jpg
     location: Monterey Coast
@@ -735,6 +1189,26 @@ contents:
     location: Monterey Coast
     date: 2026-06-28 15:12
     ig: DaOwWygmtxS
+  - photo: DSCF4497
+    origin: ~/photos/26.06.28 Monterey Coast/selects/exports/DSCF4497.jpg
+    location: Monterey Coast
+    date: 2026-06-28 15:02
+  - photo: P6266278
+    origin: "~/photos/26.06.27 Clouds & Chefs/edits/P6266278.jpg"
+    location: San José
+    date: 2026-06-26 19:21
+  - photo: P6266270
+    origin: "~/photos/26.06.27 Clouds & Chefs/edited/P6266270-3.jpg"
+    location: San José
+    date: 2026-06-26 19:21
+  - photo: P6266282
+    origin: "~/photos/26.06.27 Clouds & Chefs/edited/P6266282-2.jpg"
+    location: San José
+    date: 2026-06-26 19:21
+  - photo: P6266180
+    origin: "~/photos/26.06.27 Clouds & Chefs/edited/P6266180.jpg"
+    location: San José
+    date: 2026-06-26 16:27
   - photo: P6266161
     origin: "~/photos/26.06.27 Clouds & Chefs/edits/P6266161.jpg"
     location: San José
@@ -748,11 +1222,19 @@ contents:
         sub: r/CaliforniaPics
       - post: 1vm4q8m
         sub: r/itookapicture
+  - photo: P6266128
+    origin: "~/photos/26.06.27 Clouds & Chefs/edits/P6266128.jpg"
+    location: San José
+    date: 2026-06-26 16:24
   - photo: P6216002
     origin: ~/photos/26.06.21 dtSJ wc/edits/P6216002.jpg
     location: San José
     date: 2026-06-21 14:25
     ig: DaALSkDFNtB
+  - photo: P6215961
+    origin: ~/photos/26.06.21 dtSJ wc/edits/P6215961.jpg
+    location: San José
+    date: 2026-06-21 14:17
   - photo: P6205762
     origin: ~/photos/26.06.20 Rose Garden/edits/P6205762.jpg
     location: San José
@@ -760,10 +1242,26 @@ contents:
     reddit:
       - post: 1us0ji3
         sub: r/itookapicture
+  - photo: P6205663
+    origin: ~/photos/26.06.20 Rose Garden/tops/exports/P6205663.jpg
+    location: "Municipal Rose Garden, San José"
+    date: 2026-06-20 19:25
   - photo: P6205563
     origin: ~/photos/26.06.20 Rose Garden/tops/exports/P6205563.jpg
     location: San José
     date: 2026-06-20 19:19
+  - photo: P6205332
+    origin: ~/photos/26.06.20 Rose Garden/tops/exports/P6205332.jpg
+    location: "Municipal Rose Garden, San José"
+    date: 2026-06-20 18:54
+  - photo: P6205262
+    origin: ~/photos/26.06.20 Rose Garden/edits/P6205262.jpg
+    location: "Municipal Rose Garden, San José"
+    date: 2026-06-20 18:47
+  - photo: P6205138
+    origin: ~/photos/26.06.20 Rose Garden/edits/P6205138-sooc.jpg
+    location: "Municipal Rose Garden, San José"
+    date: 2026-06-20 18:38
   - photo: P6204945
     origin: ~/photos/26.06.20 Rose Garden/tops/exports/P6204945.jpg
     location: San José
@@ -779,6 +1277,42 @@ contents:
     reddit:
       - post: 1vnxslj
         sub: r/minimalistphotography
+  - photo: P6204676
+    origin: ~/photos/26.06.20 Rose Garden/tops/exports/P6204676.jpg
+    location: "Municipal Rose Garden, San José"
+    date: 2026-06-20 17:58
+  - photo: P6064513
+    origin: ~/photos/26.06 dtSJ/edits/P6064513.jpg
+    location: San José
+    date: 2026-06-06 19:36
+  - photo: P6064507
+    origin: ~/photos/26.06 dtSJ/edits/P6064507.jpg
+    location: San José
+    date: 2026-06-06 19:34
+  - photo: P6064485
+    origin: ~/photos/26.06 dtSJ/edits/P6064485.jpg
+    location: San José
+    date: 2026-06-06 19:31
+  - photos: P6064479
+    location: San José
+    date: 2026-06-06 19:30
+    stack:
+      - photo: P6064479
+        origin: ~/photos/26.06 dtSJ/edits/P6064479.jpg
+      - photo: P6064428
+        origin: ~/photos/26.06 dtSJ/edits/P6064428.jpg
+  - photo: P6064469
+    origin: ~/photos/26.06 dtSJ/edits/P6064469.jpg
+    location: San José
+    date: 2026-06-06 19:29
+  - photo: P6064470
+    origin: ~/photos/26.06 dtSJ/edits/P6064470.jpg
+    location: San José
+    date: 2026-06-06 19:29
+  - photo: P6064440
+    origin: ~/photos/26.06 dtSJ/edits/P6064440.jpg
+    location: San José
+    date: 2026-06-06 19:26
   - photo: P6064421
     origin: ~/photos/26.06 dtSJ/edits/P6064421.jpg
     location: San José
@@ -808,6 +1342,18 @@ contents:
             sub: r/AccidentalWesAnderson
       - photo: P6064390
         origin: ~/photos/26.06 dtSJ/edits/P6064390-2.jpg
+  - photo: P6064376
+    origin: ~/photos/26.06 dtSJ/edits/P6064376.jpg
+    location: San José
+    date: 2026-06-06 19:16
+  - photos: P6064360
+    location: San José
+    date: 2026-06-06 19:15
+    stack:
+      - photo: P6064360
+        origin: ~/photos/26.06 dtSJ/edits/P6064360.jpg
+      - photo: P6064384
+        origin: ~/photos/26.06 dtSJ/edits/P6064384.jpg
   - photo: P6064344
     origin: ~/photos/26.06 dtSJ/edits/P6064344.jpg
     location: San José
@@ -818,6 +1364,10 @@ contents:
         sub: r/SanJose
       - post: 1u5viaq
         sub: r/ArchitecturalRevival
+  - photo: P6064341
+    origin: ~/photos/26.06 dtSJ/edits/P6064341.jpg
+    location: San José
+    date: 2026-06-06 19:11
   - photo: P5264218
     origin: ~/photos/26.05 Coastal North/edits/P5264218.jpg
     location: Mendocino
@@ -1445,6 +1995,14 @@ contents:
         sub: r/itookapicture
       - post: 1tthxpo
         sub: r/photocritique
+  - photo: P4057012
+    origin: ~/photos/26.04.05 Napa/selects/jpeg/P4057012.JPG
+    location: Napa
+    date: 2026-05-04 20:58
+  - photo: P4056977
+    origin: ~/photos/26.04.05 Napa/selects/jpeg/P4056977.JPG
+    location: Napa
+    date: 2026-05-04 20:58
   - photo: P5027665
     origin: ~/photos/26.05 Santa Cruz/edits/P5027665.jpg
     location: Santa Cruz
@@ -1498,6 +2056,10 @@ contents:
         ig: DYztW41lO0t
       - photo: DSCF3180
         origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3180.jpg
+  - photo: DSCF3110
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3110.jpg
+    location: Highway 1
+    date: 2026-03-14 16:42
   - photo: DSCF3097
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3097.jpg
     location: Highway 1
@@ -1511,6 +2073,10 @@ contents:
         sub: r/MostBeautiful
       - post: 1uhqo4w
         sub: r/CaliforniaPics
+  - photo: DSCF3092
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF3092.jpg
+    location: Highway 1
+    date: 2026-03-14 16:01
   - photo: P3146721
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146721.jpg
     location: Highway 1
@@ -1526,6 +2092,10 @@ contents:
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146705.jpg
     location: Highway 1
     date: 2026-03-14 14:57
+  - photo: P3146703
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146703.jpg
+    location: Highway 1
+    date: 2026-03-14 14:57
   - photos: DSCF3012
     location: Highway 1
     date: 2026-03-14 13:46
@@ -1538,6 +2108,18 @@ contents:
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF2975.jpg
     location: Highway 1
     date: 2026-03-14 13:39
+  - photo: P3146635
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146635.jpg
+    location: Highway 1
+    date: 2026-03-14 13:25
+  - photo: P3146552
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146552.jpg
+    location: Highway 1
+    date: 2026-03-14 13:18
+  - photo: DSCF2925
+    origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF2925.jpg
+    location: Highway 1
+    date: 2026-03-14 12:54
   - photo: DSCF2910
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/DSCF2910.jpg
     location: Highway 1
@@ -1562,10 +2144,126 @@ contents:
     origin: ~/photos/26.03.14 Coastal Drive/selects/exports/P3146743-2.jpg
     location: Highway 1
     date: 2026-03-14 00:00
+  - photo: DSCF2731
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2731.jpg
+    location: Carmel
+    date: 2026-01-31 18:39
+  - photo: DSCF2723
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2723.jpg
+    location: Carmel
+    date: 2026-01-31 18:38
+  - photo: DSCF2666
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2666.jpg
+    location: Carmel
+    date: 2026-01-31 16:34
+  - photo: DSCF2660
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2660.jpg
+    location: Carmel
+    date: 2026-01-31 16:32
+  - photo: DSCF2642
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2642.jpg
+    location: Carmel
+    date: 2026-01-31 16:25
+  - photo: DSCF2630
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2630.jpg
+    location: Carmel
+    date: 2026-01-31 15:56
+  - photo: DSCF2616
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2616.jpg
+    location: Carmel
+    date: 2026-01-31 15:54
   - photo: DSCF2609
     origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2609.jpg
     location: Carmel
     date: 2026-01-31 15:53
+  - photo: DSCF2612
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2612.jpg
+    location: Carmel
+    date: 2026-01-31 15:53
+  - photo: DSCF2588
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2588.jpg
+    location: Carmel
+    date: 2026-01-31 15:36
+  - photo: DSCF2583
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2583.jpg
+    location: Carmel
+    date: 2026-01-31 15:35
+  - photo: DSCF2585
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2585.jpg
+    location: Carmel
+    date: 2026-01-31 15:35
+  - photo: DSCF2575
+    origin: ~/photos/26.01.31 Carmel/lightroom/exports/DSCF2575.jpg
+    location: Carmel
+    date: 2026-01-31 15:09
+  - photo: P1186234
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186234.jpg
+    location: Yosemite
+    date: 2026-01-18 17:50
+  - photo: P1186206
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186206.jpg
+    location: Yosemite
+    date: 2026-01-18 17:45
+  - photo: P1186164
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186164.jpg
+    location: Yosemite
+    date: 2026-01-18 16:15
+  - photos: P1186151
+    location: Yosemite
+    date: 2026-01-18 16:13
+    stack:
+      - photo: P1186151
+        origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186151.jpg
+      - photo: P1186198
+        origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186198.jpg
+  - photo: P1186112
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186112.jpg
+    location: Yosemite
+    date: 2026-01-18 15:01
+  - photo: P1186034
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1186034.jpg
+    location: Yosemite
+    date: 2026-01-18 14:42
+  - photo: P1185987
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1185987.jpg
+    location: Yosemite
+    date: 2026-01-18 13:57
+  - photo: P1185905
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1185905.jpg
+    location: Yosemite
+    date: 2026-01-18 12:16
+  - photo: P1185602
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1185602.jpg
+    location: Yosemite
+    date: 2026-01-18 11:53
+  - photo: P1185536
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1185536.jpg
+    location: Yosemite
+    date: 2026-01-18 11:45
+  - photo: P1185378
+    origin: ~/photos/26.01.16 Yosemite/lightroom/badger-jpeg/P1185378.jpg
+    location: Yosemite
+    date: 2026-01-18 10:39
+  - photo: P1115052
+    origin: ~/photos/26.01.11 SF Museum/bak/jpeg/P1115052.jpg
+    location: San Francisco
+    date: 2026-01-11 15:06
+  - photo: P1115035
+    origin: ~/photos/26.01.11 SF Museum/bak/jpeg/P1115035.jpg
+    location: San Francisco
+    date: 2026-01-11 15:05
+  - photo: P1114999
+    origin: ~/photos/26.01.11 SF Museum/bak/jpeg/P1114999.jpg
+    location: San Francisco
+    date: 2026-01-11 13:07
+  - photo: P1114985
+    origin: ~/photos/26.01.11 SF Museum/bak/jpeg/P1114985.jpg
+    location: San Francisco
+    date: 2026-01-11 13:02
+  - photo: P1114922
+    origin: ~/photos/26.01.11 SF Museum/bak/jpeg/P1114922.jpg
+    location: San Francisco
+    date: 2026-01-11 12:18
   - photo: P1044674
     origin: ~/photos/26.01 Austin/lightroom/edits/P1044674.jpg
     location: Austin
@@ -1577,6 +2275,26 @@ contents:
     reddit:
       - post: 1vj6dcr
         sub: r/itookapicture
+  - photo: P1044555
+    origin: ~/photos/26.01 Austin/lightroom/edits/P1044555.jpg
+    location: Austin
+    date: 2026-01-04 13:13
+  - photo: P1044544
+    origin: ~/photos/26.01 Austin/lightroom/edits/P1044544.jpg
+    location: Austin
+    date: 2026-01-04 13:11
+  - photo: P1044513
+    origin: ~/photos/26.01 Austin/edits/P1044513.jpg
+    location: Austin
+    date: 2026-01-04 13:03
+  - photo: P1044509
+    origin: ~/photos/26.01 Austin/lightroom/edits/P1044509.jpg
+    location: Austin
+    date: 2026-01-04 13:02
+  - photo: P1044465
+    origin: ~/photos/26.01 Austin/lightroom/edits/P1044465.jpg
+    location: Austin
+    date: 2026-01-04 12:58
   - photo: P1044421
     origin: ~/photos/26.01 Austin/bak/jpeg/P1044421.JPG
     location: Austin
@@ -1585,15 +2303,31 @@ contents:
     origin: ~/photos/26.01 Austin/bak/jpeg/P1044214.JPG
     location: Austin
     date: 2026-01-04 11:51
+  - photo: P1034128
+    origin: ~/photos/26.01 Austin/bak/jpeg/P1034128.JPG
+    location: Austin
+    date: 2026-01-03 16:22
   - photo: P1034082
     origin: ~/photos/26.01 Austin/bak/jpeg/P1034082.JPG
     location: Austin
     date: 2026-01-03 15:38
     ig: DTM3B7rlJSs
+  - photo: P1033999
+    origin: ~/photos/26.01 Austin/bak/jpeg/P1033999.JPG
+    location: Austin
+    date: 2026-01-03 15:25
   - photo: DSCF2410
     origin: ~/photos/26.01 Austin/edits/DSCF2410.jpg
     location: Austin
     date: 2026-01-03 13:06
+  - photo: DSCF2376
+    origin: ~/photos/26.01 Austin/bak/jpeg/DSCF2376.jpg
+    location: Austin
+    date: 2026-01-03 11:55
+  - photo: P1023642
+    origin: ~/photos/26.01 Austin/bak/jpeg/P1023642.JPG
+    location: Austin
+    date: 2026-01-02 13:58
   - photo: P1023333
     origin: ~/photos/26.01 Austin/edits/P1023333.jpg
     location: Austin
@@ -1607,6 +2341,10 @@ contents:
     origin: ~/photos/26.01 Austin/edits/DSCF2309-2.jpg
     location: Austin
     date: 2026-01-01 19:07
+  - photo: DSCF2286
+    origin: ~/photos/26.01 Austin/edits/DSCF2286-2-2.jpg
+    location: Austin
+    date: 2026-01-01 18:34
   - photo: DSCF2344
     origin: ~/photos/26.01 Austin/bak/jpeg/DSCF2344.JPG
     location: Austin
@@ -1643,10 +2381,18 @@ contents:
     reddit:
       - post: 1u9ixzt
         sub: r/SkyPorn
+  - photo: PC210990
+    origin: ~/photos/25.12 Hawaii - Oahu/selects/exports/legacy-cull/PC210990.JPG
+    location: Oʻahu
+    date: 2025-12-21 19:46
   - photo: PC210966
     origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210966.jpg
     location: Oʻahu
     date: 2025-12-21 19:38
+  - photo: PC210879
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210879.jpg
+    location: Oʻahu
+    date: 2025-12-21 18:45
   - photo: DSCF1884
     origin: ~/photos/25.12 Hawaii - Oahu/edited/DSCF1884.jpg
     location: Oʻahu
@@ -1674,6 +2420,10 @@ contents:
     reddit:
       - post: 1uxw751
         sub: r/BirdPhotography
+  - photo: PC210634
+    origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210634.jpg
+    location: Oʻahu
+    date: 2025-12-21 14:08
   - photos: PC210616
     location: Oʻahu
     date: 2025-12-21 14:00
@@ -1691,6 +2441,10 @@ contents:
         origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210653-2.jpg
   - photo: PC210598
     origin: ~/photos/25.12 Hawaii - Oahu/edited/PC210598.jpg
+    location: Oʻahu
+    date: 2025-12-21 13:49
+  - photo: PC210596
+    origin: ~/photos/25.12 Hawaii - Oahu/selects/exports/legacy-cull/PC210596.JPG
     location: Oʻahu
     date: 2025-12-21 13:49
   - photo: PC210564
@@ -1731,3 +2485,27 @@ contents:
             sub: r/seaporn
       - photo: PC200370
         origin: ~/photos/25.12 Hawaii - Oahu/edited/PC200370.jpg
+  - photo: DSCF1451
+    origin: ~/photos/25.12.13 Walk/selects/jpeg/DSCF1451.JPG
+    location: San Francisco
+    date: 2025-12-13 16:14
+  - photo: DSCF1404
+    origin: ~/photos/25.12.13 Walk/keeps/jpeg/DSCF1404.JPG
+    location: San Francisco
+    date: 2025-12-13 15:52
+  - photo: DSCF1382
+    origin: ~/photos/25.12.13 Walk/DSCF1382.jpg
+    location: San Francisco
+    date: 2025-12-13 15:42
+  - photo: DSCF1293
+    origin: ~/photos/25.12.13 Walk/selects/jpeg/DSCF1293.JPG
+    location: San Francisco
+    date: 2025-12-13 12:58
+  - photo: DSCF1284
+    origin: ~/photos/25.12.13 Walk/selects/jpeg/DSCF1284.JPG
+    location: San Francisco
+    date: 2025-12-13 12:53
+  - photo: DSCF1266
+    origin: ~/photos/25.12.13 Walk/selects/jpeg/DSCF1266.JPG
+    location: San Francisco
+    date: 2025-12-13 12:48

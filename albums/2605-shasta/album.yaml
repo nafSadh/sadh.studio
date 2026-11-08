@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: mount-shasta
   title: Mount Shasta
+  nav: Mount Shasta
   frames:
   - P5109495
   - DSCF3494
@@ -21,6 +22,7 @@ posts:
   - P5097822
 - id: ridges-and-firs
   title: Cascade ridges & high firs
+  nav: Ridges
   frames:
   - P5097801
   - P5109983
@@ -31,6 +33,7 @@ posts:
   - P5109891
 - id: waterfalls-and-creeks
   title: Waterfalls, creeks & osprey
+  nav: Waterfalls
   frames:
   - P5098825
   - P5099064
@@ -43,12 +46,14 @@ posts:
   - P5099421
 - id: castle-lake
   title: Castle Lake
+  nav: Castle Lake
   frames:
   - P5100091
   - DSCF3535
   - P5100086
 - id: lake-shasta-caverns
   title: Lake Shasta & the caverns
+  nav: Caverns
   frames:
   - P5098471
   - P5098683

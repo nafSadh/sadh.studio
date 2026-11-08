@@ -10,6 +10,7 @@ hidden: false
 posts:
 - id: muir
   title: Muir Beach to Bolinas Lagoon
+  nav: Muir Beach
   frames:
   - P5251263
   - P5251461
@@ -21,6 +22,7 @@ posts:
   - P5251876
 - id: point-reyes-ranches
   title: Point Reyes ranches & hills
+  nav: Ranches
   frames:
   - DSCF3980
   - P5252009
@@ -31,6 +33,7 @@ posts:
   - P5253150
 - id: point-reyes
   title: Point Reyes Lighthouse & headlands
+  nav: Point Reyes
   frames:
   - P5252760
   - DSCF4129
@@ -46,6 +49,7 @@ posts:
   - P5253064
 - id: sonoma-mendocino
   title: Bodega, Sonoma Coast & Mendocino
+  nav: Mendocino
   frames:
   - P5263833
   - P5263801
@@ -59,6 +63,7 @@ posts:
   - DSCF4264
 - id: wildlife
   title: Deer, vultures & songbirds
+  nav: Wildlife
   frames:
   - P5252213
   - P5252253
@@ -70,6 +75,7 @@ posts:
   - P5251872
 - id: seabirds
   title: Seabirds & shorebirds
+  nav: Seabirds
   frames:
   - P5264043
   - P5263368
@@ -81,6 +87,7 @@ posts:
   - P5252387
 - id: flora
   title: Coastal wildflowers & grasses
+  nav: Wildflowers
   frames:
   - P5252092
   - P5251635
