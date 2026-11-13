@@ -29,6 +29,7 @@ PLACES = {                       # feed `location` values that belong to each al
     "2608-santa-cruz": ["Santa Cruz", "Henry Cowell"], "2609-los-angeles": ["Los Angeles"],
     "2609-tahoe": ["Lake Tahoe", "Fallen Leaf"], "2610-panther": ["Panther Beach"],
     "2610-new-york": ["New York", "Hudson Valley", "Sleepy Hollow", "Cold Spring"],
+    "2611-knoxville": ["Knoxville", "Cades Cove", "Smokies", "Great Smoky Mountains"],
 }
 
 def feed_frames():

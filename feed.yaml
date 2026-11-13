@@ -9,6 +9,98 @@
 # flags any differences between the two.
 
 contents:
+  - photo: DSCF7700
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7700.JPG
+    location: Knoxville
+    date: 2026-11-09 14:16
+  - photo: DSCF7696
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7696.JPG
+    location: Knoxville
+    date: 2026-11-09 14:16
+  - photo: DSCF7673
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7673.JPG
+    location: Knoxville
+    date: 2026-11-09 14:08
+  - photo: DSCF7667
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7667.JPG
+    location: Knoxville
+    date: 2026-11-09 14:08
+  - photo: DSCF7660
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7660.JPG
+    location: Knoxville
+    date: 2026-11-09 14:07
+  - photo: DSCF7644
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7644.JPG
+    location: Knoxville
+    date: 2026-11-09 14:03
+  - photo: DSCF7624
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7624.JPG
+    location: Knoxville
+    date: 2026-11-09 14:01
+  - photo: DSCF7583
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7583.JPG
+    location: Knoxville
+    date: 2026-11-09 13:50
+  - photo: DSCF7582
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7582.JPG
+    location: Knoxville
+    date: 2026-11-09 13:50
+  - photos: DSCF7574
+    location: Knoxville
+    date: 2026-11-09 13:47
+    stack:
+      - photo: DSCF7574
+        origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7574.JPG
+      - photo: DSCF7565
+        origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7565.JPG
+  - photo: DSCF7568
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7568.JPG
+    location: Knoxville
+    date: 2026-11-09 13:46
+  - photo: DSCF7552
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7552.JPG
+    location: Knoxville
+    date: 2026-11-09 13:45
+  - photo: DSCF7559
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7559.JPG
+    location: Knoxville
+    date: 2026-11-09 13:45
+  - photo: DSCF7537
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7537.JPG
+    location: Knoxville
+    date: 2026-11-09 13:42
+  - photo: DSCF7528
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7528.JPG
+    location: Knoxville
+    date: 2026-11-09 13:41
+  - photo: DSCF7520
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7520.JPG
+    location: Knoxville
+    date: 2026-11-09 13:39
+  - photo: DSCF7510
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7510.JPG
+    location: Knoxville
+    date: 2026-11-09 13:36
+  - photo: DSCF7507
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7507.JPG
+    location: Knoxville
+    date: 2026-11-09 13:34
+  - photo: DSCF7504
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7504.JPG
+    location: Knoxville
+    date: 2026-11-09 13:34
+  - photo: DSCF7499
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7499.JPG
+    location: Knoxville
+    date: 2026-11-09 13:33
+  - photo: DSCF7497
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7497.JPG
+    location: Knoxville
+    date: 2026-11-09 13:33
+  - photo: DSCF7482
+    origin: ~/photos/26.11 Knoxville/5 Downtown/jpeg/DSCF7482.JPG
+    location: Knoxville
+    date: 2026-11-09 13:30
   - photo: DSCF6589
     origin: ~/photos/26.10 New York Trip/edits/DSCF6589.jpg
     location: New York
