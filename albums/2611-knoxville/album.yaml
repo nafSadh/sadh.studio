@@ -8,79 +8,34 @@ until: '2026-11-09'
 source: 26.11 Knoxville
 hidden: false
 posts:
-- id: getting-there
-  title: Getting there
-  nav: Flight
-  frames:
-  - DSC00031
-  - DSC00035
-  - DSCF6670
-  - DSCF6675
-  - DSC00048
-  - DSC00055
-  - DSC00074
-  - DSCF6682
-  - DSC00085
-  - DSC00097
-  - DSC00103
-  - DSC00114
-  - DSCF6699
-- id: overlook
-  title: The overlook
-  nav: Overlook
-  frames:
-  - DSCF7193
-  - DSCF7197
-  - DSCF7207
-  - DSCF7213
-  - DSCF7221
-  - DSCF7225
-  - DSCF7233
-- id: horses
-  title: Cades Cove · horses
-  nav: Horses
+- id: cades-cove
+  title: Cades Cove
+  nav: Cades Cove
   frames:
   - DSCF7246
-  - DSCF7245
-  - DSCF7250
-  - DSCF7256
-  - DSCF7274
-  - DSCF7284
-  - DSCF7290
-  - DSCF7296
-- id: golden-hour
-  title: Golden hour
-  nav: Golden
-  frames:
+  - DSCF7213
+  - DSCF7225
   - DSCF7332
-  - DSCF7341
-  - DSCF7356
   - DSCF7369
-  - DSCF7378
+  - DSCF7356
+  - DSCF7296
   - DSCF7383
-  - DSCF7387
-- id: alpenglow
-  title: Alpenglow & dusk
-  nav: Dusk
-  frames:
-  - DSCF7412
   - DSCF7433
-  - DSCF7405
   - DSCF7409
   - DSCF7446
-  - DSCF7448
-- id: glass-tall
-  title: Knoxville through glass
-  nav: Glass · V
+- id: downtown
+  title: Gay Street
+  nav: Gay Street
   frames:
-  - DSCF7499
-  - DSCF7537
-  - DSCF7700
-  - DSCF7510
-  - DSCF7504
-  - DSCF7507
-  - DSCF7552
-  - DSCF7490
+  - DSCF7583
+  - DSCF7623
+  - DSCF7582
+  - DSCF7487
+  - DSCF7574
+  - DSCF7660
+  - DSCF7482
+  - DSCF7624
+  - DSCF7565
 - id: glass-wide
   title: Window layers
   nav: Glass · H
@@ -88,46 +43,45 @@ posts:
   - DSCF7559
   - DSCF7528
   - DSCF7673
-  - DSCF7644
   - DSCF7667
+  - DSCF7644
   - DSCF7493
   - DSCF7497
   - DSCF7696
   - DSCF7568
   - DSCF7520
-- id: downtown
-  title: Gay Street
-  nav: Downtown
+- id: glass-tall
+  title: Knoxville through glass
+  nav: Glass · V
   frames:
-  - DSCF7583
-  - DSCF7623
-  - DSCF7482
-  - DSCF7660
-  - DSCF7582
-  - DSCF7487
-  - DSCF7624
-  - DSCF7574
-  - DSCF7565
+  - DSCF7499
+  - DSCF7537
+  - DSCF7504
+  - DSCF7700
+  - DSCF7507
+  - DSCF7552
+  - DSCF7490
+  - DSCF7510
+- id: window-seat
+  title: Window seat
+  nav: Flight
+  frames:
+  - DSCF6675
+  - DSCF6680
+  - DSC00048
+  - DSC00055
 - id: layover
-  title: Heading home · TYS & DFW
+  title: Layover noir
   nav: Layover
   frames:
-  - DSCF7720
   - DSCF7714
-  - DSCF7730
   - DSCF7732
   - DSCF7728
   - DSCF7726
-  - DSCF7731
   - DSCF7741
-  - DSCF7752
-  - DSCF7758
   - DSCF7764
   - DSCF7747
 cover:
-- DSCF7583
+- DSCF7499
 - DSCF7383
-- DSCF7433
-- DSCF7356
-- DSCF7559
 - DSCF7296
