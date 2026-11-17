@@ -32,7 +32,13 @@ if ! rclone listremotes | grep -qx "r2:"; then
   chmod 600 "$RCLONE_CONFIG"
   echo "saved remote r2 in $RCLONE_CONFIG"
 fi
-for d in albums/*/img; do
+if [ $# -gt 0 ]; then
+  dirs=(); for s in "$@"; do s="${s#albums/}"; dirs+=("albums/${s%/}/img"); done
+else
+  dirs=(); for d in albums/*/img; do dirs=("$d" "${dirs[@]+"${dirs[@]}"}"); done
+fi
+for d in "${dirs[@]}"; do
+  [ -d "$d" ] || continue
   slug=$(basename "$(dirname "$d")")
   rclone sync "$d" "r2:$BUCKET/albums/$slug" --include "*.jpg" \
     --header-upload "Cache-Control: public, max-age=31536000, immutable" --progress

@@ -310,6 +310,16 @@ function show(i){
   if (g) document.documentElement.style.setProperty("--lbglow", g);
   else document.documentElement.style.removeProperty("--lbglow");
   const baseSrc = srcOf(f), remSrc = rsrcOf(f);
+  lbi.onload = () => {
+    if (!lb.open || idx !== i || !lbi.naturalWidth) return;
+    const ar = lbi.naturalWidth / lbi.naturalHeight;
+    if (Math.abs(ar - curAr) > .005) {
+      curAr = ar;
+      lb.classList.remove("lb-side", "lb-below");
+      lb.classList.add(sideLayout(curAr) ? "lb-side" : "lb-below");
+      fitImg();
+    }
+  };
   lbi.onerror = () => { if (lbi.src !== remSrc && RBASE) lbi.src = remSrc; };
   curHi = f.hi || "";
   if (curHi && LOADED.has(curHi)) lbi.src = curHi;

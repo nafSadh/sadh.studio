@@ -235,13 +235,14 @@ def render_page(a, tmpl, base, feed_info=None):
     meta = json.load(open(mf, encoding="utf-8")) if os.path.isfile(mf) else {}
     new_meta = {}
     has_idir = os.path.isdir(os.path.join(d, "img"))
+    bust = f"-{a['bust']}" if a.get("bust") else ""
     for p in a.get("posts") or []:
         fr = []
         for fid in p.get("frames") or []:
             fid = str(fid)
             f = os.path.join(d, "img", f"{fid}.jpg")
             if os.path.isfile(f):
-                w, h = Image.open(f).size; v = _hash(f)
+                w, h = Image.open(f).size; v = _hash(f) + bust
                 new_meta[fid] = [w, h, v]
             elif fid in meta:
                 w, h, v = meta[fid]
@@ -289,10 +290,12 @@ def deploy(out, darkroom_tmpl, styles_css, theme_js, feed_info=None):
         os.makedirs(dst, exist_ok=True)
         open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(render_page(a, tmpl, base, feed_info))
         if os.path.isdir(os.path.join(src, "covers")):
-            shutil.copytree(os.path.join(src, "covers"), os.path.join(dst, "covers"))
+            shutil.copytree(os.path.join(src, "covers"), os.path.join(dst, "covers"), dirs_exist_ok=True)
         if os.path.isdir(os.path.join(src, "img")):
-            if not base: shutil.copytree(os.path.join(src, "img"), os.path.join(dst, "img"))
-            elif not os.environ.get("GITHUB_ACTIONS"): os.symlink(os.path.join(src, "img"), os.path.join(dst, "img"))
+            if not base: shutil.copytree(os.path.join(src, "img"), os.path.join(dst, "img"), dirs_exist_ok=True)
+            elif not os.environ.get("GITHUB_ACTIONS"):
+                img_dst = os.path.join(dst, "img")
+                if not os.path.exists(img_dst): os.symlink(os.path.join(src, "img"), img_dst)
     listed = [a for a in albums if not a.get("hidden")]
     open(os.path.join(root, "index.html"), "w", encoding="utf-8").write(index_page(tmpl, listed))
     return albums

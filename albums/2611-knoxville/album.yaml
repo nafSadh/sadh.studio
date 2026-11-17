@@ -7,6 +7,7 @@ date: '2026-11-07'
 until: '2026-11-09'
 source: 26.11 Knoxville
 hidden: false
+bust: 2
 posts:
 - id: cades-cove
   title: Cades Cove
@@ -15,11 +16,13 @@ posts:
   - DSCF7246
   - DSCF7213
   - DSCF7225
+  - DSCF7265
   - DSCF7332
   - DSCF7369
   - DSCF7356
   - DSCF7296
   - DSCF7383
+  - DSCF7415
   - DSCF7433
   - DSCF7409
   - DSCF7446
@@ -74,13 +77,11 @@ posts:
   title: Layover noir
   nav: Layover
   frames:
-  - DSCF7714
+  - DSCF7720
   - DSCF7732
   - DSCF7728
-  - DSCF7726
-  - DSCF7741
-  - DSCF7764
   - DSCF7747
+  - DSCF7764
 cover:
 - DSCF7499
 - DSCF7383

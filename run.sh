@@ -14,6 +14,6 @@ case "${1:-}" in
   add|rm) exec python3 _build/photos.py "$@" ;;
   check) exec python3 _build/check.py ;;
   albums) shift; python3 _build/albums_port.py ~/photos "$@" && exec python3 _build/albums_feed.py ;;
-  sync) exec _build/albums_sync.sh ;;
+  sync) shift; exec _build/albums_sync.sh "$@" ;;
   *) exec python3 _build/serve.py "${1:-8768}" ;;
 esac
